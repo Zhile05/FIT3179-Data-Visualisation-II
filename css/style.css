@@ -202,7 +202,6 @@ h1 span{
 }
 
 .chapter-intro{
-  max-width:65ch;
   margin:0;
   color:#435f70
 }
@@ -753,14 +752,6 @@ p {
 }
 .chart-subtitle {
    min-height: 2.8em;
-   
-}
-figcaption {
-   max-width: 65ch;
-   
-}
-.takeaway {
-   max-width: 75ch;
    
 }
 .country-code-key {
