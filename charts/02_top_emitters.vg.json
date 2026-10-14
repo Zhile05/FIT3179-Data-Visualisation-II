@@ -1,0 +1,222 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 345,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding",
+    "resize": true
+  },
+  "padding": { "left": 24, "right": 12, "top": 8, "bottom": 8 },
+  "config": {
+    "background": "#ffffff",
+    "font": "Source Sans 3",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFontSize": 13,
+      "titleFontSize": 13,
+      "labelColor": "#435968",
+      "titleColor": "#435968",
+      "gridColor": "#e5edf1",
+      "domain": false,
+      "labelPadding": 7,
+      "titlePadding": 12
+    },
+    "legend": {
+      "orient": "bottom",
+      "labelFontSize": 13,
+      "titleFontSize": 13,
+      "labelLimit": 180,
+      "offset": 12,
+      "titleLimit": 300
+    }
+  },
+  "description": "Ten largest EDGAR country reporting areas, ordered by annual greenhouse gas emissions.",
+  "data": {
+    "url": "data/country_history.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "year": "number",
+        "total_ghg_mt_co2e": "number",
+        "ghg_per_capita_t_co2e": "number",
+        "global_share_pct": "number"
+      }
+    }
+  },
+  "transform": [
+    {
+      "filter": "datum.year === selectedYear && datum.country_code !== 'GLOBAL TOTAL'"
+    },
+    {
+      "lookup": "country_code",
+      "from": {
+        "data": {
+          "url": "data/country_metadata.json"
+        },
+        "key": "country_code",
+        "fields": [
+          "country",
+          "imf_group",
+          "longitude",
+          "latitude",
+          "geography_note"
+        ]
+      }
+    },
+    {
+      "window": [
+        {
+          "op": "rank",
+          "as": "rank"
+        }
+      ],
+      "sort": [
+        {
+          "field": "total_ghg_mt_co2e",
+          "order": "descending"
+        }
+      ]
+    },
+    {
+      "filter": "datum.rank <= 10"
+    },
+    {
+      "calculate": "datum.total_ghg_mt_co2e / 1000",
+      "as": "total_gt"
+    },
+    {
+      "calculate": "format(datum.total_gt, '.1f')",
+      "as": "value_label"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "color": "#24485f",
+        "cornerRadiusEnd": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "total_gt",
+          "type": "quantitative",
+          "title": "Annual emissions (Gt CO₂e)",
+          "scale": {
+            "domain": [
+              0,
+              18.5
+            ]
+          },
+          "axis": {
+            "tickCount": 5,
+            "format": ".0f"
+          }
+        },
+        "y": {
+          "field": "country",
+          "type": "nominal",
+          "sort": {
+            "field": "total_ghg_mt_co2e",
+            "op": "max",
+            "order": "descending"
+          },
+          "title": null,
+          "axis": {
+            "labelLimit": 155,
+            "grid": false
+          }
+        },
+        "tooltip": [
+          {
+            "field": "country",
+            "title": "Country / reporting area"
+          },
+          {
+            "field": "year",
+            "type": "quantitative",
+            "title": "Year",
+            "format": "d"
+          },
+          {
+            "field": "total_ghg_mt_co2e",
+            "type": "quantitative",
+            "title": "Total (Mt CO₂e)",
+            "format": ".1f"
+          },
+          {
+            "field": "ghg_per_capita_t_co2e",
+            "type": "quantitative",
+            "title": "Per person (t CO₂e)",
+            "format": ".1f"
+          },
+          {
+            "field": "global_share_pct",
+            "type": "quantitative",
+            "title": "Share of world (%)",
+            "format": ".2f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 6,
+        "color": "#24485f",
+        "fontSize": 12
+      },
+      "encoding": {
+        "x": {
+          "field": "total_gt",
+          "type": "quantitative",
+          "title": "Annual emissions (Gt CO₂e)",
+          "scale": {
+            "domain": [
+              0,
+              18.5
+            ]
+          },
+          "axis": {
+            "tickCount": 5,
+            "format": ".0f"
+          }
+        },
+        "y": {
+          "field": "country",
+          "type": "nominal",
+          "sort": {
+            "field": "total_ghg_mt_co2e",
+            "op": "max",
+            "order": "descending"
+          },
+          "title": null,
+          "axis": {
+            "labelLimit": 155,
+            "grid": false
+          }
+        },
+        "text": {
+          "field": "value_label"
+        }
+      }
+    }
+  ],
+  "usermeta": {
+    "chart_number": 2,
+    "sources": [
+      "EDGAR 2026"
+    ],
+    "data_year": 2025,
+    "specification_file": "js/02_top_emitters.vg.json"
+  },
+  "params": [
+    {
+      "name": "selectedYear",
+      "value": 2025
+    }
+  ]
+}

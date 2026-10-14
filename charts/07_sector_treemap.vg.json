@@ -1,0 +1,244 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "width": 540,
+  "height": 330,
+  "padding": 2,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding",
+    "resize": true
+  },
+  "background": "#ffffff",
+  "description": "Share of global greenhouse gas emissions by sector in 2025. Rectangle area is proportional to emissions.",
+  "data": [
+    {
+      "name": "sector_tree",
+      "url": "data/sector_tree.json"
+    },
+    {
+      "name": "tree_layout",
+      "source": "sector_tree",
+      "transform": [
+        {
+          "type": "stratify",
+          "key": "id",
+          "parentKey": "parent"
+        },
+        {
+          "type": "treemap",
+          "field": "value",
+          "sort": {
+            "field": "value",
+            "order": "descending"
+          },
+          "method": "squarify",
+          "size": [
+            {
+              "signal": "width"
+            },
+            {
+              "signal": "height"
+            }
+          ],
+          "paddingInner": 4,
+          "round": true
+        }
+      ]
+    },
+    {
+      "name": "leaves",
+      "source": "tree_layout",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.depth === 1"
+        }
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "sector_color",
+      "type": "ordinal",
+      "domain": [
+        "Power Industry",
+        "Industrial Combustion",
+        "Transport",
+        "Agriculture",
+        "Processes",
+        "Fuel Production",
+        "Buildings",
+        "Waste"
+      ],
+      "range": [
+        "#164b68",
+        "#39768c",
+        "#39768c",
+        "#39768c",
+        "#39768c",
+        "#39768c",
+        "#39768c",
+        "#39768c"
+      ]
+    }
+  ],
+  "marks": [
+    {
+      "type": "rect",
+      "from": {
+        "data": "leaves"
+      },
+      "encode": {
+        "update": {
+          "x": {
+            "field": "x0"
+          },
+          "y": {
+            "field": "y0"
+          },
+          "x2": {
+            "field": "x1"
+          },
+          "y2": {
+            "field": "y1"
+          },
+          "fill": {
+            "scale": "sector_color",
+            "field": "sector"
+          },
+          "cornerRadius": {
+            "value": 3
+          },
+          "tooltip": {
+            "signal": "{'Sector':datum.sector, 'Emissions (Mt CO₂e)':format(datum.value,'.1f'), 'Share (%)':format(datum.share,'.1f')}"
+          }
+        },
+        "hover": {
+          "fillOpacity": {
+            "value": 0.8
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "leaves"
+      },
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "datum.x0 + 10"
+          },
+          "y": {
+            "signal": "datum.y0 + 12"
+          },
+          "text": {
+            "signal": "datum.x1-datum.x0 > 65 && datum.y1-datum.y0 > 45 ? datum.label : ''"
+          },
+          "align": {
+            "value": "left"
+          },
+          "baseline": {
+            "value": "top"
+          },
+          "fill": {
+            "field": "text_color"
+          },
+          "font": {
+            "value": "Source Sans 3"
+          },
+          "fontSize": {
+            "value": 14
+          },
+          "fontWeight": {
+            "value": "bold"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "leaves"
+      },
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "datum.x0 + 10"
+          },
+          "y": {
+            "signal": "datum.y0 + 35"
+          },
+          "text": {
+            "signal": "datum.x1-datum.x0 > 65 && datum.y1-datum.y0 > 65 ? format(datum.share,'.1f') + '%' : ''"
+          },
+          "align": {
+            "value": "left"
+          },
+          "baseline": {
+            "value": "top"
+          },
+          "fill": {
+            "field": "text_color"
+          },
+          "font": {
+            "value": "Source Sans 3"
+          },
+          "fontSize": {
+            "value": 21
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "leaves"
+      },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "(datum.x0 + datum.x1) / 2"
+          },
+          "y": {
+            "signal": "(datum.y0 + datum.y1) / 2"
+          },
+          "text": {
+            "signal": "datum.sector === 'Waste' && datum.x1-datum.x0 <= 65 ? 'Waste' : ''"
+          },
+          "angle": {
+            "value": -90
+          },
+          "align": {
+            "value": "center"
+          },
+          "baseline": {
+            "value": "middle"
+          },
+          "font": {
+            "value": "Source Sans 3"
+          },
+          "fontSize": {
+            "value": 13
+          },
+          "fontWeight": {
+            "value": "bold"
+          },
+          "fill": {
+            "value": "#ffffff"
+          }
+        }
+      }
+    }
+  ],
+  "usermeta": {
+    "chart_number": 7,
+    "sources": [
+      "EDGAR 2026"
+    ],
+    "data_year": 2025,
+    "specification_file": "js/07_sector_treemap.vg.json"
+  }
+}

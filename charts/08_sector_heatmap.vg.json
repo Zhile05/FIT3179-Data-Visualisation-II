@@ -1,0 +1,252 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 350,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding",
+    "resize": true
+  },
+  "padding": { "left": 24, "right": 12, "top": 8, "bottom": 8 },
+  "config": {
+    "background": "#ffffff",
+    "font": "Source Sans 3",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFontSize": 13,
+      "titleFontSize": 13,
+      "labelColor": "#435968",
+      "titleColor": "#435968",
+      "gridColor": "#e5edf1",
+      "domain": false,
+      "labelPadding": 7,
+      "titlePadding": 12
+    },
+    "legend": {
+      "orient": "bottom",
+      "labelFontSize": 13,
+      "titleFontSize": 13,
+      "labelLimit": 180,
+      "offset": 12,
+      "titleLimit": 300
+    }
+  },
+  "description": "Sector shares of national emissions in eight selected economies, 2025. Each country row represents 100 percent.",
+  "data": {
+    "url": "data/sector_heatmap.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "year": "number",
+        "sector_ghg_mt_co2e": "number",
+        "country_total_ghg_mt_co2e": "number",
+        "sector_share_pct": "number"
+      }
+    }
+  },
+  "transform": [
+    {
+      "calculate": "datum.imf_group === 'Advanced economies' ? 'Developed countries' : 'Developing countries'",
+      "as": "development_group"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "rect",
+        "stroke": "#ffffff",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "sector_label",
+          "type": "nominal",
+          "sort": [
+            "Power",
+            "Transport",
+            "Farming",
+            "Industry",
+            "Fuel",
+            "Processes",
+            "Buildings",
+            "Waste"
+          ],
+          "title": null,
+          "axis": {
+            "labelAngle": -45,
+            "labelLimit": 140,
+            "grid": false,
+            "labelPadding": 6
+          }
+        },
+        "y": {
+          "field": "country",
+          "type": "nominal",
+          "sort": [
+            "United States",
+            "Australia",
+            "Germany",
+            "Japan",
+            "China",
+            "India",
+            "Indonesia",
+            "Malaysia"
+          ],
+          "title": null,
+          "axis": {
+            "grid": false,
+            "labelLimit": 125,
+            "labelColor": {
+              "expr": "datum.label === 'Malaysia' ? '#d65f36' : '#435968'"
+            }
+          }
+        },
+        "color": {
+          "field": "sector_share_pct",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              65
+            ],
+            "range": [
+              "#edf3f7",
+              "#164f74"
+            ]
+          },
+          "legend": {
+            "title": "Share of country emissions (%)",
+            "direction": "horizontal",
+            "gradientLength": 180,
+            "format": ".0f"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "country",
+            "title": "Country"
+          },
+          {
+            "field": "development_group",
+            "title": "Development group"
+          },
+          {
+            "field": "sector",
+            "title": "Sector"
+          },
+          {
+            "field": "sector_share_pct",
+            "type": "quantitative",
+            "title": "Share of country total (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "sector_ghg_mt_co2e",
+            "type": "quantitative",
+            "title": "Emissions (Mt CO₂e)",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 12
+      },
+      "encoding": {
+        "x": {
+          "field": "sector_label",
+          "type": "nominal",
+          "sort": [
+            "Power",
+            "Transport",
+            "Farming",
+            "Industry",
+            "Fuel",
+            "Processes",
+            "Buildings",
+            "Waste"
+          ],
+          "title": null,
+          "axis": {
+            "labelAngle": -45,
+            "labelLimit": 140,
+            "grid": false,
+            "labelPadding": 6
+          }
+        },
+        "y": {
+          "field": "country",
+          "type": "nominal",
+          "sort": [
+            "United States",
+            "Australia",
+            "Germany",
+            "Japan",
+            "China",
+            "India",
+            "Indonesia",
+            "Malaysia"
+          ],
+          "title": null,
+          "axis": {
+            "grid": false,
+            "labelLimit": 125,
+            "labelColor": {
+              "expr": "datum.label === 'Malaysia' ? '#d65f36' : '#435968'"
+            }
+          }
+        },
+        "text": {
+          "field": "sector_share_pct",
+          "type": "quantitative",
+          "format": ".0f"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.sector_share_pct > 33",
+            "value": "#ffffff"
+          },
+          "value": "#1e4057"
+        },
+        "tooltip": [
+          {
+            "field": "country",
+            "title": "Country"
+          },
+          {
+            "field": "development_group",
+            "title": "Development group"
+          },
+          {
+            "field": "sector",
+            "title": "Sector"
+          },
+          {
+            "field": "sector_share_pct",
+            "type": "quantitative",
+            "title": "Share of country total (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "sector_ghg_mt_co2e",
+            "type": "quantitative",
+            "title": "Emissions (Mt CO₂e)",
+            "format": ".1f"
+          }
+        ]
+      }
+    }
+  ],
+  "usermeta": {
+    "chart_number": 8,
+    "sources": [
+      "EDGAR 2026"
+    ],
+    "data_year": 2025,
+    "specification_file": "js/08_sector_heatmap.vg.json"
+  }
+}

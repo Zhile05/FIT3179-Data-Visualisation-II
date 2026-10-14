@@ -1,0 +1,240 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 370,
+  "autosize": {
+    "type": "fit-x",
+    "contains": "padding",
+    "resize": true
+  },
+  "padding": 8,
+  "config": {
+    "background": "#ffffff",
+    "font": "Source Sans 3",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFontSize": 13,
+      "titleFontSize": 13,
+      "labelColor": "#435968",
+      "titleColor": "#435968",
+      "gridColor": "#e5edf1",
+      "domain": false,
+      "labelPadding": 7,
+      "titlePadding": 12
+    },
+    "legend": {
+      "orient": "bottom",
+      "labelFontSize": 13,
+      "titleFontSize": 13,
+      "labelLimit": 180,
+      "offset": 12,
+      "titleLimit": 300,
+      "layout": {
+        "bottom": {
+          "direction": "vertical",
+          "margin": 18
+        }
+      }
+    }
+  },
+  "description": "GDP per person and greenhouse gas emissions per person, using EDGAR and World Bank data for the same year. Bubble area shows population.",
+  "data": {
+    "url": "data/income_scatter.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "year": "number",
+        "total_ghg_mt_co2e": "number",
+        "ghg_per_capita_t_co2e": "number",
+        "gdp_per_capita_usd": "number",
+        "population": "number"
+      }
+    }
+  },
+  "params": [
+    {
+      "name": "incomeGroup",
+      "value": "All groups",
+      "bind": {
+        "input": "select",
+        "options": [
+          "All groups",
+          "Low income",
+          "Lower middle income",
+          "Upper middle income",
+          "High income"
+        ],
+        "name": "Income group: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "incomeGroup === 'All groups' || datum.income_group === incomeGroup"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "gdp_per_capita_usd",
+      "type": "quantitative",
+      "title": "GDP per person (US$, logarithmic scale)",
+      "scale": {
+        "type": "log",
+        "domain": [
+          150,
+          200000
+        ],
+        "nice": true
+      },
+      "axis": {
+        "values": [
+          1000,
+          10000,
+          100000
+        ],
+        "format": ".0f"
+      }
+    },
+    "y": {
+      "field": "ghg_per_capita_t_co2e",
+      "type": "quantitative",
+      "title": "Annual tonnes CO₂e per person",
+      "scale": {
+        "zero": true
+      },
+      "axis": {
+        "tickCount": 5,
+        "format": ".0f"
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "circle",
+        "opacity": 0.65
+      },
+      "encoding": {
+        "size": {
+          "field": "population",
+          "type": "quantitative",
+          "scale": {
+            "range": [
+              20,
+              1600
+            ]
+          },
+          "legend": {
+            "title": "Population",
+            "values": [
+              10000000,
+              100000000,
+              1000000000
+            ],
+            "labelExpr": "format(datum.value/1000000,'.0f') + 'M'",
+            "direction": "horizontal"
+          }
+        },
+        "color": {
+          "field": "income_group",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Low income",
+              "Lower middle income",
+              "Upper middle income",
+              "High income"
+            ],
+            "range": [
+              "#b88740",
+              "#668a42",
+              "#15808b",
+              "#3f65a0"
+            ]
+          },
+          "legend": {
+            "title": null,
+            "columns": 1,
+            "rowPadding": 8
+          }
+        },
+        "stroke": {
+          "condition": {
+            "test": "datum.country_code === 'MYS'",
+            "value": "#d65f36"
+          },
+          "value": "#ffffff"
+        },
+        "strokeWidth": {
+          "condition": {
+            "test": "datum.country_code === 'MYS'",
+            "value": 3
+          },
+          "value": 0.6
+        },
+        "tooltip": [
+          {
+            "field": "country",
+            "title": "Country"
+          },
+          {
+            "field": "year",
+            "type": "quantitative",
+            "title": "Year",
+            "format": "d"
+          },
+          {
+            "field": "income_group",
+            "title": "World Bank income group"
+          },
+          {
+            "field": "gdp_per_capita_usd",
+            "type": "quantitative",
+            "title": "GDP/person (US$)",
+            "format": ".0f"
+          },
+          {
+            "field": "ghg_per_capita_t_co2e",
+            "type": "quantitative",
+            "title": "GHG/person (t CO₂e)",
+            "format": ".1f"
+          },
+          {
+            "field": "population",
+            "type": "quantitative",
+            "title": "Population",
+            "format": ".0f"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.country_code === 'MYS'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "text": "Malaysia",
+        "align": "left",
+        "dx": 8,
+        "dy": -8,
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#d65f36"
+      }
+    }
+  ],
+  "usermeta": {
+    "chart_number": 9,
+    "sources": [
+      "EDGAR 2026",
+      "World Bank WDI"
+    ],
+    "data_year": 2025,
+    "specification_file": "js/09_income_scatter.vg.json"
+  }
+}

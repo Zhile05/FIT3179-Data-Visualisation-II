@@ -1,0 +1,274 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 400,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding",
+    "resize": true
+  },
+  "padding": 8,
+  "config": {
+    "background": "#ffffff",
+    "font": "Source Sans 3",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFontSize": 13,
+      "titleFontSize": 13,
+      "labelColor": "#435968",
+      "titleColor": "#435968",
+      "gridColor": "#e5edf1",
+      "domain": false,
+      "labelPadding": 7,
+      "titlePadding": 12
+    },
+    "legend": {
+      "orient": "bottom",
+      "labelFontSize": 13,
+      "titleFontSize": 13,
+      "labelLimit": 180,
+      "offset": 12,
+      "titleLimit": 300
+    }
+  },
+  "description": "Greenhouse gas emissions per person, shaded by country reporting area. Equal Earth projection.",
+  "projection": {
+    "type": "equalEarth"
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "data/geography.json"
+      },
+      "transform": [
+        {
+          "calculate": "'No matched emissions record'",
+          "as": "coverage_note"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "fill": "#e7e9eb",
+        "stroke": "white",
+        "strokeWidth": 0.65
+      },
+      "encoding": {
+        "tooltip": [
+          {
+            "field": "properties.name",
+            "title": "Reporting area"
+          },
+          {
+            "field": "coverage_note",
+            "title": "Coverage"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/country_history.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "year": "number",
+            "total_ghg_mt_co2e": "number",
+            "ghg_per_capita_t_co2e": "number",
+            "global_share_pct": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.year === selectedYear && datum.country_code !== 'GLOBAL TOTAL'"
+        },
+        {
+          "lookup": "country_code",
+          "from": {
+            "data": {
+              "url": "data/country_metadata.json"
+            },
+            "key": "country_code",
+            "fields": [
+              "country",
+              "imf_group",
+              "longitude",
+              "latitude",
+              "geography_note"
+            ]
+          }
+        },
+        {
+          "lookup": "country_code",
+          "from": {
+            "data": {
+              "url": "data/geography.json"
+            },
+            "key": "properties.country_code"
+          },
+          "as": "geo"
+        },
+        {
+          "filter": "isValid(datum.geo)"
+        },
+        {
+          "calculate": "datum.country",
+          "as": "display_country"
+        },
+        {
+          "calculate": "!isValid(datum.ghg_per_capita_t_co2e) ? 'No data' : datum.ghg_per_capita_t_co2e < 2 ? 'Under 2' : datum.ghg_per_capita_t_co2e < 5 ? '2-5' : datum.ghg_per_capita_t_co2e < 10 ? '5-10' : datum.ghg_per_capita_t_co2e < 20 ? '10-20' : '20+'",
+          "as": "band"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#ffffff",
+        "strokeWidth": 0.65
+      },
+      "encoding": {
+        "color": {
+          "condition": {
+            "test": "isValid(datum.ghg_per_capita_t_co2e)",
+            "field": "band",
+            "type": "nominal",
+            "scale": {
+              "domain": [
+                "Under 2",
+                "2-5",
+                "5-10",
+                "10-20",
+                "20+"
+              ],
+              "range": [
+                "#dcebf3",
+                "#b6d1e2",
+                "#78a8c5",
+                "#3b7d9e",
+                "#174b6b"
+              ]
+            },
+            "legend": {
+              "title": "Annual tonnes CO₂e per person",
+              "direction": "horizontal",
+              "columns": 5,
+              "symbolType": "square"
+            }
+          },
+          "value": "#e7e9eb"
+        },
+        "tooltip": [
+          {
+            "field": "display_country",
+            "title": "Country / reporting area"
+          },
+          {
+            "field": "year",
+            "type": "quantitative",
+            "title": "Year",
+            "format": "d"
+          },
+          {
+            "field": "ghg_per_capita_t_co2e",
+            "type": "quantitative",
+            "title": "Per person (t CO₂e)",
+            "format": ".1f"
+          }
+        ],
+        "shape": {
+          "field": "geo",
+          "type": "geojson"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/geography.json"
+      },
+      "transform": [
+        {
+          "filter": "datum.properties.country_code === 'MYS'"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "fill": "transparent",
+        "stroke": "#d65f36",
+        "strokeWidth": 1.8
+      }
+    },
+    {
+      "data": {
+        "url": "data/country_history.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "year": "number",
+            "total_ghg_mt_co2e": "number",
+            "ghg_per_capita_t_co2e": "number",
+            "global_share_pct": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.year === selectedYear && datum.country_code !== 'GLOBAL TOTAL'"
+        },
+        {
+          "lookup": "country_code",
+          "from": {
+            "data": {
+              "url": "data/country_metadata.json"
+            },
+            "key": "country_code",
+            "fields": [
+              "country",
+              "imf_group",
+              "longitude",
+              "latitude",
+              "geography_note"
+            ]
+          }
+        },
+        {
+          "filter": "datum.country_code === 'MYS'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "text": "Malaysia",
+        "align": "left",
+        "dx": 7,
+        "dy": -7,
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#d65f36"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        }
+      }
+    }
+  ],
+  "usermeta": {
+    "chart_number": 3,
+    "sources": [
+      "EDGAR 2026"
+    ],
+    "data_year": 2025,
+    "specification_file": "js/03_percap_map.vg.json"
+  },
+  "params": [
+    {
+      "name": "selectedYear",
+      "value": 2025
+    }
+  ]
+}

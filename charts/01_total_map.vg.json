@@ -1,0 +1,246 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 400,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding",
+    "resize": true
+  },
+  "padding": 8,
+  "config": {
+    "background": "#ffffff",
+    "font": "Source Sans 3",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFontSize": 13,
+      "titleFontSize": 13,
+      "labelColor": "#435968",
+      "titleColor": "#435968",
+      "gridColor": "#e5edf1",
+      "domain": false,
+      "labelPadding": 7,
+      "titlePadding": 12
+    },
+    "legend": {
+      "orient": "bottom",
+      "labelFontSize": 13,
+      "titleFontSize": 13,
+      "labelLimit": 180,
+      "offset": 12,
+      "titleLimit": 300
+    }
+  },
+  "description": "Country greenhouse gas totals. Circle area represents emissions. Equal Earth projection.",
+  "projection": {
+    "type": "equalEarth"
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "data/geography.json"
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#edf1f3",
+        "stroke": "#ffffff",
+        "strokeWidth": 0.6
+      }
+    },
+    {
+      "data": {
+        "url": "data/country_history.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "year": "number",
+            "total_ghg_mt_co2e": "number",
+            "ghg_per_capita_t_co2e": "number",
+            "global_share_pct": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.year === selectedYear && datum.country_code !== 'GLOBAL TOTAL'"
+        },
+        {
+          "lookup": "country_code",
+          "from": {
+            "data": {
+              "url": "data/country_metadata.json"
+            },
+            "key": "country_code",
+            "fields": [
+              "country",
+              "imf_group",
+              "longitude",
+              "latitude",
+              "geography_note"
+            ]
+          }
+        },
+        {
+          "filter": "isValid(datum.longitude) && isValid(datum.latitude)"
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "opacity": 0.6,
+        "stroke": "#ffffff",
+        "strokeWidth": 0.6
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "total_ghg_mt_co2e",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              17000
+            ],
+            "range": [
+              0,
+              2600
+            ]
+          },
+          "legend": {
+            "title": "Annual emissions (Mt CO₂e)",
+            "values": [
+              100,
+              1000,
+              5000,
+              15000
+            ],
+            "format": ".0f",
+            "direction": "horizontal"
+          }
+        },
+        "color": {
+          "condition": {
+            "test": "datum.country_code === 'MYS'",
+            "value": "#d65f36"
+          },
+          "value": "#24485f"
+        },
+        "order": {
+          "field": "total_ghg_mt_co2e",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "tooltip": [
+          {
+            "field": "country",
+            "title": "Country / reporting area"
+          },
+          {
+            "field": "year",
+            "type": "quantitative",
+            "title": "Year",
+            "format": "d"
+          },
+          {
+            "field": "total_ghg_mt_co2e",
+            "type": "quantitative",
+            "title": "Total (Mt CO₂e)",
+            "format": ".1f"
+          },
+          {
+            "field": "ghg_per_capita_t_co2e",
+            "type": "quantitative",
+            "title": "Per person (t CO₂e)",
+            "format": ".1f"
+          },
+          {
+            "field": "global_share_pct",
+            "type": "quantitative",
+            "title": "Share of world (%)",
+            "format": ".2f"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/country_history.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "year": "number",
+            "total_ghg_mt_co2e": "number",
+            "ghg_per_capita_t_co2e": "number",
+            "global_share_pct": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.year === selectedYear && datum.country_code !== 'GLOBAL TOTAL'"
+        },
+        {
+          "lookup": "country_code",
+          "from": {
+            "data": {
+              "url": "data/country_metadata.json"
+            },
+            "key": "country_code",
+            "fields": [
+              "country",
+              "imf_group",
+              "longitude",
+              "latitude",
+              "geography_note"
+            ]
+          }
+        },
+        {
+          "filter": "datum.country_code === 'MYS'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "text": "Malaysia",
+        "align": "left",
+        "dx": 7,
+        "dy": -7,
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#d65f36"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        }
+      }
+    }
+  ],
+  "usermeta": {
+    "chart_number": 1,
+    "sources": [
+      "EDGAR 2026"
+    ],
+    "data_year": 2025,
+    "specification_file": "js/01_total_map.vg.json"
+  },
+  "params": [
+    {
+      "name": "selectedYear",
+      "value": 2025
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 350,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding",
+    "resize": true
+  },
+  "padding": 8,
+  "config": {
+    "background": "#ffffff",
+    "font": "Source Sans 3",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFontSize": 13,
+      "titleFontSize": 13,
+      "labelColor": "#435968",
+      "titleColor": "#435968",
+      "gridColor": "#e5edf1",
+      "domain": false,
+      "labelPadding": 7,
+      "titlePadding": 12
+    },
+    "legend": {
+      "orient": "bottom",
+      "labelFontSize": 13,
+      "titleFontSize": 13,
+      "labelLimit": 180,
+      "offset": 12,
+      "titleLimit": 300
+    }
+  },
+  "description": "Global emission ranks of seven major emitters at selected years. Ranks are computed across all EDGAR country entries.",
+  "data": {
+    "url": "data/country_ranks.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "year": "number",
+        "rank": "number",
+        "total_ghg_mt_co2e": "number"
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 2.5,
+        "point": {
+          "filled": true,
+          "size": 45
+        }
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "quantitative",
+          "title": null,
+          "axis": {
+            "values": [
+              1990,
+              2000,
+              2010,
+              2020,
+              2025
+            ],
+            "format": "d",
+            "grid": false
+          },
+          "scale": {
+            "domain": [
+              1990,
+              2027
+            ]
+          }
+        },
+        "y": {
+          "field": "rank",
+          "type": "quantitative",
+          "title": "Global rank (1 = largest)",
+          "scale": {
+            "domain": [
+              1,
+              19
+            ],
+            "reverse": true
+          },
+          "axis": {
+            "tickCount": 6,
+            "format": "d"
+          }
+        },
+        "color": {
+          "field": "country",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Brazil",
+              "China",
+              "India",
+              "Indonesia",
+              "Iran",
+              "Russia",
+              "United States"
+            ],
+            "range": [
+              "#8396a1",
+              "#164b68",
+              "#7355a0",
+              "#8396a1",
+              "#8396a1",
+              "#8396a1",
+              "#167f8d"
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "country",
+            "title": "Country"
+          },
+          {
+            "field": "year",
+            "type": "quantitative",
+            "title": "Year",
+            "format": "d"
+          },
+          {
+            "field": "rank",
+            "type": "quantitative",
+            "title": "Global rank",
+            "format": "d"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.year === 2025"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 6,
+        "fontSize": 12,
+        "color": "#19374b"
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "quantitative",
+          "title": null,
+          "axis": {
+            "values": [
+              1990,
+              2000,
+              2010,
+              2020,
+              2025
+            ],
+            "format": "d",
+            "grid": false
+          },
+          "scale": {
+            "domain": [
+              1990,
+              2027
+            ]
+          }
+        },
+        "y": {
+          "field": "rank",
+          "type": "quantitative",
+          "title": "Global rank (1 = largest)",
+          "scale": {
+            "domain": [
+              1,
+              19
+            ],
+            "reverse": true
+          },
+          "axis": {
+            "tickCount": 6,
+            "format": "d"
+          }
+        },
+        "text": {
+          "field": "country"
+        }
+      }
+    }
+  ],
+  "usermeta": {
+    "chart_number": 6,
+    "sources": [
+      "EDGAR 2026"
+    ],
+    "data_year": 2025,
+    "specification_file": "js/06_rank_bump.vg.json"
+  }
+}

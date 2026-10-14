@@ -1,0 +1,253 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "A Dorling cartogram of eleven Southeast Asian economies in 2025. Area encodes greenhouse gas totals; positions are shifted around projected geographic reference points to remove overlaps.",
+  "width": 720,
+  "height": 445,
+  "padding": 10,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding",
+    "resize": true
+  },
+  "background": "#ffffff",
+  "projections": [
+    {
+      "name": "regional_projection",
+      "type": "equirectangular",
+      "center": [
+        111,
+        8
+      ],
+      "scale": {
+        "signal": "min(width / 0.72, height / 0.78)"
+      },
+      "translate": [
+        {
+          "signal": "width / 2"
+        },
+        {
+          "signal": "height / 2"
+        }
+      ]
+    }
+  ],
+  "data": [
+    {
+      "name": "countries",
+      "url": "data/region_cartogram.csv",
+      "format": {
+        "type": "csv",
+        "parse": {
+          "longitude": "number",
+          "latitude": "number",
+          "total_ghg_mt_co2e": "number",
+          "ghg_per_capita_t_co2e": "number"
+        }
+      },
+      "transform": [
+        {
+          "type": "geopoint",
+          "projection": "regional_projection",
+          "fields": [
+            "longitude",
+            "latitude"
+          ],
+          "as": [
+            "anchor_x",
+            "anchor_y"
+          ]
+        },
+        {
+          "type": "formula",
+          "as": "symbol_area",
+          "expr": "datum.total_ghg_mt_co2e / 1358.912940661 * pow(min(width, 720) / 720, 2) * 22500"
+        },
+        {
+          "type": "force",
+          "static": true,
+          "restart": true,
+          "iterations": 450,
+          "forces": [
+            {
+              "force": "collide",
+              "radius": {
+                "expr": "sqrt(datum.symbol_area) / 2 + 11"
+              },
+              "iterations": 3,
+              "strength": 1
+            },
+            {
+              "force": "x",
+              "x": "anchor_x",
+              "strength": 0.15
+            },
+            {
+              "force": "y",
+              "y": "anchor_y",
+              "strength": 0.15
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "marks": [
+    {
+      "type": "text",
+      "encode": {
+        "update": {
+          "x": {
+            "value": 14
+          },
+          "y": {
+            "value": 20
+          },
+          "text": {
+            "value": "N ↑"
+          },
+          "font": {
+            "value": "Source Sans 3"
+          },
+          "fontSize": {
+            "value": 14
+          },
+          "fontWeight": {
+            "value": "bold"
+          },
+          "fill": {
+            "value": "#435968"
+          }
+        }
+      }
+    },
+    {
+      "type": "symbol",
+      "from": {
+        "data": "countries"
+      },
+      "encode": {
+        "update": {
+          "x": {
+            "field": "x"
+          },
+          "y": {
+            "field": "y"
+          },
+          "size": {
+            "field": "symbol_area"
+          },
+          "fill": {
+            "signal": "datum.country_code === 'MYS' ? '#d65f36' : '#167f8d'"
+          },
+          "fillOpacity": {
+            "value": 0.9
+          },
+          "stroke": {
+            "value": "white"
+          },
+          "strokeWidth": {
+            "value": 1.5
+          },
+          "tooltip": {
+            "signal": "{'Country': datum.country, 'Total (Mt CO₂e)': format(datum.total_ghg_mt_co2e, '.1f'), 'Per person (t CO₂e)': format(datum.ghg_per_capita_t_co2e, '.1f')}"
+          }
+        },
+        "hover": {
+          "fillOpacity": {
+            "value": 0.7
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "countries"
+      },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": {
+            "field": "x"
+          },
+          "y": {
+            "field": "y"
+          },
+          "dy": {
+            "signal": "datum.symbol_area >= 3000 ? -6 : sqrt(datum.symbol_area) / 2 + 13"
+          },
+          "text": {
+            "signal": "datum.symbol_area >= 3000 ? datum.country : datum.country_code"
+          },
+          "align": {
+            "value": "center"
+          },
+          "baseline": {
+            "value": "middle"
+          },
+          "font": {
+            "value": "Source Sans 3"
+          },
+          "fontSize": {
+            "value": 13
+          },
+          "fontWeight": {
+            "value": "bold"
+          },
+          "fill": {
+            "signal": "datum.symbol_area >= 3000 ? 'white' : '#19374b'"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "countries"
+      },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": {
+            "field": "x"
+          },
+          "y": {
+            "field": "y"
+          },
+          "dy": {
+            "value": 14
+          },
+          "text": {
+            "signal": "datum.symbol_area >= 3000 ? format(datum.total_ghg_mt_co2e, '.0f') + ' Mt' : ''"
+          },
+          "align": {
+            "value": "center"
+          },
+          "baseline": {
+            "value": "middle"
+          },
+          "font": {
+            "value": "Source Sans 3"
+          },
+          "fontSize": {
+            "value": 13
+          },
+          "fill": {
+            "value": "white"
+          }
+        }
+      }
+    }
+  ],
+  "usermeta": {
+    "chart_number": 11,
+    "sources": [
+      "EDGAR 2026",
+      "Natural Earth",
+      "World Bank country reference points"
+    ],
+    "data_year": 2025,
+    "map_idiom": "Dorling cartogram",
+    "specification_file": "js/11_regional_cartogram.vg.json"
+  }
+}

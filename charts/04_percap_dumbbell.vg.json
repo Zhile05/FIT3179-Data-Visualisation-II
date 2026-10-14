@@ -1,0 +1,321 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 345,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding",
+    "resize": true
+  },
+  "padding": { "left": 24, "right": 12, "top": 8, "bottom": 8 },
+  "config": {
+    "background": "#ffffff",
+    "font": "Source Sans 3",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFontSize": 13,
+      "titleFontSize": 13,
+      "labelColor": "#435968",
+      "titleColor": "#435968",
+      "gridColor": "#e5edf1",
+      "domain": false,
+      "labelPadding": 7,
+      "titlePadding": 12
+    },
+    "legend": {
+      "orient": "bottom",
+      "labelFontSize": 13,
+      "titleFontSize": 13,
+      "labelLimit": 180,
+      "offset": 12,
+      "titleLimit": 300
+    }
+  },
+  "description": "Change in per person emissions between 1990 and 2025 for eight selected economies.",
+  "data": {
+    "url": "data/percap_comparison.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "baseline": "number",
+        "current": "number",
+        "difference": "number"
+      }
+    }
+  },
+  "transform": [
+    {
+      "calculate": "datum.imf_group === 'Advanced economies' ? 'Developed countries' : 'Developing countries'",
+      "as": "development_group"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "stroke": "#b8c7d0",
+        "strokeWidth": 3
+      },
+      "encoding": {
+        "x": {
+          "field": "baseline",
+          "type": "quantitative",
+          "title": "Annual tonnes CO₂e per person",
+          "scale": {
+            "domain": [
+              0,
+              31.058742085855
+            ]
+          },
+          "axis": {
+            "tickCount": 5,
+            "format": ".0f"
+          }
+        },
+        "x2": {
+          "field": "current"
+        },
+        "y": {
+          "field": "country",
+          "type": "nominal",
+          "sort": {
+            "field": "current",
+            "order": "descending"
+          },
+          "title": null,
+          "axis": {
+            "labelLimit": 140,
+            "labelColor": {
+              "expr": "datum.label === 'Malaysia' ? '#d65f36' : '#435968'"
+            },
+            "grid": false
+          }
+        },
+        "tooltip": [
+          {
+            "field": "country",
+            "title": "Country"
+          },
+          {
+            "field": "development_group",
+            "title": "Development group"
+          },
+          {
+            "field": "baseline",
+            "type": "quantitative",
+            "title": "1990 (t/person)",
+            "format": ".1f"
+          },
+          {
+            "field": "current",
+            "type": "quantitative",
+            "title": "2025 (t/person)",
+            "format": ".1f"
+          },
+          {
+            "field": "difference",
+            "type": "quantitative",
+            "title": "Change (t/person)",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "circle",
+        "color": "#82939e",
+        "size": 90,
+        "opacity": 1
+      },
+      "encoding": {
+        "x": {
+          "field": "baseline",
+          "type": "quantitative",
+          "title": "Annual tonnes CO₂e per person",
+          "scale": {
+            "domain": [
+              0,
+              31.058742085855
+            ]
+          },
+          "axis": {
+            "tickCount": 5,
+            "format": ".0f"
+          }
+        },
+        "y": {
+          "field": "country",
+          "type": "nominal",
+          "sort": {
+            "field": "current",
+            "order": "descending"
+          },
+          "title": null,
+          "axis": {
+            "labelLimit": 140,
+            "labelColor": {
+              "expr": "datum.label === 'Malaysia' ? '#d65f36' : '#435968'"
+            },
+            "grid": false
+          }
+        },
+        "tooltip": [
+          {
+            "field": "country",
+            "title": "Country"
+          },
+          {
+            "field": "development_group",
+            "title": "Development group"
+          },
+          {
+            "field": "baseline",
+            "type": "quantitative",
+            "title": "1990 (t/person)",
+            "format": ".1f"
+          },
+          {
+            "field": "current",
+            "type": "quantitative",
+            "title": "2025 (t/person)",
+            "format": ".1f"
+          },
+          {
+            "field": "difference",
+            "type": "quantitative",
+            "title": "Change (t/person)",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "circle",
+        "color": "#157f8d",
+        "size": 110,
+        "opacity": 1
+      },
+      "encoding": {
+        "x": {
+          "field": "current",
+          "type": "quantitative",
+          "title": "Annual tonnes CO₂e per person",
+          "scale": {
+            "domain": [
+              0,
+              31.058742085855
+            ]
+          },
+          "axis": {
+            "tickCount": 5,
+            "format": ".0f"
+          }
+        },
+        "y": {
+          "field": "country",
+          "type": "nominal",
+          "sort": {
+            "field": "current",
+            "order": "descending"
+          },
+          "title": null,
+          "axis": {
+            "labelLimit": 140,
+            "labelColor": {
+              "expr": "datum.label === 'Malaysia' ? '#d65f36' : '#435968'"
+            },
+            "grid": false
+          }
+        },
+        "tooltip": [
+          {
+            "field": "country",
+            "title": "Country"
+          },
+          {
+            "field": "development_group",
+            "title": "Development group"
+          },
+          {
+            "field": "baseline",
+            "type": "quantitative",
+            "title": "1990 (t/person)",
+            "format": ".1f"
+          },
+          {
+            "field": "current",
+            "type": "quantitative",
+            "title": "2025 (t/person)",
+            "format": ".1f"
+          },
+          {
+            "field": "difference",
+            "type": "quantitative",
+            "title": "Change (t/person)",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "dx": 0,
+        "fontSize": 12,
+        "color": "#157f8d",
+        "dy": -10
+      },
+      "encoding": {
+        "x": {
+          "field": "current",
+          "type": "quantitative",
+          "title": "Annual tonnes CO₂e per person",
+          "scale": {
+            "domain": [
+              0,
+              31.058742085855
+            ]
+          },
+          "axis": {
+            "tickCount": 5,
+            "format": ".0f"
+          }
+        },
+        "y": {
+          "field": "country",
+          "type": "nominal",
+          "sort": {
+            "field": "current",
+            "order": "descending"
+          },
+          "title": null,
+          "axis": {
+            "labelLimit": 140,
+            "labelColor": {
+              "expr": "datum.label === 'Malaysia' ? '#d65f36' : '#435968'"
+            },
+            "grid": false
+          }
+        },
+        "text": {
+          "field": "current",
+          "type": "quantitative",
+          "format": ".1f"
+        }
+      }
+    }
+  ],
+  "usermeta": {
+    "chart_number": 4,
+    "sources": [
+      "EDGAR 2026"
+    ],
+    "data_year": 2025,
+    "specification_file": "js/04_percap_dumbbell.vg.json"
+  }
+}
