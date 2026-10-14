@@ -137,7 +137,7 @@
             "field": "symbol_area"
           },
           "fill": {
-            "signal": "datum.country_code === 'MYS' ? '#d65f36' : '#167f8d'"
+            "signal": "datum.country_code === 'MYS' ? '#a84420' : '#496b8a'"
           },
           "fillOpacity": {
             "value": 0.9

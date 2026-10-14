@@ -23,8 +23,8 @@
 :root{
   --ink:#19374b;
   --muted:#567080;
-  --teal:#157f8d;
-  --orange:#d65f36;
+  --accent:#496b8a;
+  --orange:#a84420;
   --line:#dce5eb;
   --light:#edf5f8;
   --paper:#fff
@@ -46,7 +46,7 @@ body{
 }
 
 a{
-  color:#126878;
+  color:#496b8a;
   text-underline-offset:3px
 }
 
@@ -55,7 +55,7 @@ a:hover{
 }
 
 a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{
-  outline:3px solid #d65f36;
+  outline:3px solid #a84420;
   outline-offset:4px
 }
 .page{
@@ -102,7 +102,7 @@ nav a:hover{
 
 .eyebrow{
   font-size:13px;
-  color:var(--teal);
+  color:var(--accent);
   font-weight:700;
   letter-spacing:.11em;
   text-transform:uppercase;
@@ -123,7 +123,7 @@ h1{
 }
 
 h1 span{
-  color:var(--teal)
+  color:inherit
 }
 
 .lede{
@@ -150,7 +150,7 @@ h1 span{
 
 .kpi{
   padding:14px 18px 12px;
-  border-top:3px solid var(--teal);
+  border-top:3px solid var(--accent);
   background:#f2f7f9
 }
 
@@ -190,7 +190,7 @@ h1 span{
 
 .chapter-number{
   font:32px/1.2 'Source Sans 3',Arial,sans-serif;
-  color:#7b9eae;
+  color:#567080;
   padding-top:2px
 }
 
@@ -234,7 +234,7 @@ h1 span{
 
 .figure-label{
   font-size:12px;
-  color:var(--teal);
+  color:var(--accent);
   text-transform:uppercase;
   letter-spacing:.08em;
   font-weight:700
@@ -323,7 +323,7 @@ figcaption{
 .year-controls input{
   min-width:120px;
   flex:1;
-  accent-color:var(--teal);
+  accent-color:var(--accent);
   cursor:pointer
 }
 
@@ -369,7 +369,7 @@ figcaption{
   font-weight:600;
   line-height:1.1;
   margin:8px 0;
-  color:var(--teal)
+  color:var(--accent)
 }
 
 .insight.orange{
@@ -403,8 +403,10 @@ figcaption{
   background:#82939e
 }
 
-.teal-dot{
-  background:var(--teal)
+.current-dot{
+  border-radius:0;
+  transform:rotate(45deg);
+  background:var(--accent)
 }
 .sector-key{
   display:flex;
@@ -427,12 +429,12 @@ figcaption{
   margin-top:22px;
   padding:17px 22px;
   background:#edf5f8;
-  border-left:4px solid var(--teal);
+  border-left:4px solid var(--accent);
   font-size:16px
 }
 
 .takeaway strong{
-  color:var(--teal)
+  color:var(--accent)
 }
 .vega-embed{
   width:100%;

@@ -7,7 +7,12 @@
     "contains": "padding",
     "resize": true
   },
-  "padding": { "left": 24, "right": 12, "top": 8, "bottom": 8 },
+  "padding": {
+    "left": 24,
+    "right": 12,
+    "top": 8,
+    "bottom": 8
+  },
   "config": {
     "background": "#ffffff",
     "font": "Source Sans 3",
@@ -88,7 +93,7 @@
           "axis": {
             "labelLimit": 140,
             "labelColor": {
-              "expr": "datum.label === 'Malaysia' ? '#d65f36' : '#435968'"
+              "expr": "datum.label === 'Malaysia' ? '#a84420' : '#435968'"
             },
             "grid": false
           }
@@ -157,7 +162,7 @@
           "axis": {
             "labelLimit": 140,
             "labelColor": {
-              "expr": "datum.label === 'Malaysia' ? '#d65f36' : '#435968'"
+              "expr": "datum.label === 'Malaysia' ? '#a84420' : '#435968'"
             },
             "grid": false
           }
@@ -194,10 +199,12 @@
     },
     {
       "mark": {
-        "type": "circle",
-        "color": "#157f8d",
+        "type": "point",
+        "color": "#496b8a",
         "size": 110,
-        "opacity": 1
+        "opacity": 1,
+        "shape": "diamond",
+        "filled": true
       },
       "encoding": {
         "x": {
@@ -226,7 +233,7 @@
           "axis": {
             "labelLimit": 140,
             "labelColor": {
-              "expr": "datum.label === 'Malaysia' ? '#d65f36' : '#435968'"
+              "expr": "datum.label === 'Malaysia' ? '#a84420' : '#435968'"
             },
             "grid": false
           }
@@ -267,7 +274,7 @@
         "align": "center",
         "dx": 0,
         "fontSize": 12,
-        "color": "#157f8d",
+        "color": "#496b8a",
         "dy": -10
       },
       "encoding": {
@@ -297,7 +304,7 @@
           "axis": {
             "labelLimit": 140,
             "labelColor": {
-              "expr": "datum.label === 'Malaysia' ? '#d65f36' : '#435968'"
+              "expr": "datum.label === 'Malaysia' ? '#a84420' : '#435968'"
             },
             "grid": false
           }

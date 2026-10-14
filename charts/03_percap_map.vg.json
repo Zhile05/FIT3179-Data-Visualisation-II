@@ -194,7 +194,7 @@
       "mark": {
         "type": "geoshape",
         "fill": "transparent",
-        "stroke": "#d65f36",
+        "stroke": "#a84420",
         "strokeWidth": 1.8
       }
     },
@@ -243,7 +243,7 @@
         "dy": -7,
         "fontSize": 12,
         "fontWeight": "bold",
-        "color": "#d65f36"
+        "color": "#a84420"
       },
       "encoding": {
         "longitude": {

@@ -129,7 +129,7 @@
         "color": {
           "condition": {
             "test": "datum.country_code === 'MYS'",
-            "value": "#d65f36"
+            "value": "#a84420"
           },
           "value": "#24485f"
         },
@@ -215,7 +215,7 @@
         "dy": -7,
         "fontSize": 12,
         "fontWeight": "bold",
-        "color": "#d65f36"
+        "color": "#a84420"
       },
       "encoding": {
         "longitude": {

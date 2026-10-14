@@ -108,13 +108,13 @@
               "United States"
             ],
             "range": [
-              "#8396a1",
-              "#164b68",
-              "#7355a0",
-              "#8396a1",
-              "#8396a1",
-              "#8396a1",
-              "#167f8d"
+              "#4477bb",
+              "#cc4466",
+              "#993366",
+              "#2255aa",
+              "#882288",
+              "#775500",
+              "#444444"
             ]
           },
           "legend": null
@@ -136,7 +136,61 @@
             "title": "Global rank",
             "format": "d"
           }
-        ]
+        ],
+        "strokeDash": {
+          "field": "country",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Brazil",
+              "China",
+              "India",
+              "Indonesia",
+              "Iran",
+              "Russia",
+              "United States"
+            ],
+            "range": [
+              [
+                1,
+                0
+              ],
+              [
+                6,
+                3
+              ],
+              [
+                2,
+                3
+              ],
+              [
+                9,
+                3,
+                2,
+                3
+              ],
+              [
+                9,
+                3,
+                2,
+                3,
+                2,
+                3
+              ],
+              [
+                12,
+                4
+              ],
+              [
+                4,
+                2,
+                1,
+                2
+              ]
+            ]
+          },
+          "legend": null
+        }
       }
     },
     {

@@ -113,8 +113,9 @@
   "layer": [
     {
       "mark": {
-        "type": "circle",
-        "opacity": 0.65
+        "type": "point",
+        "opacity": 0.65,
+        "filled": true
       },
       "encoding": {
         "size": {
@@ -148,10 +149,10 @@
               "High income"
             ],
             "range": [
-              "#b88740",
-              "#668a42",
-              "#15808b",
-              "#3f65a0"
+              "#997700",
+              "#994455",
+              "#6699cc",
+              "#004488"
             ]
           },
           "legend": {
@@ -163,7 +164,7 @@
         "stroke": {
           "condition": {
             "test": "datum.country_code === 'MYS'",
-            "value": "#d65f36"
+            "value": "#a84420"
           },
           "value": "#ffffff"
         },
@@ -207,7 +208,30 @@
             "title": "Population",
             "format": ".0f"
           }
-        ]
+        ],
+        "shape": {
+          "field": "income_group",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Low income",
+              "Lower middle income",
+              "Upper middle income",
+              "High income"
+            ],
+            "range": [
+              "circle",
+              "square",
+              "triangle-up",
+              "diamond"
+            ]
+          },
+          "legend": {
+            "title": null,
+            "columns": 1,
+            "rowPadding": 8
+          }
+        }
       }
     },
     {
@@ -224,7 +248,7 @@
         "dy": -8,
         "fontSize": 12,
         "fontWeight": "bold",
-        "color": "#d65f36"
+        "color": "#a84420"
       }
     }
   ],
