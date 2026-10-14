@@ -1,0 +1,65 @@
+country_code,country,year,sector,sector_ghg_mt_co2e,country_total_ghg_mt_co2e,sector_share_pct,imf_group,entity_type,sector_label
+AUS,Australia,2025,Agriculture,134.01902019522862,578.06234878789,23.184180819983588,Advanced economies,Country or territory,Farming
+AUS,Australia,2025,Buildings,21.05470729926019,578.06234878789,3.6422900303762655,Advanced economies,Country or territory,Buildings
+AUS,Australia,2025,Fuel Production,87.3506184103952,578.06234878789,15.110933724287069,Advanced economies,Country or territory,Fuel
+AUS,Australia,2025,Industrial Combustion,38.82465461087848,578.06234878789,6.716343780612585,Advanced economies,Country or territory,Industry
+AUS,Australia,2025,Power Industry,152.0066321366491,578.06234878789,26.29588874891856,Advanced economies,Country or territory,Power
+AUS,Australia,2025,Processes,28.55263012283274,578.06234878789,4.93936859626013,Advanced economies,Country or territory,Processes
+AUS,Australia,2025,Transport,101.97597043721076,578.06234878789,17.640998527414745,Advanced economies,Country or territory,Transport
+AUS,Australia,2025,Waste,14.27811557543894,578.06234878789,2.4699957721477634,Advanced economies,Country or territory,Waste
+CHN,China,2025,Agriculture,762.9899554329629,15980.974040899,4.774364525468195,Emerging and developing economies,Country or territory,Farming
+CHN,China,2025,Buildings,611.0770672061986,15980.974040899,3.8237786110052574,Emerging and developing economies,Country or territory,Buildings
+CHN,China,2025,Fuel Production,1517.1151808827074,15980.974040899,9.493258527296645,Emerging and developing economies,Country or territory,Fuel
+CHN,China,2025,Industrial Combustion,2675.2851887657284,15980.974040899,16.740438861355113,Emerging and developing economies,Country or territory,Industry
+CHN,China,2025,Power Industry,6634.098028146916,15980.974040899,41.51247609293856,Emerging and developing economies,Country or territory,Power
+CHN,China,2025,Processes,2357.8564975328272,15980.974040899,14.754147597627831,Emerging and developing economies,Country or territory,Processes
+CHN,China,2025,Transport,1119.7575345465152,15980.974040899,7.00681655373945,Emerging and developing economies,Country or territory,Transport
+CHN,China,2025,Waste,302.794588385446,15980.974040899,1.8947192305708325,Emerging and developing economies,Country or territory,Waste
+DEU,Germany,2025,Agriculture,53.47293147683023,660.44384974406,8.096514411868995,Advanced economies,Country or territory,Farming
+DEU,Germany,2025,Buildings,113.1752953990958,660.44384974406,17.136247910091722,Advanced economies,Country or territory,Buildings
+DEU,Germany,2025,Fuel Production,34.90645579726957,660.44384974406,5.285302575048094,Advanced economies,Country or territory,Fuel
+DEU,Germany,2025,Industrial Combustion,81.6137224113505,660.44384974406,12.35740516668874,Advanced economies,Country or territory,Industry
+DEU,Germany,2025,Power Industry,180.1642054269502,660.44384974406,27.27926159003051,Advanced economies,Country or territory,Power
+DEU,Germany,2025,Processes,46.01263962603225,660.44384974406,6.966926808972995,Advanced economies,Country or territory,Processes
+DEU,Germany,2025,Transport,138.38110932145312,660.44384974406,20.952744033437448,Advanced economies,Country or territory,Transport
+DEU,Germany,2025,Waste,12.7174902850771,660.44384974406,1.925597503861301,Advanced economies,Country or territory,Waste
+IND,India,2025,Agriculture,834.174063631849,4508.007755755,18.504273036507712,Emerging and developing economies,Country or territory,Farming
+IND,India,2025,Buildings,250.2950218471221,4508.007755755,5.552231393736872,Emerging and developing economies,Country or territory,Buildings
+IND,India,2025,Fuel Production,218.71249352976156,4508.007755755,4.851644127065873,Emerging and developing economies,Country or territory,Fuel
+IND,India,2025,Industrial Combustion,681.7709278372117,4508.007755755,15.1235526817107,Emerging and developing economies,Country or territory,Industry
+IND,India,2025,Power Industry,1571.6528397443217,4508.007755755,34.86357887778526,Emerging and developing economies,Country or territory,Power
+IND,India,2025,Processes,411.0269069443244,4508.007755755,9.117706295416204,Emerging and developing economies,Country or territory,Processes
+IND,India,2025,Transport,381.6968527221958,4508.007755755,8.467085093962295,Emerging and developing economies,Country or territory,Transport
+IND,India,2025,Waste,158.678649498164,4508.007755755,3.519928493813972,Emerging and developing economies,Country or territory,Waste
+IDN,Indonesia,2025,Agriculture,140.711311697907,1358.912940661,10.354696573090434,Emerging and developing economies,Country or territory,Farming
+IDN,Indonesia,2025,Buildings,34.824593617909244,1358.912940661,2.5626802553642567,Emerging and developing economies,Country or territory,Buildings
+IDN,Indonesia,2025,Fuel Production,344.9145795093978,1358.912940661,25.38165390798509,Emerging and developing economies,Country or territory,Fuel
+IDN,Indonesia,2025,Industrial Combustion,133.50565050748466,1358.912940661,9.824444709647484,Emerging and developing economies,Country or territory,Industry
+IDN,Indonesia,2025,Power Industry,384.3271156973439,1358.912940661,28.281952743080087,Emerging and developing economies,Country or territory,Power
+IDN,Indonesia,2025,Processes,84.6527793931264,1358.912940661,6.229448323006604,Emerging and developing economies,Country or territory,Processes
+IDN,Indonesia,2025,Transport,157.67855250357232,1358.912940661,11.603285816593562,Emerging and developing economies,Country or territory,Transport
+IDN,Indonesia,2025,Waste,78.2983577342193,1358.912940661,5.761837671229589,Emerging and developing economies,Country or territory,Waste
+JPN,Japan,2025,Agriculture,43.70197032783134,1063.1288916514,4.110693507722036,Advanced economies,Country or territory,Farming
+JPN,Japan,2025,Buildings,103.22712242653004,1063.1288916514,9.709746695547262,Advanced economies,Country or territory,Buildings
+JPN,Japan,2025,Fuel Production,45.6913400535888,1063.1288916514,4.297817547091081,Advanced economies,Country or territory,Fuel
+JPN,Japan,2025,Industrial Combustion,161.2281721767724,1063.1288916514,15.16543981100263,Advanced economies,Country or territory,Industry
+JPN,Japan,2025,Power Industry,442.09972234462833,1063.1288916514,41.58477168820964,Advanced economies,Country or territory,Power
+JPN,Japan,2025,Processes,68.09413329471434,1063.1288916514,6.405068456839795,Advanced economies,Country or territory,Processes
+JPN,Japan,2025,Transport,182.1838381617395,1063.1288916514,17.136571077355086,Advanced economies,Country or territory,Transport
+JPN,Japan,2025,Waste,16.9025928656424,1063.1288916514,1.5898912162369077,Advanced economies,Country or territory,Waste
+MYS,Malaysia,2025,Agriculture,9.08226317391636,337.28114776575,2.692787081068704,Emerging and developing economies,Country or territory,Farming
+MYS,Malaysia,2025,Buildings,8.109526965024276,337.28114776575,2.4043819284724863,Emerging and developing economies,Country or territory,Buildings
+MYS,Malaysia,2025,Fuel Production,53.01576595868434,337.28114776575,15.71856782090444,Emerging and developing economies,Country or territory,Fuel
+MYS,Malaysia,2025,Industrial Combustion,36.039703452026274,337.28114776575,10.685359585249255,Emerging and developing economies,Country or territory,Industry
+MYS,Malaysia,2025,Power Industry,125.6833447267062,337.28114776575,37.2636732172165,Emerging and developing economies,Country or territory,Power
+MYS,Malaysia,2025,Processes,25.622859947348367,337.28114776575,7.596884710895277,Emerging and developing economies,Country or territory,Processes
+MYS,Malaysia,2025,Transport,68.12138604134347,337.28114776575,20.19721128577736,Emerging and developing economies,Country or territory,Transport
+MYS,Malaysia,2025,Waste,11.606297500696488,337.28114776575,3.441134370414721,Emerging and developing economies,Country or territory,Waste
+USA,United States,2025,Agriculture,397.9380814090859,6018.3012411881,6.612132983401926,Advanced economies,Country or territory,Farming
+USA,United States,2025,Buildings,550.2238081639058,6018.3012411881,9.142510255190942,Advanced economies,Country or territory,Buildings
+USA,United States,2025,Fuel Production,717.6478040561952,6018.3012411881,11.924424771973047,Advanced economies,Country or territory,Fuel
+USA,United States,2025,Industrial Combustion,457.6133635177578,6018.3012411881,7.603696544565428,Advanced economies,Country or territory,Industry
+USA,United States,2025,Power Industry,1573.49361464695,6018.3012411881,26.14514547524244,Advanced economies,Country or territory,Power
+USA,United States,2025,Processes,397.0253962938203,6018.3012411881,6.596967821694511,Advanced economies,Country or territory,Processes
+USA,United States,2025,Transport,1750.0313334192424,6018.3012411881,29.07849346992409,Advanced economies,Country or territory,Transport
+USA,United States,2025,Waste,174.327839681151,6018.3012411881,2.896628678007752,Advanced economies,Country or territory,Waste

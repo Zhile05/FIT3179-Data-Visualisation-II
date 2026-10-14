@@ -1,0 +1,9 @@
+country_code,country,baseline,current,difference,imf_group
+USA,United States,24.615473598524,17.533032996426,-7.082440602098,Advanced economies
+AUS,Australia,27.058742085855,21.523712580999,-5.5350295048559985,Advanced economies
+DEU,Germany,15.507998410795,8.0097489508709,-7.4982494599241,Advanced economies
+JPN,Japan,10.349854230055,8.5522394952251,-1.7976147348298994,Advanced economies
+CHN,China,3.1511304296385,11.106876698178,7.9557462685395,Emerging and developing economies
+IND,India,1.5167865990715,3.1050542148938,1.5882676158223001,Emerging and developing economies
+IDN,Indonesia,1.9112452358006,4.7722850513641,2.8610398155634997,Emerging and developing economies
+MYS,Malaysia,4.8558900971271,9.6503904940128,4.7945003968857005,Emerging and developing economies

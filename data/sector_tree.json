@@ -1,0 +1,80 @@
+[
+  {
+    "id": "World",
+    "parent": null,
+    "sector": "World",
+    "value": 0
+  },
+  {
+    "id": "Agriculture",
+    "parent": "World",
+    "sector": "Agriculture",
+    "label": "Farming",
+    "value": 6322.65709669931,
+    "share": 11.67636849965196,
+    "text_color": "#ffffff"
+  },
+  {
+    "id": "Buildings",
+    "parent": "World",
+    "sector": "Buildings",
+    "label": "Buildings",
+    "value": 3570.76087378089,
+    "share": 6.594303494360091,
+    "text_color": "#ffffff"
+  },
+  {
+    "id": "Fuel Production",
+    "parent": "World",
+    "sector": "Fuel Production",
+    "label": "Fuel",
+    "value": 6105.042237584247,
+    "share": 11.274488206736216,
+    "text_color": "#ffffff"
+  },
+  {
+    "id": "Industrial Combustion",
+    "parent": "World",
+    "sector": "Industrial Combustion",
+    "label": "Industry",
+    "value": 6253.520622775075,
+    "share": 11.548690699961163,
+    "text_color": "#ffffff"
+  },
+  {
+    "id": "Power Industry",
+    "parent": "World",
+    "sector": "Power Industry",
+    "label": "Power",
+    "value": 15811.390117752517,
+    "share": 29.199688466896745,
+    "text_color": "#ffffff"
+  },
+  {
+    "id": "Processes",
+    "parent": "World",
+    "sector": "Processes",
+    "label": "Processes",
+    "value": 5378.887938730398,
+    "share": 9.933462582327412,
+    "text_color": "#ffffff"
+  },
+  {
+    "id": "Transport",
+    "parent": "World",
+    "sector": "Transport",
+    "label": "Transport",
+    "value": 8770.68556007303,
+    "share": 16.197265647610585,
+    "text_color": "#ffffff"
+  },
+  {
+    "id": "Waste",
+    "parent": "World",
+    "sector": "Waste",
+    "label": "Waste",
+    "value": 1936.229560668351,
+    "share": 3.5757324024554906,
+    "text_color": "#ffffff"
+  }
+]

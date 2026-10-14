@@ -1,0 +1,1666 @@
+[
+  {
+    "country_code": "CHN",
+    "country": "China",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 106.337289,
+    "latitude": 32.498178
+  },
+  {
+    "country_code": "USA",
+    "country": "United States",
+    "imf_group": "Advanced economies",
+    "geography_note": "",
+    "longitude": -97.482602,
+    "latitude": 39.538479
+  },
+  {
+    "country_code": "IND",
+    "country": "India",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 79.358105,
+    "latitude": 22.686852
+  },
+  {
+    "country_code": "RUS",
+    "country": "Russia",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 44.686469,
+    "latitude": 58.249357
+  },
+  {
+    "country_code": "IDN",
+    "country": "Indonesia",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 101.892949,
+    "latitude": -0.954404
+  },
+  {
+    "country_code": "BRA",
+    "country": "Brazil",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -49.55945,
+    "latitude": -12.098687
+  },
+  {
+    "country_code": "IRN",
+    "country": "Iran",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 54.931495,
+    "latitude": 32.166225
+  },
+  {
+    "country_code": "JPN",
+    "country": "Japan",
+    "imf_group": "Advanced economies",
+    "geography_note": "",
+    "longitude": 138.44217,
+    "latitude": 36.142538
+  },
+  {
+    "country_code": "SAU",
+    "country": "Saudi Arabia",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 44.6996,
+    "latitude": 23.806908
+  },
+  {
+    "country_code": "CAN",
+    "country": "Canada",
+    "imf_group": "Advanced economies",
+    "geography_note": "",
+    "longitude": -101.9107,
+    "latitude": 60.324287
+  },
+  {
+    "country_code": "MEX",
+    "country": "Mexico",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -102.289448,
+    "latitude": 23.919988
+  },
+  {
+    "country_code": "KOR",
+    "country": "South Korea",
+    "imf_group": "Advanced economies",
+    "geography_note": "",
+    "longitude": 128.129504,
+    "latitude": 36.384924
+  },
+  {
+    "country_code": "DEU",
+    "country": "Germany",
+    "imf_group": "Advanced economies",
+    "geography_note": "",
+    "longitude": 9.678348,
+    "latitude": 50.961733
+  },
+  {
+    "country_code": "TUR",
+    "country": "Türkiye",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 34.508268,
+    "latitude": 39.345388
+  },
+  {
+    "country_code": "AUS",
+    "country": "Australia",
+    "imf_group": "Advanced economies",
+    "geography_note": "",
+    "longitude": 134.04972,
+    "latitude": -24.129522
+  },
+  {
+    "country_code": "VNM",
+    "country": "Viet Nam",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 105.387292,
+    "latitude": 21.715416
+  },
+  {
+    "country_code": "PAK",
+    "country": "Pakistan",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 68.545632,
+    "latitude": 29.328389
+  },
+  {
+    "country_code": "ZAF",
+    "country": "South Africa",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 23.665734,
+    "latitude": -29.708776
+  },
+  {
+    "country_code": "IRQ",
+    "country": "Iraq",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 43.26181,
+    "latitude": 33.09403
+  },
+  {
+    "country_code": "THA",
+    "country": "Thailand",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 101.073198,
+    "latitude": 15.45974
+  },
+  {
+    "country_code": "EGY",
+    "country": "Egypt",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 29.445837,
+    "latitude": 26.186173
+  },
+  {
+    "country_code": "FRA",
+    "country": "France and Monaco",
+    "imf_group": "Mixed / unclassified geography",
+    "geography_note": "EDGAR combines France, Monaco. Keep one source entry.",
+    "longitude": 2.552275,
+    "latitude": 46.696113
+  },
+  {
+    "country_code": "GBR",
+    "country": "United Kingdom",
+    "imf_group": "Advanced economies",
+    "geography_note": "",
+    "longitude": -2.116346,
+    "latitude": 54.402739
+  },
+  {
+    "country_code": "NGA",
+    "country": "Nigeria",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 7.50322,
+    "latitude": 9.439799
+  },
+  {
+    "country_code": "KAZ",
+    "country": "Kazakhstan",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 68.685548,
+    "latitude": 49.054149
+  },
+  {
+    "country_code": "ITA",
+    "country": "Italy, San Marino and the Holy See",
+    "imf_group": "Mixed / unclassified geography",
+    "geography_note": "EDGAR combines Italy, San Marino, Holy See. Keep one source entry.",
+    "longitude": 11.076907,
+    "latitude": 44.732482
+  },
+  {
+    "country_code": "ARG",
+    "country": "Argentina",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -64.173331,
+    "latitude": -33.501159
+  },
+  {
+    "country_code": "POL",
+    "country": "Poland",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 19.490468,
+    "latitude": 51.990316
+  },
+  {
+    "country_code": "MYS",
+    "country": "Malaysia",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 113.83708,
+    "latitude": 2.528667
+  },
+  {
+    "country_code": "TWN",
+    "country": "Taiwan",
+    "imf_group": "Advanced economies",
+    "geography_note": "",
+    "longitude": 120.868204,
+    "latitude": 23.652408
+  },
+  {
+    "country_code": "ESP",
+    "country": "Spain and Andorra",
+    "imf_group": "Advanced economies",
+    "geography_note": "EDGAR combines Spain, Andorra. Keep one source entry.",
+    "longitude": -3.464718,
+    "latitude": 40.090953
+  },
+  {
+    "country_code": "ARE",
+    "country": "United Arab Emirates",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 54.547256,
+    "latitude": 23.466285
+  },
+  {
+    "country_code": "PHL",
+    "country": "Philippines",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 122.465,
+    "latitude": 11.198
+  },
+  {
+    "country_code": "DZA",
+    "country": "Algeria",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 2.808241,
+    "latitude": 27.397406
+  },
+  {
+    "country_code": "BGD",
+    "country": "Bangladesh",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 89.684963,
+    "latitude": 24.214956
+  },
+  {
+    "country_code": "UZB",
+    "country": "Uzbekistan",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 64.005429,
+    "latitude": 41.693603
+  },
+  {
+    "country_code": "UKR",
+    "country": "Ukraine",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 32.140865,
+    "latitude": 49.724739
+  },
+  {
+    "country_code": "COL",
+    "country": "Colombia",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -73.174347,
+    "latitude": 3.373111
+  },
+  {
+    "country_code": "ETH",
+    "country": "Ethiopia",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 39.0886,
+    "latitude": 8.032795
+  },
+  {
+    "country_code": "VEN",
+    "country": "Venezuela",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -64.599381,
+    "latitude": 7.182476
+  },
+  {
+    "country_code": "KWT",
+    "country": "Kuwait",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 47.313999,
+    "latitude": 29.413628
+  },
+  {
+    "country_code": "QAT",
+    "country": "Qatar",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 51.143509,
+    "latitude": 25.237383
+  },
+  {
+    "country_code": "NLD",
+    "country": "Netherlands",
+    "imf_group": "Advanced economies",
+    "geography_note": "",
+    "longitude": 5.61144,
+    "latitude": 52.422211
+  },
+  {
+    "country_code": "OMN",
+    "country": "Oman",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 57.336553,
+    "latitude": 22.120427
+  },
+  {
+    "country_code": "MMR",
+    "country": "Myanmar/Burma",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 95.804497,
+    "latitude": 21.573855
+  },
+  {
+    "country_code": "SDN",
+    "country": "Sudan and South Sudan",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "EDGAR combines Sudan, South Sudan. Keep one source entry.",
+    "longitude": 29.260657,
+    "latitude": 16.330746
+  },
+  {
+    "country_code": "TKM",
+    "country": "Turkmenistan",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 58.676647,
+    "latitude": 39.855246
+  },
+  {
+    "country_code": "LBY",
+    "country": "Libya",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 18.011015,
+    "latitude": 26.638944
+  },
+  {
+    "country_code": "CHL",
+    "country": "Chile",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -72.318871,
+    "latitude": -38.151771
+  },
+  {
+    "country_code": "MAR",
+    "country": "Morocco",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -7.187296,
+    "latitude": 31.650723
+  },
+  {
+    "country_code": "KEN",
+    "country": "Kenya",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 37.907632,
+    "latitude": 0.549043
+  },
+  {
+    "country_code": "MNG",
+    "country": "Mongolia",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 104.150405,
+    "latitude": 45.997488
+  },
+  {
+    "country_code": "BEL",
+    "country": "Belgium",
+    "imf_group": "Advanced economies",
+    "geography_note": "",
+    "longitude": 4.800448,
+    "latitude": 50.785392
+  },
+  {
+    "country_code": "PER",
+    "country": "Peru",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -72.90016,
+    "latitude": -12.976679
+  },
+  {
+    "country_code": "TZA",
+    "country": "Tanzania",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 34.959183,
+    "latitude": -6.051866
+  },
+  {
+    "country_code": "CZE",
+    "country": "Czechia",
+    "imf_group": "Advanced economies",
+    "geography_note": "",
+    "longitude": 15.377555,
+    "latitude": 49.882364
+  },
+  {
+    "country_code": "TCD",
+    "country": "Chad",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 18.645041,
+    "latitude": 15.142959
+  },
+  {
+    "country_code": "ROU",
+    "country": "Romania",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 24.972624,
+    "latitude": 45.733237
+  },
+  {
+    "country_code": "PRK",
+    "country": "North Korea",
+    "imf_group": "Not classified",
+    "geography_note": "No match in the two main IMF October 2026 classification lists.",
+    "longitude": 126.444516,
+    "latitude": 39.885252
+  },
+  {
+    "country_code": "BLR",
+    "country": "Belarus",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 28.417701,
+    "latitude": 53.821888
+  },
+  {
+    "country_code": "ISR",
+    "country": "Israel and Palestine, State of",
+    "imf_group": "Mixed / unclassified geography",
+    "geography_note": "EDGAR combines Israel, West Bank and Gaza. Keep one source entry.",
+    "longitude": 34.847915,
+    "latitude": 30.911148
+  },
+  {
+    "country_code": "NZL",
+    "country": "New Zealand",
+    "imf_group": "Advanced economies",
+    "geography_note": "",
+    "longitude": 172.787,
+    "latitude": -39.759
+  },
+  {
+    "country_code": "SGP",
+    "country": "Singapore",
+    "imf_group": "Advanced economies",
+    "geography_note": "",
+    "longitude": 103.85,
+    "latitude": 1.28941
+  },
+  {
+    "country_code": "GRC",
+    "country": "Greece",
+    "imf_group": "Advanced economies",
+    "geography_note": "",
+    "longitude": 21.72568,
+    "latitude": 39.492763
+  },
+  {
+    "country_code": "AGO",
+    "country": "Angola",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 17.984249,
+    "latitude": -12.182762
+  },
+  {
+    "country_code": "AUT",
+    "country": "Austria",
+    "imf_group": "Advanced economies",
+    "geography_note": "",
+    "longitude": 14.130515,
+    "latitude": 47.518859
+  },
+  {
+    "country_code": "ECU",
+    "country": "Ecuador",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -78.188375,
+    "latitude": -1.259076
+  },
+  {
+    "country_code": "BHR",
+    "country": "Bahrain",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 50.5354,
+    "latitude": 26.1921
+  },
+  {
+    "country_code": "SCG",
+    "country": "Serbia and Montenegro",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "EDGAR combines Serbia, Montenegro. Keep one source entry.",
+    "longitude": 20.787989,
+    "latitude": 44.189919
+  },
+  {
+    "country_code": "BOL",
+    "country": "Bolivia",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -64.593433,
+    "latitude": -16.666015
+  },
+  {
+    "country_code": "UGA",
+    "country": "Uganda",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 32.948555,
+    "latitude": 1.972589
+  },
+  {
+    "country_code": "KHM",
+    "country": "Cambodia",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 104.50487,
+    "latitude": 12.647584
+  },
+  {
+    "country_code": "AZE",
+    "country": "Azerbaijan",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 47.210994,
+    "latitude": 40.402387
+  },
+  {
+    "country_code": "HUN",
+    "country": "Hungary",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 19.447867,
+    "latitude": 47.086841
+  },
+  {
+    "country_code": "COD",
+    "country": "Democratic Republic of the Congo",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 23.458829,
+    "latitude": -1.858167
+  },
+  {
+    "country_code": "IRL",
+    "country": "Ireland",
+    "imf_group": "Advanced economies",
+    "geography_note": "",
+    "longitude": -7.798588,
+    "latitude": 53.078726
+  },
+  {
+    "country_code": "SWE",
+    "country": "Sweden",
+    "imf_group": "Advanced economies",
+    "geography_note": "",
+    "longitude": 19.01705,
+    "latitude": 65.85918
+  },
+  {
+    "country_code": "PRT",
+    "country": "Portugal",
+    "imf_group": "Advanced economies",
+    "geography_note": "",
+    "longitude": -8.271754,
+    "latitude": 39.606675
+  },
+  {
+    "country_code": "NOR",
+    "country": "Norway",
+    "imf_group": "Advanced economies",
+    "geography_note": "",
+    "longitude": 9.679975,
+    "latitude": 61.357092
+  },
+  {
+    "country_code": "DOM",
+    "country": "Dominican Republic",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -70.653998,
+    "latitude": 19.104137
+  },
+  {
+    "country_code": "GHA",
+    "country": "Ghana",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -1.036941,
+    "latitude": 7.717639
+  },
+  {
+    "country_code": "MLI",
+    "country": "Mali",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -2.038455,
+    "latitude": 18.692713
+  },
+  {
+    "country_code": "BGR",
+    "country": "Bulgaria",
+    "imf_group": "Not classified",
+    "geography_note": "No match in the two main IMF October 2026 classification lists.",
+    "longitude": 25.15709,
+    "latitude": 42.508785
+  },
+  {
+    "country_code": "FIN",
+    "country": "Finland",
+    "imf_group": "Advanced economies",
+    "geography_note": "",
+    "longitude": 27.276449,
+    "latitude": 63.252361
+  },
+  {
+    "country_code": "NER",
+    "country": "Niger",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 9.504356,
+    "latitude": 17.446195
+  },
+  {
+    "country_code": "TUN",
+    "country": "Tunisia",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 9.007881,
+    "latitude": 33.687263
+  },
+  {
+    "country_code": "SYR",
+    "country": "Syria",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 38.277783,
+    "latitude": 35.006636
+  },
+  {
+    "country_code": "URY",
+    "country": "Uruguay",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -55.966942,
+    "latitude": -32.961127
+  },
+  {
+    "country_code": "NPL",
+    "country": "Nepal",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 83.639914,
+    "latitude": 28.297925
+  },
+  {
+    "country_code": "ZMB",
+    "country": "Zambia",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 26.395298,
+    "latitude": -14.660804
+  },
+  {
+    "country_code": "CHE",
+    "country": "Switzerland and Liechtenstein",
+    "imf_group": "Advanced economies",
+    "geography_note": "EDGAR combines Switzerland, Liechtenstein. Keep one source entry.",
+    "longitude": 7.463965,
+    "latitude": 46.719114
+  },
+  {
+    "country_code": "PRY",
+    "country": "Paraguay",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -60.146394,
+    "latitude": -21.674509
+  },
+  {
+    "country_code": "CIV",
+    "country": "Côte d’Ivoire",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -5.568618,
+    "latitude": 7.49139
+  },
+  {
+    "country_code": "ZWE",
+    "country": "Zimbabwe",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 29.925444,
+    "latitude": -18.91164
+  },
+  {
+    "country_code": "GTM",
+    "country": "Guatemala",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -90.497134,
+    "latitude": 14.982133
+  },
+  {
+    "country_code": "LAO",
+    "country": "Laos",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 102.533912,
+    "latitude": 19.431821
+  },
+  {
+    "country_code": "CMR",
+    "country": "Cameroon",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 12.473488,
+    "latitude": 4.585041
+  },
+  {
+    "country_code": "JOR",
+    "country": "Jordan",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 36.375991,
+    "latitude": 30.805025
+  },
+  {
+    "country_code": "YEM",
+    "country": "Yemen",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 45.874383,
+    "latitude": 15.328226
+  },
+  {
+    "country_code": "HKG",
+    "country": "Hong Kong",
+    "imf_group": "Advanced economies",
+    "geography_note": "",
+    "longitude": 114.109,
+    "latitude": 22.3964
+  },
+  {
+    "country_code": "SVK",
+    "country": "Slovakia",
+    "imf_group": "Advanced economies",
+    "geography_note": "",
+    "longitude": 19.049868,
+    "latitude": 48.734044
+  },
+  {
+    "country_code": "MOZ",
+    "country": "Mozambique",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 37.83789,
+    "latitude": -13.94323
+  },
+  {
+    "country_code": "SOM",
+    "country": "Somalia",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 45.19238,
+    "latitude": 3.568925
+  },
+  {
+    "country_code": "CUB",
+    "country": "Cuba",
+    "imf_group": "Not classified",
+    "geography_note": "No match in the two main IMF October 2026 classification lists.",
+    "longitude": -77.975855,
+    "latitude": 21.334024
+  },
+  {
+    "country_code": "DNK",
+    "country": "Denmark",
+    "imf_group": "Advanced economies",
+    "geography_note": "",
+    "longitude": 9.018163,
+    "latitude": 55.966965
+  },
+  {
+    "country_code": "BFA",
+    "country": "Burkina Faso",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -1.36388,
+    "latitude": 12.673048
+  },
+  {
+    "country_code": "MDG",
+    "country": "Madagascar",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 46.704241,
+    "latitude": -18.628288
+  },
+  {
+    "country_code": "SEN",
+    "country": "Senegal",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -14.778586,
+    "latitude": 15.138125
+  },
+  {
+    "country_code": "TTO",
+    "country": "Trinidad and Tobago",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -60.9184,
+    "latitude": 10.9989
+  },
+  {
+    "country_code": "AFG",
+    "country": "Afghanistan",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 66.496586,
+    "latitude": 34.164262
+  },
+  {
+    "country_code": "LKA",
+    "country": "Sri Lanka",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 80.704823,
+    "latitude": 7.581097
+  },
+  {
+    "country_code": "GIN",
+    "country": "Guinea",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -10.016402,
+    "latitude": 10.618516
+  },
+  {
+    "country_code": "HRV",
+    "country": "Croatia",
+    "imf_group": "Advanced economies",
+    "geography_note": "",
+    "longitude": 16.37241,
+    "latitude": 45.805799
+  },
+  {
+    "country_code": "BIH",
+    "country": "Bosnia and Herzegovina",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 18.06841,
+    "latitude": 44.091051
+  },
+  {
+    "country_code": "HND",
+    "country": "Honduras",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -86.887604,
+    "latitude": 14.794801
+  },
+  {
+    "country_code": "KGZ",
+    "country": "Kyrgyzstan",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 74.532637,
+    "latitude": 41.66854
+  },
+  {
+    "country_code": "COG",
+    "country": "Congo",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 15.9005,
+    "latitude": 0.142331
+  },
+  {
+    "country_code": "TJK",
+    "country": "Tajikistan",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 72.587276,
+    "latitude": 38.199835
+  },
+  {
+    "country_code": "MWI",
+    "country": "Malawi",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 33.608082,
+    "latitude": -13.386737
+  },
+  {
+    "country_code": "LBN",
+    "country": "Lebanon",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 35.992892,
+    "latitude": 34.133368
+  },
+  {
+    "country_code": "BEN",
+    "country": "Benin",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 2.352018,
+    "latitude": 10.324775
+  },
+  {
+    "country_code": "PAN",
+    "country": "Panama",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -80.352106,
+    "latitude": 8.72198
+  },
+  {
+    "country_code": "GAB",
+    "country": "Gabon",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 11.835939,
+    "latitude": -0.437739
+  },
+  {
+    "country_code": "LTU",
+    "country": "Lithuania",
+    "imf_group": "Advanced economies",
+    "geography_note": "",
+    "longitude": 24.089932,
+    "latitude": 55.103703
+  },
+  {
+    "country_code": "NIC",
+    "country": "Nicaragua",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -85.069347,
+    "latitude": 12.670697
+  },
+  {
+    "country_code": "GEO",
+    "country": "Georgia",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 43.735724,
+    "latitude": 41.870087
+  },
+  {
+    "country_code": "MRT",
+    "country": "Mauritania",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -9.740299,
+    "latitude": 19.587062
+  },
+  {
+    "country_code": "CRI",
+    "country": "Costa Rica",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -84.077922,
+    "latitude": 10.0651
+  },
+  {
+    "country_code": "SVN",
+    "country": "Slovenia",
+    "imf_group": "Advanced economies",
+    "geography_note": "",
+    "longitude": 14.915312,
+    "latitude": 46.06076
+  },
+  {
+    "country_code": "SLV",
+    "country": "El Salvador",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -88.890124,
+    "latitude": 13.685371
+  },
+  {
+    "country_code": "PRI",
+    "country": "Puerto Rico",
+    "imf_group": "Advanced economies",
+    "geography_note": "",
+    "longitude": -66.481065,
+    "latitude": 18.234668
+  },
+  {
+    "country_code": "EST",
+    "country": "Estonia",
+    "imf_group": "Advanced economies",
+    "geography_note": "",
+    "longitude": 25.867126,
+    "latitude": 58.724865
+  },
+  {
+    "country_code": "CAF",
+    "country": "Central African Republic",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 20.906897,
+    "latitude": 6.989681
+  },
+  {
+    "country_code": "PNG",
+    "country": "Papua New Guinea",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 143.910216,
+    "latitude": -5.695285
+  },
+  {
+    "country_code": "NAM",
+    "country": "Namibia",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 17.108166,
+    "latitude": -20.575298
+  },
+  {
+    "country_code": "BWA",
+    "country": "Botswana",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 24.179216,
+    "latitude": -22.102634
+  },
+  {
+    "country_code": "HTI",
+    "country": "Haiti",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -72.224051,
+    "latitude": 19.263784
+  },
+  {
+    "country_code": "BRN",
+    "country": "Brunei",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 114.551943,
+    "latitude": 4.448298
+  },
+  {
+    "country_code": "MDA",
+    "country": "Moldova",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 28.487904,
+    "latitude": 47.434999
+  },
+  {
+    "country_code": "TGO",
+    "country": "Togo",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 1.058113,
+    "latitude": 8.80722
+  },
+  {
+    "country_code": "LVA",
+    "country": "Latvia",
+    "imf_group": "Advanced economies",
+    "geography_note": "",
+    "longitude": 25.458723,
+    "latitude": 57.066872
+  },
+  {
+    "country_code": "ARM",
+    "country": "Armenia",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 44.800564,
+    "latitude": 40.459077
+  },
+  {
+    "country_code": "GUY",
+    "country": "Guyana",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -58.942643,
+    "latitude": 5.124317
+  },
+  {
+    "country_code": "MKD",
+    "country": "North Macedonia",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 21.555839,
+    "latitude": 41.558223
+  },
+  {
+    "country_code": "JAM",
+    "country": "Jamaica",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -77.318767,
+    "latitude": 18.137124
+  },
+  {
+    "country_code": "RWA",
+    "country": "Rwanda",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 30.103894,
+    "latitude": -1.897196
+  },
+  {
+    "country_code": "CYP",
+    "country": "Cyprus",
+    "imf_group": "Advanced economies",
+    "geography_note": "",
+    "longitude": 33.084182,
+    "latitude": 34.913329
+  },
+  {
+    "country_code": "SLE",
+    "country": "Sierra Leone",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -11.763677,
+    "latitude": 8.617449
+  },
+  {
+    "country_code": "ALB",
+    "country": "Albania",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 20.11384,
+    "latitude": 40.654855
+  },
+  {
+    "country_code": "GNQ",
+    "country": "Equatorial Guinea",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 8.9902,
+    "latitude": 2.333
+  },
+  {
+    "country_code": "BDI",
+    "country": "Burundi",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 29.917086,
+    "latitude": -3.332836
+  },
+  {
+    "country_code": "LUX",
+    "country": "Luxembourg",
+    "imf_group": "Advanced economies",
+    "geography_note": "",
+    "longitude": 6.07762,
+    "latitude": 49.733732
+  },
+  {
+    "country_code": "MUS",
+    "country": "Mauritius",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 57.4977,
+    "latitude": -20.1605
+  },
+  {
+    "country_code": "NCL",
+    "country": "New Caledonia",
+    "imf_group": "Not classified",
+    "geography_note": "No match in the two main IMF October 2026 classification lists.",
+    "longitude": 165.084004,
+    "latitude": -21.064697
+  },
+  {
+    "country_code": "ERI",
+    "country": "Eritrea",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 38.285566,
+    "latitude": 15.787401
+  },
+  {
+    "country_code": "LBR",
+    "country": "Liberia",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -9.460379,
+    "latitude": 6.447177
+  },
+  {
+    "country_code": "ISL",
+    "country": "Iceland",
+    "imf_group": "Advanced economies",
+    "geography_note": "",
+    "longitude": -18.673711,
+    "latitude": 64.779286
+  },
+  {
+    "country_code": "SUR",
+    "country": "Suriname",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -55.91094,
+    "latitude": 4.143987
+  },
+  {
+    "country_code": "FJI",
+    "country": "Fiji",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 177.975427,
+    "latitude": -17.826099
+  },
+  {
+    "country_code": "SWZ",
+    "country": "Eswatini",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 31.467264,
+    "latitude": -26.533676
+  },
+  {
+    "country_code": "BTN",
+    "country": "Bhutan",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 90.040294,
+    "latitude": 27.536685
+  },
+  {
+    "country_code": "GNB",
+    "country": "Guinea-Bissau",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -14.52413,
+    "latitude": 12.163712
+  },
+  {
+    "country_code": "LSO",
+    "country": "Lesotho",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 28.246639,
+    "latitude": -29.480158
+  },
+  {
+    "country_code": "REU",
+    "country": "Réunion",
+    "imf_group": "Not classified",
+    "geography_note": "No match in the two main IMF October 2026 classification lists.",
+    "longitude": null,
+    "latitude": null
+  },
+  {
+    "country_code": "DJI",
+    "country": "Djibouti",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 42.498825,
+    "latitude": 11.976343
+  },
+  {
+    "country_code": "MLT",
+    "country": "Malta",
+    "imf_group": "Advanced economies",
+    "geography_note": "",
+    "longitude": 14.5189,
+    "latitude": 35.9042
+  },
+  {
+    "country_code": "MDV",
+    "country": "Maldives",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 73.5109,
+    "latitude": 4.1742
+  },
+  {
+    "country_code": "MAC",
+    "country": "Macao",
+    "imf_group": "Advanced economies",
+    "geography_note": "",
+    "longitude": 113.55,
+    "latitude": 22.1667
+  },
+  {
+    "country_code": "GMB",
+    "country": "The Gambia",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -14.998318,
+    "latitude": 13.641721
+  },
+  {
+    "country_code": "BHS",
+    "country": "Bahamas",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -77.146688,
+    "latitude": 26.401789
+  },
+  {
+    "country_code": "TLS",
+    "country": "Timor-Leste",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 125.854679,
+    "latitude": -8.803705
+  },
+  {
+    "country_code": "PLW",
+    "country": "Palau",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 134.479,
+    "latitude": 7.34194
+  },
+  {
+    "country_code": "ANT",
+    "country": "Curaçao",
+    "imf_group": "Not classified",
+    "geography_note": "No match in the two main IMF October 2026 classification lists.",
+    "longitude": null,
+    "latitude": null
+  },
+  {
+    "country_code": "GLP",
+    "country": "Guadeloupe",
+    "imf_group": "Not classified",
+    "geography_note": "No match in the two main IMF October 2026 classification lists.",
+    "longitude": null,
+    "latitude": null
+  },
+  {
+    "country_code": "PYF",
+    "country": "French Polynesia",
+    "imf_group": "Not classified",
+    "geography_note": "No match in the two main IMF October 2026 classification lists.",
+    "longitude": -149.57,
+    "latitude": -17.535
+  },
+  {
+    "country_code": "MTQ",
+    "country": "Martinique",
+    "imf_group": "Not classified",
+    "geography_note": "No match in the two main IMF October 2026 classification lists.",
+    "longitude": null,
+    "latitude": null
+  },
+  {
+    "country_code": "SYC",
+    "country": "Seychelles",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 55.4466,
+    "latitude": -4.6309
+  },
+  {
+    "country_code": "BRB",
+    "country": "Barbados",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -59.6105,
+    "latitude": 13.0935
+  },
+  {
+    "country_code": "CPV",
+    "country": "Cabo Verde",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -23.5087,
+    "latitude": 14.9218
+  },
+  {
+    "country_code": "BLZ",
+    "country": "Belize",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -88.712962,
+    "latitude": 17.202068
+  },
+  {
+    "country_code": "COM",
+    "country": "Comoros",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 43.2418,
+    "latitude": -11.6986
+  },
+  {
+    "country_code": "ESH",
+    "country": "Western Sahara",
+    "imf_group": "Not classified",
+    "geography_note": "No match in the two main IMF October 2026 classification lists.",
+    "longitude": -12.630304,
+    "latitude": 23.967592
+  },
+  {
+    "country_code": "GRL",
+    "country": "Greenland",
+    "imf_group": "Not classified",
+    "geography_note": "No match in the two main IMF October 2026 classification lists.",
+    "longitude": -39.335251,
+    "latitude": 74.319387
+  },
+  {
+    "country_code": "VUT",
+    "country": "Vanuatu",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 166.908762,
+    "latitude": -15.37153
+  },
+  {
+    "country_code": "GUF",
+    "country": "French Guiana",
+    "imf_group": "Not classified",
+    "geography_note": "No match in the two main IMF October 2026 classification lists.",
+    "longitude": null,
+    "latitude": null
+  },
+  {
+    "country_code": "ABW",
+    "country": "Aruba",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -70.0167,
+    "latitude": 12.5167
+  },
+  {
+    "country_code": "SLB",
+    "country": "Solomon Islands",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 159.170468,
+    "latitude": -8.029548
+  },
+  {
+    "country_code": "WSM",
+    "country": "Samoa",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -171.752,
+    "latitude": -13.8314
+  },
+  {
+    "country_code": "LCA",
+    "country": "Saint Lucia",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -60.9832,
+    "latitude": 14.0
+  },
+  {
+    "country_code": "CYM",
+    "country": "Cayman Islands",
+    "imf_group": "Not classified",
+    "geography_note": "No match in the two main IMF October 2026 classification lists.",
+    "longitude": -81.3857,
+    "latitude": 19.3022
+  },
+  {
+    "country_code": "ATG",
+    "country": "Antigua and Barbuda",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -61.8456,
+    "latitude": 17.1175
+  },
+  {
+    "country_code": "TON",
+    "country": "Tonga",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -175.216,
+    "latitude": -21.136
+  },
+  {
+    "country_code": "GIB",
+    "country": "Gibraltar",
+    "imf_group": "Not classified",
+    "geography_note": "No match in the two main IMF October 2026 classification lists.",
+    "longitude": null,
+    "latitude": null
+  },
+  {
+    "country_code": "BMU",
+    "country": "Bermuda",
+    "imf_group": "Not classified",
+    "geography_note": "No match in the two main IMF October 2026 classification lists.",
+    "longitude": -64.706,
+    "latitude": 32.3293
+  },
+  {
+    "country_code": "STP",
+    "country": "São Tomé and Príncipe",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 6.6071,
+    "latitude": 0.20618
+  },
+  {
+    "country_code": "GRD",
+    "country": "Grenada",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -61.7449,
+    "latitude": 12.0653
+  },
+  {
+    "country_code": "TCA",
+    "country": "Turks and Caicos Islands",
+    "imf_group": "Not classified",
+    "geography_note": "No match in the two main IMF October 2026 classification lists.",
+    "longitude": -71.141389,
+    "latitude": 21.4602778
+  },
+  {
+    "country_code": "VCT",
+    "country": "Saint Vincent and the Grenadines",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -61.2653,
+    "latitude": 13.2035
+  },
+  {
+    "country_code": "FLK",
+    "country": "Falkland Islands",
+    "imf_group": "Not classified",
+    "geography_note": "No match in the two main IMF October 2026 classification lists.",
+    "longitude": -58.738602,
+    "latitude": -51.608913
+  },
+  {
+    "country_code": "KNA",
+    "country": "Saint Kitts and Nevis",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -62.7309,
+    "latitude": 17.3
+  },
+  {
+    "country_code": "DMA",
+    "country": "Dominica",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": -61.39,
+    "latitude": 15.2976
+  },
+  {
+    "country_code": "COK",
+    "country": "Cook Islands",
+    "imf_group": "Not classified",
+    "geography_note": "No match in the two main IMF October 2026 classification lists.",
+    "longitude": null,
+    "latitude": null
+  },
+  {
+    "country_code": "KIR",
+    "country": "Kiribati",
+    "imf_group": "Emerging and developing economies",
+    "geography_note": "",
+    "longitude": 172.979,
+    "latitude": 1.32905
+  },
+  {
+    "country_code": "VGB",
+    "country": "British Virgin Islands",
+    "imf_group": "Not classified",
+    "geography_note": "No match in the two main IMF October 2026 classification lists.",
+    "longitude": -64.623056,
+    "latitude": 18.431389
+  },
+  {
+    "country_code": "FRO",
+    "country": "Faroes",
+    "imf_group": "Not classified",
+    "geography_note": "No match in the two main IMF October 2026 classification lists.",
+    "longitude": -6.91181,
+    "latitude": 61.8926
+  },
+  {
+    "country_code": "SPM",
+    "country": "Saint Pierre and Miquelon",
+    "imf_group": "Not classified",
+    "geography_note": "No match in the two main IMF October 2026 classification lists.",
+    "longitude": null,
+    "latitude": null
+  },
+  {
+    "country_code": "AIA",
+    "country": "Anguilla",
+    "imf_group": "Not classified",
+    "geography_note": "No match in the two main IMF October 2026 classification lists.",
+    "longitude": null,
+    "latitude": null
+  },
+  {
+    "country_code": "SHN",
+    "country": "Saint Helena, Ascension and Tristan da Cunha",
+    "imf_group": "Not classified",
+    "geography_note": "No match in the two main IMF October 2026 classification lists.",
+    "longitude": null,
+    "latitude": null
+  }
+]
