@@ -33,7 +33,7 @@
       "titleLimit": 300
     }
   },
-  "description": "Country greenhouse gas totals. Circle area represents emissions. Equal Earth projection.",
+  "description": "Country greenhouse gas totals. Circle area represents emissions.",
   "projection": {
     "type": "equalEarth"
   },

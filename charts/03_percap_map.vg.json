@@ -33,7 +33,7 @@
       "titleLimit": 300
     }
   },
-  "description": "Greenhouse gas emissions per person, shaded by country reporting area. Equal Earth projection.",
+  "description": "Greenhouse gas emissions per person, shaded by country reporting area.",
   "projection": {
     "type": "equalEarth"
   },
