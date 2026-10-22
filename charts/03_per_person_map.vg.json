@@ -235,16 +235,34 @@
           "filter": "datum.country_code === 'MYS'"
         }
       ],
-      "mark": {
-        "type": "text",
-        "text": "Malaysia",
-        "align": "left",
-        "dx": 7,
-        "dy": -7,
-        "fontSize": 12,
-        "fontWeight": "bold",
-        "color": "#a84420"
-      },
+      "layer": [
+        {
+          "mark": {
+            "type": "text",
+            "text": "Malaysia",
+            "align": "left",
+            "dx": 17,
+            "dy": -12,
+            "fontSize": 12,
+            "fontWeight": "bold",
+            "fill": "#ffffff",
+            "stroke": "#ffffff",
+            "strokeWidth": 3
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "text": "Malaysia",
+            "align": "left",
+            "dx": 17,
+            "dy": -12,
+            "fontSize": 12,
+            "fontWeight": "bold",
+            "color": "#a84420"
+          }
+        }
+      ],
       "encoding": {
         "longitude": {
           "field": "longitude",
