@@ -259,6 +259,6 @@
       "World Bank WDI"
     ],
     "data_year": 2025,
-    "specification_file": "js/09_income_scatter.vg.json"
+    "specification_file": "charts/05_income_scatter.vg.json"
   }
 }

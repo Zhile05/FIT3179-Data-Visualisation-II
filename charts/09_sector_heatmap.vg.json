@@ -252,6 +252,6 @@
       "EDGAR 2026"
     ],
     "data_year": 2025,
-    "specification_file": "js/08_sector_heatmap.vg.json"
+    "specification_file": "charts/09_sector_heatmap.vg.json"
   }
 }
