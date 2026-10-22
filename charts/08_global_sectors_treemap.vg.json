@@ -6,7 +6,7 @@
   "autosize": {
     "type": "fit",
     "contains": "padding",
-    "resize": true
+    "resize": false
   },
   "background": "#ffffff",
   "description": "Share of global greenhouse gas emissions by sector in 2025. Rectangle area is proportional to emissions.",
