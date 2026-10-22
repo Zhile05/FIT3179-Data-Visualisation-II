@@ -1,0 +1,1543 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "Greenhouse gas emissions embodied in Malaysia's gross exports to its ten largest individual destinations in 2022. Curved arrows point from Malaysia to the direct importer; line width encodes embodied emissions.",
+  "width": 1000,
+  "height": 450,
+  "padding": 12,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding",
+    "resize": true
+  },
+  "background": "white",
+  "signals": [
+    {
+      "name": "hoverPartner",
+      "value": null,
+      "on": [
+        {
+          "events": "@trade_routes:pointerover, @trade_arrows:pointerover, @trade_labels:pointerover, @inset_routes:pointerover, @inset_arrows:pointerover, @inset_labels:pointerover",
+          "update": "datum.importer"
+        },
+        {
+          "events": "@trade_routes:pointerout, @trade_arrows:pointerout, @trade_labels:pointerout, @inset_routes:pointerout, @inset_arrows:pointerout, @inset_labels:pointerout",
+          "update": "null"
+        }
+      ]
+    },
+    {
+      "name": "stackInset",
+      "update": "width < 760"
+    },
+    {
+      "name": "mainHeight",
+      "update": "stackInset ? (width < 500 ? 330 : 400) : height"
+    },
+    {
+      "name": "insetWidth",
+      "update": "stackInset ? width - 24 : min(330, width * 0.34)"
+    },
+    {
+      "name": "insetHeight",
+      "update": "stackInset ? 290 : 235"
+    },
+    {
+      "name": "insetX",
+      "update": "stackInset ? 12 : width - insetWidth - 14"
+    },
+    {
+      "name": "insetY",
+      "update": "stackInset ? mainHeight + 22 : height - insetHeight - 8"
+    }
+  ],
+  "projections": [
+    {
+      "name": "trade_projection",
+      "type": "equalEarth",
+      "rotate": [
+        -160,
+        0,
+        0
+      ],
+      "fit": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            113.83708,
+            2.528667
+          ],
+          [
+            106.337289,
+            32.498178
+          ],
+          [
+            -97.482602,
+            39.538479
+          ],
+          [
+            138.44217,
+            36.142538
+          ],
+          [
+            103.85,
+            1.28941
+          ],
+          [
+            79.358105,
+            22.686852
+          ],
+          [
+            101.073198,
+            15.45974
+          ],
+          [
+            128.129504,
+            36.384924
+          ],
+          [
+            101.892949,
+            -0.954404
+          ],
+          [
+            134.04972,
+            -24.129522
+          ],
+          [
+            105.387292,
+            21.715416
+          ],
+          [
+            65,
+            -38
+          ],
+          [
+            65,
+            58
+          ],
+          [
+            -80,
+            58
+          ],
+          [
+            -80,
+            -38
+          ],
+          [
+            150,
+            65
+          ]
+        ]
+      },
+      "extent": {
+        "signal": "[[30, 24], [width - 30, mainHeight - 94]]"
+      },
+      "clipExtent": {
+        "signal": "[[0, 0], [width, mainHeight - 82]]"
+      }
+    },
+    {
+      "name": "inset_projection",
+      "type": "mercator",
+      "fit": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            98,
+            -4
+          ],
+          [
+            117,
+            24
+          ],
+          [
+            113.83708,
+            2.528667
+          ],
+          [
+            103.85,
+            1.28941
+          ],
+          [
+            101.073198,
+            15.45974
+          ],
+          [
+            105.387292,
+            21.715416
+          ],
+          [
+            101.892949,
+            -0.954404
+          ]
+        ]
+      },
+      "extent": {
+        "signal": "[[36, 65], [insetWidth - 30, insetHeight - 35]]"
+      },
+      "clipExtent": {
+        "signal": "[[8, 54], [insetWidth - 8, insetHeight - 10]]"
+      }
+    }
+  ],
+  "data": [
+    {
+      "name": "world",
+      "url": "data/geography.json"
+    },
+    {
+      "name": "metadata",
+      "url": "data/country_metadata.json"
+    },
+    {
+      "name": "flows",
+      "url": "data/malaysia_trade_flows.csv",
+      "format": {
+        "type": "csv",
+        "parse": {
+          "year": "number",
+          "emissions_mt_co2e": "number"
+        }
+      },
+      "transform": [
+        {
+          "type": "lookup",
+          "from": "metadata",
+          "key": "country_code",
+          "fields": [
+            "exporter"
+          ],
+          "values": [
+            "longitude",
+            "latitude"
+          ],
+          "as": [
+            "origin_longitude",
+            "origin_latitude"
+          ]
+        },
+        {
+          "type": "lookup",
+          "from": "metadata",
+          "key": "country_code",
+          "fields": [
+            "importer"
+          ],
+          "values": [
+            "country",
+            "longitude",
+            "latitude"
+          ],
+          "as": [
+            "country",
+            "longitude",
+            "latitude"
+          ]
+        },
+        {
+          "type": "window",
+          "sort": {
+            "field": "emissions_mt_co2e",
+            "order": "descending"
+          },
+          "ops": [
+            "row_number"
+          ],
+          "as": [
+            "rank"
+          ]
+        },
+        {
+          "type": "formula",
+          "as": "export_share_pct",
+          "expr": "datum.emissions_mt_co2e / 206.097 * 100"
+        },
+        {
+          "type": "geopoint",
+          "projection": "trade_projection",
+          "fields": [
+            "origin_longitude",
+            "origin_latitude"
+          ],
+          "as": [
+            "source_x",
+            "source_y"
+          ]
+        },
+        {
+          "type": "geopoint",
+          "projection": "trade_projection",
+          "fields": [
+            "longitude",
+            "latitude"
+          ],
+          "as": [
+            "target_x",
+            "target_y"
+          ]
+        },
+        {
+          "type": "formula",
+          "as": "distance",
+          "expr": "sqrt(pow(datum.target_x - datum.source_x, 2) + pow(datum.target_y - datum.source_y, 2))"
+        },
+        {
+          "type": "formula",
+          "as": "curve_bend",
+          "expr": "datum.importer === 'JPN' ? -0.08 : datum.importer === 'KOR' ? 0.4 : datum.importer === 'VNM' ? -0.45 : datum.importer === 'THA' ? 0.45 : datum.importer === 'SGP' ? -0.5 : datum.importer === 'IDN' ? 0.4 : datum.importer === 'CHN' ? 0.1 : datum.importer === 'USA' ? 0.3 : 0.2"
+        },
+        {
+          "type": "formula",
+          "as": "control_x",
+          "expr": "(datum.source_x + datum.target_x) / 2 + (datum.target_y - datum.source_y) * datum.curve_bend"
+        },
+        {
+          "type": "formula",
+          "as": "control_y",
+          "expr": "(datum.source_y + datum.target_y) / 2 - (datum.target_x - datum.source_x) * datum.curve_bend"
+        },
+        {
+          "type": "formula",
+          "as": "tangent_length",
+          "expr": "sqrt(pow(datum.target_x - datum.control_x, 2) + pow(datum.target_y - datum.control_y, 2))"
+        },
+        {
+          "type": "formula",
+          "as": "unit_x",
+          "expr": "(datum.target_x - datum.control_x) / datum.tangent_length"
+        },
+        {
+          "type": "formula",
+          "as": "unit_y",
+          "expr": "(datum.target_y - datum.control_y) / datum.tangent_length"
+        },
+        {
+          "type": "formula",
+          "as": "arrow_length",
+          "expr": "min(datum.distance * 0.35, max(6, scale('flow_width', datum.emissions_mt_co2e) * 1.7))"
+        },
+        {
+          "type": "formula",
+          "as": "flow_path",
+          "expr": "'M' + datum.source_x + ',' + datum.source_y + 'Q' + datum.control_x + ',' + datum.control_y + ' ' + (datum.target_x - datum.unit_x * datum.arrow_length * 0.7) + ',' + (datum.target_y - datum.unit_y * datum.arrow_length * 0.7)"
+        },
+        {
+          "type": "formula",
+          "as": "arrow_path",
+          "expr": "'M' + datum.target_x + ',' + datum.target_y + 'L' + (datum.target_x - datum.unit_x * datum.arrow_length + datum.unit_y * datum.arrow_length * 0.45) + ',' + (datum.target_y - datum.unit_y * datum.arrow_length - datum.unit_x * datum.arrow_length * 0.45) + 'L' + (datum.target_x - datum.unit_x * datum.arrow_length - datum.unit_y * datum.arrow_length * 0.45) + ',' + (datum.target_y - datum.unit_y * datum.arrow_length + datum.unit_x * datum.arrow_length * 0.45) + 'Z'"
+        },
+        {
+          "type": "formula",
+          "as": "label_dx",
+          "expr": "datum.importer === 'USA' ? (width < 600 ? -10 : 12) : datum.importer === 'CHN' ? -16 : datum.importer === 'IND' ? -14 : datum.importer === 'SGP' ? -30 : datum.importer === 'THA' ? -35 : datum.importer === 'KOR' ? 5 : datum.importer === 'AUS' && width < 600 ? 28 : datum.importer === 'VNM' ? 38 : datum.importer === 'IDN' ? 30 : 16"
+        },
+        {
+          "type": "formula",
+          "as": "label_dy",
+          "expr": "width < 600 ? (datum.importer === 'USA' ? 35 : datum.importer === 'KOR' ? -35 : datum.importer === 'SGP' ? 42 : datum.importer === 'IDN' ? 25 : datum.importer === 'THA' ? 22 : datum.importer === 'AUS' ? 35 : datum.importer === 'VNM' ? 2 : datum.importer === 'IND' ? 0 : -12) : (datum.importer === 'KOR' ? -35 : datum.importer === 'SGP' ? 42 : datum.importer === 'IDN' ? 25 : datum.importer === 'THA' ? 2 : datum.importer === 'AUS' ? 12 : -12)"
+        },
+        {
+          "type": "formula",
+          "as": "label_x",
+          "expr": "datum.target_x + datum.label_dx"
+        },
+        {
+          "type": "formula",
+          "as": "label_y",
+          "expr": "datum.target_y + datum.label_dy"
+        },
+        {
+          "type": "formula",
+          "as": "label_text",
+          "expr": "(width < 600 ? datum.importer : datum.country) + ' ' + format(datum.emissions_mt_co2e, '.1f')"
+        },
+        {
+          "type": "formula",
+          "as": "label_align",
+          "expr": "datum.label_dx < 0 ? 'right' : 'left'"
+        }
+      ]
+    },
+    {
+      "name": "highlighted",
+      "source": "world",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.properties.country_code === 'MYS' || indata('flows', 'importer', datum.properties.country_code)"
+        }
+      ]
+    },
+    {
+      "name": "malaysia_boundary",
+      "source": "world",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.properties.country_code === 'MYS'"
+        }
+      ]
+    },
+    {
+      "name": "origin",
+      "source": "metadata",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.country_code === 'MYS'"
+        },
+        {
+          "type": "geopoint",
+          "projection": "trade_projection",
+          "fields": [
+            "longitude",
+            "latitude"
+          ],
+          "as": [
+            "x",
+            "y"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "legend_values",
+      "values": [
+        {
+          "index": 0,
+          "value": 10
+        },
+        {
+          "index": 1,
+          "value": 30
+        },
+        {
+          "index": 2,
+          "value": 50
+        }
+      ]
+    },
+    {
+      "name": "main_label_flows",
+      "source": "flows",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "indexof(['SGP', 'THA', 'VNM', 'IDN'], datum.importer) < 0"
+        }
+      ]
+    },
+    {
+      "name": "nearby_flows",
+      "source": "flows",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "indexof(['SGP', 'THA', 'VNM', 'IDN'], datum.importer) >= 0"
+        },
+        {
+          "type": "geopoint",
+          "projection": "inset_projection",
+          "fields": [
+            "origin_longitude",
+            "origin_latitude"
+          ],
+          "as": [
+            "inset_source_x",
+            "inset_source_y"
+          ]
+        },
+        {
+          "type": "geopoint",
+          "projection": "inset_projection",
+          "fields": [
+            "longitude",
+            "latitude"
+          ],
+          "as": [
+            "inset_target_x",
+            "inset_target_y"
+          ]
+        },
+        {
+          "type": "formula",
+          "as": "inset_distance",
+          "expr": "sqrt(pow(datum.inset_target_x - datum.inset_source_x, 2) + pow(datum.inset_target_y - datum.inset_source_y, 2))"
+        },
+        {
+          "type": "formula",
+          "as": "inset_curve_bend",
+          "expr": "datum.importer === 'SGP' ? -0.15 : datum.importer === 'VNM' ? -0.3 : datum.importer === 'IDN' ? 0.4 : 0.3"
+        },
+        {
+          "type": "formula",
+          "as": "inset_control_x",
+          "expr": "(datum.inset_source_x + datum.inset_target_x) / 2 + (datum.inset_target_y - datum.inset_source_y) * datum.inset_curve_bend"
+        },
+        {
+          "type": "formula",
+          "as": "inset_control_y",
+          "expr": "(datum.inset_source_y + datum.inset_target_y) / 2 - (datum.inset_target_x - datum.inset_source_x) * datum.inset_curve_bend"
+        },
+        {
+          "type": "formula",
+          "as": "inset_tangent_length",
+          "expr": "sqrt(pow(datum.inset_target_x - datum.inset_control_x, 2) + pow(datum.inset_target_y - datum.inset_control_y, 2))"
+        },
+        {
+          "type": "formula",
+          "as": "inset_unit_x",
+          "expr": "(datum.inset_target_x - datum.inset_control_x) / datum.inset_tangent_length"
+        },
+        {
+          "type": "formula",
+          "as": "inset_unit_y",
+          "expr": "(datum.inset_target_y - datum.inset_control_y) / datum.inset_tangent_length"
+        },
+        {
+          "type": "formula",
+          "as": "inset_arrow_length",
+          "expr": "min(datum.inset_distance * 0.35, max(6, scale('flow_width', datum.emissions_mt_co2e) * 1.7))"
+        },
+        {
+          "type": "formula",
+          "as": "inset_flow_path",
+          "expr": "'M' + datum.inset_source_x + ',' + datum.inset_source_y + 'Q' + datum.inset_control_x + ',' + datum.inset_control_y + ' ' + (datum.inset_target_x - datum.inset_unit_x * datum.inset_arrow_length * 0.7) + ',' + (datum.inset_target_y - datum.inset_unit_y * datum.inset_arrow_length * 0.7)"
+        },
+        {
+          "type": "formula",
+          "as": "inset_arrow_path",
+          "expr": "'M' + datum.inset_target_x + ',' + datum.inset_target_y + 'L' + (datum.inset_target_x - datum.inset_unit_x * datum.inset_arrow_length + datum.inset_unit_y * datum.inset_arrow_length * 0.45) + ',' + (datum.inset_target_y - datum.inset_unit_y * datum.inset_arrow_length - datum.inset_unit_x * datum.inset_arrow_length * 0.45) + 'L' + (datum.inset_target_x - datum.inset_unit_x * datum.inset_arrow_length - datum.inset_unit_y * datum.inset_arrow_length * 0.45) + ',' + (datum.inset_target_y - datum.inset_unit_y * datum.inset_arrow_length + datum.inset_unit_x * datum.inset_arrow_length * 0.45) + 'Z'"
+        },
+        {
+          "type": "formula",
+          "as": "inset_label_dx",
+          "expr": "datum.importer === 'VNM' ? 12 : -12"
+        },
+        {
+          "type": "formula",
+          "as": "inset_label_dy",
+          "expr": "datum.importer === 'IDN' ? 27 : datum.importer === 'SGP' ? -3 : -10"
+        },
+        {
+          "type": "formula",
+          "as": "inset_label_x",
+          "expr": "datum.inset_target_x + datum.inset_label_dx"
+        },
+        {
+          "type": "formula",
+          "as": "inset_label_y",
+          "expr": "datum.inset_target_y + datum.inset_label_dy"
+        },
+        {
+          "type": "formula",
+          "as": "inset_label_text",
+          "expr": "datum.country + ' ' + format(datum.emissions_mt_co2e, '.1f')"
+        }
+      ]
+    },
+    {
+      "name": "inset_origin",
+      "source": "metadata",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.country_code === 'MYS'"
+        },
+        {
+          "type": "geopoint",
+          "projection": "inset_projection",
+          "fields": [
+            "longitude",
+            "latitude"
+          ],
+          "as": [
+            "x",
+            "y"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "nearby_extent",
+      "values": [
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                98,
+                -4
+              ],
+              [
+                117,
+                -4
+              ],
+              [
+                117,
+                24
+              ],
+              [
+                98,
+                24
+              ],
+              [
+                98,
+                -4
+              ]
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "flow_width",
+      "type": "linear",
+      "domain": [
+        0,
+        60
+      ],
+      "range": {
+        "signal": "[0, width < 600 ? 8 : 12]"
+      },
+      "zero": true
+    }
+  ],
+  "marks": [
+    {
+      "name": "world_shapes",
+      "type": "shape",
+      "from": {
+        "data": "world"
+      },
+      "interactive": false,
+      "transform": [
+        {
+          "type": "geoshape",
+          "projection": "trade_projection"
+        }
+      ],
+      "encode": {
+        "update": {
+          "fill": {
+            "value": "#edf1f3"
+          },
+          "stroke": {
+            "value": "white"
+          },
+          "strokeWidth": {
+            "value": 0.6
+          }
+        }
+      }
+    },
+    {
+      "name": "partner_shapes",
+      "type": "shape",
+      "from": {
+        "data": "highlighted"
+      },
+      "interactive": false,
+      "transform": [
+        {
+          "type": "geoshape",
+          "projection": "trade_projection"
+        }
+      ],
+      "encode": {
+        "update": {
+          "fill": {
+            "signal": "datum.properties.country_code === 'MYS' ? '#f0d2c4' : '#d4e1eb'"
+          },
+          "stroke": {
+            "value": "white"
+          },
+          "strokeWidth": {
+            "value": 0.8
+          }
+        }
+      }
+    },
+    {
+      "name": "closeup_extent",
+      "type": "shape",
+      "from": {
+        "data": "nearby_extent"
+      },
+      "interactive": false,
+      "transform": [
+        {
+          "type": "geoshape",
+          "projection": "trade_projection"
+        }
+      ],
+      "encode": {
+        "update": {
+          "fill": {
+            "value": null
+          },
+          "stroke": {
+            "value": "#718a9c"
+          },
+          "strokeWidth": {
+            "value": 0.9
+          },
+          "strokeDash": {
+            "value": [
+              4,
+              3
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "route_casings",
+      "type": "path",
+      "from": {
+        "data": "flows"
+      },
+      "sort": {
+        "field": "datum.emissions_mt_co2e",
+        "order": "descending"
+      },
+      "encode": {
+        "update": {
+          "path": {
+            "field": "flow_path"
+          },
+          "fill": {
+            "value": null
+          },
+          "stroke": {
+            "value": "white"
+          },
+          "strokeWidth": {
+            "signal": "scale('flow_width', datum.emissions_mt_co2e) + 2.5"
+          },
+          "strokeCap": {
+            "value": "round"
+          },
+          "opacity": {
+            "signal": "!hoverPartner || hoverPartner === datum.importer ? 0.96 : 0.12"
+          }
+        }
+      },
+      "interactive": false
+    },
+    {
+      "name": "trade_routes",
+      "type": "path",
+      "from": {
+        "data": "flows"
+      },
+      "sort": {
+        "field": "datum.emissions_mt_co2e",
+        "order": "descending"
+      },
+      "encode": {
+        "update": {
+          "path": {
+            "field": "flow_path"
+          },
+          "fill": {
+            "value": null
+          },
+          "stroke": {
+            "value": "#24485f"
+          },
+          "strokeWidth": {
+            "scale": "flow_width",
+            "field": "emissions_mt_co2e"
+          },
+          "strokeCap": {
+            "value": "round"
+          },
+          "opacity": {
+            "signal": "!hoverPartner || hoverPartner === datum.importer ? 0.96 : 0.12"
+          },
+          "tooltip": {
+            "signal": "{'From': 'Malaysia', 'Destination': datum.country, 'Year': datum.year, 'Embodied emissions (Mt CO2e)': format(datum.emissions_mt_co2e, '.3f'), 'Share of export-linked emissions (%)': format(datum.export_share_pct, '.1f')}"
+          }
+        }
+      }
+    },
+    {
+      "name": "trade_arrows",
+      "type": "path",
+      "from": {
+        "data": "flows"
+      },
+      "encode": {
+        "update": {
+          "path": {
+            "field": "arrow_path"
+          },
+          "fill": {
+            "value": "#24485f"
+          },
+          "opacity": {
+            "signal": "!hoverPartner || hoverPartner === datum.importer ? 0.96 : 0.12"
+          },
+          "tooltip": {
+            "signal": "{'From': 'Malaysia', 'Destination': datum.country, 'Year': datum.year, 'Embodied emissions (Mt CO2e)': format(datum.emissions_mt_co2e, '.3f'), 'Share of export-linked emissions (%)': format(datum.export_share_pct, '.1f')}"
+          }
+        }
+      }
+    },
+    {
+      "name": "label_leaders",
+      "type": "rule",
+      "from": {
+        "data": "main_label_flows"
+      },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": {
+            "field": "target_x"
+          },
+          "y": {
+            "field": "target_y"
+          },
+          "x2": {
+            "field": "label_x"
+          },
+          "y2": {
+            "field": "label_y"
+          },
+          "stroke": {
+            "value": "#718a9c"
+          },
+          "strokeWidth": {
+            "value": 0.8
+          },
+          "opacity": {
+            "signal": "!hoverPartner || hoverPartner === datum.importer ? 0.85 : 0.13"
+          }
+        }
+      }
+    },
+    {
+      "name": "label_halos",
+      "type": "text",
+      "from": {
+        "data": "main_label_flows"
+      },
+      "encode": {
+        "update": {
+          "font": {
+            "value": "Source Sans 3"
+          },
+          "fontSize": {
+            "signal": "width < 600 ? 11 : 14"
+          },
+          "fill": {
+            "value": "white"
+          },
+          "x": {
+            "field": "label_x"
+          },
+          "y": {
+            "field": "label_y"
+          },
+          "text": {
+            "field": "label_text"
+          },
+          "align": {
+            "field": "label_align"
+          },
+          "baseline": {
+            "value": "middle"
+          },
+          "fontWeight": {
+            "value": 600
+          },
+          "opacity": {
+            "signal": "!hoverPartner || hoverPartner === datum.importer ? 1 : 0.3"
+          },
+          "stroke": {
+            "value": "white"
+          },
+          "strokeWidth": {
+            "value": 3
+          },
+          "strokeJoin": {
+            "value": "round"
+          }
+        }
+      },
+      "interactive": false
+    },
+    {
+      "name": "trade_labels",
+      "type": "text",
+      "from": {
+        "data": "main_label_flows"
+      },
+      "encode": {
+        "update": {
+          "font": {
+            "value": "Source Sans 3"
+          },
+          "fontSize": {
+            "signal": "width < 600 ? 11 : 14"
+          },
+          "fill": {
+            "value": "#19374b"
+          },
+          "x": {
+            "field": "label_x"
+          },
+          "y": {
+            "field": "label_y"
+          },
+          "text": {
+            "field": "label_text"
+          },
+          "align": {
+            "field": "label_align"
+          },
+          "baseline": {
+            "value": "middle"
+          },
+          "fontWeight": {
+            "value": 600
+          },
+          "tooltip": {
+            "signal": "{'From': 'Malaysia', 'Destination': datum.country, 'Year': datum.year, 'Embodied emissions (Mt CO2e)': format(datum.emissions_mt_co2e, '.3f'), 'Share of export-linked emissions (%)': format(datum.export_share_pct, '.1f')}"
+          },
+          "opacity": {
+            "signal": "!hoverPartner || hoverPartner === datum.importer ? 1 : 0.3"
+          }
+        }
+      }
+    },
+    {
+      "name": "malaysia_outline",
+      "type": "shape",
+      "from": {
+        "data": "malaysia_boundary"
+      },
+      "interactive": false,
+      "transform": [
+        {
+          "type": "geoshape",
+          "projection": "trade_projection"
+        }
+      ],
+      "encode": {
+        "update": {
+          "fill": {
+            "value": null
+          },
+          "stroke": {
+            "value": "#a84420"
+          },
+          "strokeWidth": {
+            "value": 1.1
+          }
+        }
+      }
+    },
+    {
+      "name": "origin_marker",
+      "type": "symbol",
+      "from": {
+        "data": "origin"
+      },
+      "encode": {
+        "update": {
+          "x": {
+            "field": "x"
+          },
+          "y": {
+            "field": "y"
+          },
+          "size": {
+            "value": 170
+          },
+          "fill": {
+            "value": "#a84420"
+          },
+          "stroke": {
+            "value": "white"
+          },
+          "strokeWidth": {
+            "value": 2
+          },
+          "tooltip": {
+            "value": {
+              "Country": "Malaysia",
+              "Role": "Export origin"
+            }
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "interactive": false,
+      "encode": {
+        "update": {
+          "font": {
+            "value": "Source Sans 3"
+          },
+          "fontSize": {
+            "value": 12
+          },
+          "fill": {
+            "value": "#19374b"
+          },
+          "x": {
+            "value": 12
+          },
+          "y": {
+            "signal": "mainHeight - 48"
+          },
+          "text": {
+            "value": "Emissions in exports (Mt CO2e)"
+          },
+          "fontWeight": {
+            "value": "bold"
+          }
+        }
+      }
+    },
+    {
+      "type": "rule",
+      "from": {
+        "data": "legend_values"
+      },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "12 + datum.index * 92"
+          },
+          "x2": {
+            "signal": "48 + datum.index * 92"
+          },
+          "y": {
+            "signal": "mainHeight - 25"
+          },
+          "stroke": {
+            "value": "#24485f"
+          },
+          "strokeWidth": {
+            "scale": "flow_width",
+            "field": "value"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "legend_values"
+      },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "font": {
+            "value": "Source Sans 3"
+          },
+          "fontSize": {
+            "value": 12
+          },
+          "fill": {
+            "value": "#19374b"
+          },
+          "x": {
+            "signal": "56 + datum.index * 92"
+          },
+          "y": {
+            "signal": "mainHeight - 25"
+          },
+          "text": {
+            "field": "value"
+          },
+          "baseline": {
+            "value": "middle"
+          }
+        }
+      }
+    },
+    {
+      "name": "southeast_asia_closeup",
+      "type": "group",
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "insetX"
+          },
+          "y": {
+            "signal": "insetY"
+          },
+          "width": {
+            "signal": "insetWidth"
+          },
+          "height": {
+            "signal": "insetHeight"
+          }
+        }
+      },
+      "marks": [
+        {
+          "type": "rect",
+          "interactive": false,
+          "encode": {
+            "update": {
+              "x": {
+                "value": 0
+              },
+              "y": {
+                "value": 0
+              },
+              "width": {
+                "signal": "insetWidth"
+              },
+              "height": {
+                "signal": "insetHeight"
+              },
+              "fill": {
+                "value": "white"
+              },
+              "stroke": {
+                "value": "#b8cbd4"
+              },
+              "strokeWidth": {
+                "value": 1
+              },
+              "cornerRadius": {
+                "value": 4
+              }
+            }
+          }
+        },
+        {
+          "type": "text",
+          "interactive": false,
+          "encode": {
+            "update": {
+              "font": {
+                "value": "Source Sans 3"
+              },
+              "fontSize": {
+                "value": 14
+              },
+              "fill": {
+                "value": "#19374b"
+              },
+              "x": {
+                "value": 14
+              },
+              "y": {
+                "value": 21
+              },
+              "text": {
+                "value": "Southeast Asia - close-up"
+              },
+              "fontWeight": {
+                "value": "bold"
+              }
+            }
+          }
+        },
+        {
+          "type": "text",
+          "interactive": false,
+          "encode": {
+            "update": {
+              "font": {
+                "value": "Source Sans 3"
+              },
+              "fontSize": {
+                "value": 11
+              },
+              "fill": {
+                "value": "#567080"
+              },
+              "x": {
+                "value": 14
+              },
+              "y": {
+                "value": 40
+              },
+              "text": {
+                "value": "Same destinations and line-width scale"
+              }
+            }
+          }
+        },
+        {
+          "type": "shape",
+          "from": {
+            "data": "world"
+          },
+          "interactive": false,
+          "transform": [
+            {
+              "type": "geoshape",
+              "projection": "inset_projection"
+            }
+          ],
+          "encode": {
+            "update": {
+              "fill": {
+                "value": "#edf1f3"
+              },
+              "stroke": {
+                "value": "white"
+              },
+              "strokeWidth": {
+                "value": 0.7
+              }
+            }
+          }
+        },
+        {
+          "type": "shape",
+          "from": {
+            "data": "highlighted"
+          },
+          "interactive": false,
+          "transform": [
+            {
+              "type": "geoshape",
+              "projection": "inset_projection"
+            }
+          ],
+          "encode": {
+            "update": {
+              "fill": {
+                "signal": "datum.properties.country_code === 'MYS' ? '#f0d2c4' : '#d4e1eb'"
+              },
+              "stroke": {
+                "value": "white"
+              },
+              "strokeWidth": {
+                "value": 0.7
+              }
+            }
+          }
+        },
+        {
+          "name": "inset_casings",
+          "type": "path",
+          "from": {
+            "data": "nearby_flows"
+          },
+          "sort": {
+            "field": "datum.emissions_mt_co2e",
+            "order": "descending"
+          },
+          "encode": {
+            "update": {
+              "path": {
+                "field": "inset_flow_path"
+              },
+              "fill": {
+                "value": null
+              },
+              "stroke": {
+                "value": "white"
+              },
+              "strokeWidth": {
+                "signal": "scale('flow_width', datum.emissions_mt_co2e) + 2.5"
+              },
+              "strokeCap": {
+                "value": "round"
+              },
+              "opacity": {
+                "signal": "!hoverPartner || hoverPartner === datum.importer ? 0.96 : 0.12"
+              }
+            }
+          },
+          "interactive": false
+        },
+        {
+          "name": "inset_routes",
+          "type": "path",
+          "from": {
+            "data": "nearby_flows"
+          },
+          "sort": {
+            "field": "datum.emissions_mt_co2e",
+            "order": "descending"
+          },
+          "encode": {
+            "update": {
+              "path": {
+                "field": "inset_flow_path"
+              },
+              "fill": {
+                "value": null
+              },
+              "stroke": {
+                "value": "#24485f"
+              },
+              "strokeWidth": {
+                "scale": "flow_width",
+                "field": "emissions_mt_co2e"
+              },
+              "strokeCap": {
+                "value": "round"
+              },
+              "opacity": {
+                "signal": "!hoverPartner || hoverPartner === datum.importer ? 0.96 : 0.12"
+              },
+              "tooltip": {
+                "signal": "{'From': 'Malaysia', 'Destination': datum.country, 'Year': datum.year, 'Embodied emissions (Mt CO2e)': format(datum.emissions_mt_co2e, '.3f'), 'Share of export-linked emissions (%)': format(datum.export_share_pct, '.1f')}"
+              }
+            }
+          }
+        },
+        {
+          "name": "inset_arrows",
+          "type": "path",
+          "from": {
+            "data": "nearby_flows"
+          },
+          "encode": {
+            "update": {
+              "path": {
+                "field": "inset_arrow_path"
+              },
+              "fill": {
+                "value": "#24485f"
+              },
+              "opacity": {
+                "signal": "!hoverPartner || hoverPartner === datum.importer ? 0.96 : 0.12"
+              },
+              "tooltip": {
+                "signal": "{'From': 'Malaysia', 'Destination': datum.country, 'Year': datum.year, 'Embodied emissions (Mt CO2e)': format(datum.emissions_mt_co2e, '.3f'), 'Share of export-linked emissions (%)': format(datum.export_share_pct, '.1f')}"
+              }
+            }
+          }
+        },
+        {
+          "name": "inset_label_leaders",
+          "type": "rule",
+          "from": {
+            "data": "nearby_flows"
+          },
+          "interactive": false,
+          "encode": {
+            "update": {
+              "x": {
+                "field": "inset_target_x"
+              },
+              "y": {
+                "field": "inset_target_y"
+              },
+              "x2": {
+                "field": "inset_label_x"
+              },
+              "y2": {
+                "field": "inset_label_y"
+              },
+              "stroke": {
+                "value": "#9bafbd"
+              },
+              "strokeWidth": {
+                "value": 0.6
+              }
+            }
+          }
+        },
+        {
+          "name": "inset_label_halos",
+          "type": "text",
+          "from": {
+            "data": "nearby_flows"
+          },
+          "encode": {
+            "update": {
+              "font": {
+                "value": "Source Sans 3"
+              },
+              "fontSize": {
+                "value": 12
+              },
+              "fill": {
+                "value": "white"
+              },
+              "x": {
+                "field": "inset_label_x"
+              },
+              "y": {
+                "field": "inset_label_y"
+              },
+              "text": {
+                "field": "inset_label_text"
+              },
+              "align": {
+                "signal": "datum.importer === 'VNM' ? 'left' : 'right'"
+              },
+              "baseline": {
+                "value": "middle"
+              },
+              "fontWeight": {
+                "value": 600
+              },
+              "opacity": {
+                "signal": "!hoverPartner || hoverPartner === datum.importer ? 1 : 0.3"
+              },
+              "stroke": {
+                "value": "white"
+              },
+              "strokeWidth": {
+                "value": 3
+              }
+            }
+          },
+          "interactive": false
+        },
+        {
+          "name": "inset_labels",
+          "type": "text",
+          "from": {
+            "data": "nearby_flows"
+          },
+          "encode": {
+            "update": {
+              "font": {
+                "value": "Source Sans 3"
+              },
+              "fontSize": {
+                "value": 12
+              },
+              "fill": {
+                "value": "#19374b"
+              },
+              "x": {
+                "field": "inset_label_x"
+              },
+              "y": {
+                "field": "inset_label_y"
+              },
+              "text": {
+                "field": "inset_label_text"
+              },
+              "align": {
+                "signal": "datum.importer === 'VNM' ? 'left' : 'right'"
+              },
+              "baseline": {
+                "value": "middle"
+              },
+              "fontWeight": {
+                "value": 600
+              },
+              "opacity": {
+                "signal": "!hoverPartner || hoverPartner === datum.importer ? 1 : 0.3"
+              },
+              "tooltip": {
+                "signal": "{'From': 'Malaysia', 'Destination': datum.country, 'Year': datum.year, 'Embodied emissions (Mt CO2e)': format(datum.emissions_mt_co2e, '.3f'), 'Share of export-linked emissions (%)': format(datum.export_share_pct, '.1f')}"
+              }
+            }
+          }
+        },
+        {
+          "name": "inset_origin_marker",
+          "type": "symbol",
+          "from": {
+            "data": "inset_origin"
+          },
+          "encode": {
+            "update": {
+              "x": {
+                "field": "x"
+              },
+              "y": {
+                "field": "y"
+              },
+              "size": {
+                "value": 90
+              },
+              "fill": {
+                "value": "#a84420"
+              },
+              "stroke": {
+                "value": "white"
+              },
+              "strokeWidth": {
+                "value": 1.5
+              },
+              "tooltip": {
+                "value": {
+                  "Country": "Malaysia",
+                  "Role": "Same export origin, enlarged"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "inset_origin_label",
+          "type": "text",
+          "from": {
+            "data": "inset_origin"
+          },
+          "encode": {
+            "update": {
+              "font": {
+                "value": "Source Sans 3"
+              },
+              "fontSize": {
+                "value": 12
+              },
+              "fill": {
+                "value": "#a84420"
+              },
+              "x": {
+                "signal": "datum.x + 8"
+              },
+              "y": {
+                "signal": "datum.y + 13"
+              },
+              "text": {
+                "value": "Malaysia"
+              },
+              "fontWeight": {
+                "value": "bold"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "usermeta": {
+    "chart_number": 12,
+    "sources": [
+      "OECD Greenhouse Gas Footprints, 2025 edition",
+      "Natural Earth",
+      "Existing country reference coordinates"
+    ],
+    "data_year": 2022,
+    "retrieved": "2026-10-22",
+    "source_url": "https://www.oecd.org/en/data/datasets/greenhouse-gas-footprint-indicators.html",
+    "data_url": "https://sdmx.oecd.org/public/rest/v1/data/OECD.STI.PIE,DSD_ICIO_GHG_TRADE_2025@DF_ICIO_GHG_TRADE_2025,1.0/A.TRADE_GHG.MYS.._T.TTL.T_CO2E?startPeriod=2020&format=csvfile",
+    "selection": {
+      "EXPORTER": "MYS",
+      "ACTIVITY": "_T",
+      "PRODUCT_CATEGORY": "TTL",
+      "TIME_PERIOD": 2022,
+      "partners": "Ten largest individual destinations by OBS_VALUE; excludes World, Malaysia and rest-of-world aggregate."
+    },
+    "units": "Source UNIT_MEASURE=T_CO2E and UNIT_MULT=6: observations are already in million tonnes CO2-equivalent. Values are copied without further scaling.",
+    "malaysia_export_total_mt_co2e": 206.097,
+    "definition": "Gross exports include intermediate and final goods and services and their upstream emissions, which can originate in Malaysia or abroad. Importer is the direct trade partner, not necessarily the final consumer. Values are not a territorial inventory or transport-only emissions.",
+    "specification_file": "charts/12_malaysia_trade_flow.vg.json",
+    "top_ten_mt_co2e": 147.366,
+    "top_ten_share_pct": 71.50322420995938,
+    "latest_year_checked": "2026-10-22: current 2025-edition Malaysia observations end in 2022.",
+    "map_view": "Focused on Asia-Pacific and the United States to make nearby destinations easier to distinguish. Curve positions are schematic trade links.",
+    "closeup": "Four of the same ten flows (Singapore, Thailand, Viet Nam and Indonesia), enlarged with a second projection and the same line-width scale. Not additional emissions.",
+    "dataset_last_updated": "2026-04-29",
+    "dataset_update_source": "https://data-explorer.oecd.org/vis?df[ag]=OECD.STI.PIE&df[ds]=dsDisseminateFinalDMZ&df[id]=DSD_ICIO_GHG_TRADE_2025@DF_ICIO_GHG_TRADE_2025&df[vs]=1.0"
+  }
+}

@@ -9,7 +9,8 @@ const charts = [
   "08_sector_heatmap",
   "09_income_scatter",
   "10_malaysia_waterfall",
-  "11_regional_cartogram"
+  "11_regional_cartogram",
+  "12_malaysia_trade_flow"
 ];
 
 const views = {};
@@ -76,6 +77,9 @@ function fitChart(id, element) {
   }
   if (id === "11_regional_cartogram") {
     view.height(width < 430 ? 390 : 445);
+  }
+  if (id === "12_malaysia_trade_flow") {
+    view.height(width < 500 ? 670 : width < 760 ? 730 : 540);
   }
   return view.runAsync();
 }

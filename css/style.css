@@ -381,7 +381,7 @@ figcaption{
   color:var(--orange)
 }
 
-.key{
+.page .key{
   display:flex;
   gap:18px;
   align-items:center;
@@ -472,6 +472,15 @@ figcaption{
 
 .vg-tooltip{
   font:13px 'Source Sans 3',Arial,sans-serif!important
+}
+
+/* Keep tooltip labels and values in two aligned columns. */
+#vg-tooltip-element.vg-tooltip table tr td.key,
+#vg-tooltip-element.vg-tooltip table tr td.value{
+  display:table-cell;
+  text-align:left;
+  vertical-align:top;
+  padding:3px 6px
 }
 
 #load-status{
