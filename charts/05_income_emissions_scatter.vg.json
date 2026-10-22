@@ -5,7 +5,7 @@
   "autosize": {
     "type": "fit-x",
     "contains": "padding",
-    "resize": true
+    "resize": false
   },
   "padding": 8,
   "config": {
@@ -122,6 +122,10 @@
           "field": "population",
           "type": "quantitative",
           "scale": {
+            "domain": [
+              0,
+              1500000000
+            ],
             "range": [
               20,
               1600
