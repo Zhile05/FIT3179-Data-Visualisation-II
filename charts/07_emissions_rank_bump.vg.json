@@ -35,7 +35,7 @@
   },
   "description": "Global emission ranks of seven major emitters at selected years. Ranks are computed across all EDGAR country entries.",
   "data": {
-    "url": "data/country_ranks.csv",
+    "url": "data/emissions_ranks.csv",
     "format": {
       "type": "csv",
       "parse": {
@@ -257,6 +257,6 @@
       "EDGAR 2026"
     ],
     "data_year": 2025,
-    "specification_file": "charts/07_rank_bump.vg.json"
+    "specification_file": "charts/07_emissions_rank_bump.vg.json"
   }
 }

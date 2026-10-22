@@ -34,7 +34,7 @@
   "data": [
     {
       "name": "countries",
-      "url": "data/region_cartogram.csv",
+      "url": "data/southeast_asia_emissions.csv",
       "format": {
         "type": "csv",
         "parse": {
@@ -248,6 +248,6 @@
     ],
     "data_year": 2025,
     "map_idiom": "Dorling cartogram",
-    "specification_file": "js/11_regional_cartogram.vg.json"
+    "specification_file": "charts/11_southeast_asia_cartogram.vg.json"
   }
 }

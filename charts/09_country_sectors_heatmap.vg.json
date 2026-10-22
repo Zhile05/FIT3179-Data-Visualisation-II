@@ -40,7 +40,7 @@
   },
   "description": "Sector shares of national emissions in eight selected economies, 2025. Each country row represents 100 percent.",
   "data": {
-    "url": "data/sector_heatmap.csv",
+    "url": "data/country_sector_emissions.csv",
     "format": {
       "type": "csv",
       "parse": {
@@ -252,6 +252,6 @@
       "EDGAR 2026"
     ],
     "data_year": 2025,
-    "specification_file": "charts/09_sector_heatmap.vg.json"
+    "specification_file": "charts/09_country_sectors_heatmap.vg.json"
   }
 }

@@ -13,7 +13,7 @@
   "data": [
     {
       "name": "sector_tree",
-      "url": "data/sector_tree.json"
+      "url": "data/global_sector_emissions.json"
     },
     {
       "name": "tree_layout",
@@ -239,6 +239,6 @@
       "EDGAR 2026"
     ],
     "data_year": 2025,
-    "specification_file": "charts/08_sector_treemap.vg.json"
+    "specification_file": "charts/08_global_sectors_treemap.vg.json"
   }
 }

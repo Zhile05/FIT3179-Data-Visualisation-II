@@ -182,15 +182,15 @@
   "data": [
     {
       "name": "world",
-      "url": "data/geography.json"
+      "url": "data/world_boundaries.json"
     },
     {
       "name": "metadata",
-      "url": "data/country_metadata.json"
+      "url": "data/country_info.json"
     },
     {
       "name": "flows",
-      "url": "data/malaysia_trade_flows.csv",
+      "url": "data/malaysia_export_emissions.csv",
       "format": {
         "type": "csv",
         "parse": {
@@ -1531,7 +1531,7 @@
     "units": "Source UNIT_MEASURE=T_CO2E and UNIT_MULT=6: observations are already in million tonnes CO2-equivalent. Values are copied without further scaling.",
     "malaysia_export_total_mt_co2e": 206.097,
     "definition": "Gross exports include intermediate and final goods and services and their upstream emissions, which can originate in Malaysia or abroad. Importer is the direct trade partner, not necessarily the final consumer. Values are not a territorial inventory or transport-only emissions.",
-    "specification_file": "charts/12_malaysia_trade_flow.vg.json",
+    "specification_file": "charts/12_malaysia_exports_flow.vg.json",
     "top_ten_mt_co2e": 147.366,
     "top_ten_share_pct": 71.50322420995938,
     "latest_year_checked": "2026-10-22: current 2025-edition Malaysia observations end in 2022.",

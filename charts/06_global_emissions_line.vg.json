@@ -37,7 +37,7 @@
   "layer": [
     {
       "data": {
-        "url": "data/global_trend.csv",
+        "url": "data/global_emissions.csv",
         "format": {
           "type": "csv",
           "parse": {
@@ -87,7 +87,7 @@
     },
     {
       "data": {
-        "url": "data/global_trend.csv",
+        "url": "data/global_emissions.csv",
         "format": {
           "type": "csv",
           "parse": {
@@ -238,7 +238,7 @@
     },
     {
       "data": {
-        "url": "data/global_trend.csv",
+        "url": "data/global_emissions.csv",
         "format": {
           "type": "csv",
           "parse": {
@@ -299,6 +299,6 @@
       "EDGAR 2026"
     ],
     "data_year": 2025,
-    "specification_file": "charts/06_global_trend.vg.json"
+    "specification_file": "charts/06_global_emissions_line.vg.json"
   }
 }

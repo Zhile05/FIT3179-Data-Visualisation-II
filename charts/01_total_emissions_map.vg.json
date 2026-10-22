@@ -40,7 +40,7 @@
   "layer": [
     {
       "data": {
-        "url": "data/geography.json"
+        "url": "data/world_boundaries.json"
       },
       "mark": {
         "type": "geoshape",
@@ -51,7 +51,7 @@
     },
     {
       "data": {
-        "url": "data/country_history.csv",
+        "url": "data/country_emissions.csv",
         "format": {
           "type": "csv",
           "parse": {
@@ -70,7 +70,7 @@
           "lookup": "country_code",
           "from": {
             "data": {
-              "url": "data/country_metadata.json"
+              "url": "data/country_info.json"
             },
             "key": "country_code",
             "fields": [
@@ -172,7 +172,7 @@
     },
     {
       "data": {
-        "url": "data/country_history.csv",
+        "url": "data/country_emissions.csv",
         "format": {
           "type": "csv",
           "parse": {
@@ -191,7 +191,7 @@
           "lookup": "country_code",
           "from": {
             "data": {
-              "url": "data/country_metadata.json"
+              "url": "data/country_info.json"
             },
             "key": "country_code",
             "fields": [
@@ -235,7 +235,7 @@
       "EDGAR 2026"
     ],
     "data_year": 2025,
-    "specification_file": "js/01_total_map.vg.json"
+    "specification_file": "charts/01_total_emissions_map.vg.json"
   },
   "params": [
     {

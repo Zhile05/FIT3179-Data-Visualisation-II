@@ -35,7 +35,7 @@
   },
   "description": "Ten largest EDGAR country reporting areas, ordered by annual greenhouse gas emissions.",
   "data": {
-    "url": "data/country_history.csv",
+    "url": "data/country_emissions.csv",
     "format": {
       "type": "csv",
       "parse": {
@@ -54,7 +54,7 @@
       "lookup": "country_code",
       "from": {
         "data": {
-          "url": "data/country_metadata.json"
+          "url": "data/country_info.json"
         },
         "key": "country_code",
         "fields": [
@@ -211,7 +211,7 @@
       "EDGAR 2026"
     ],
     "data_year": 2025,
-    "specification_file": "js/02_top_emitters.vg.json"
+    "specification_file": "charts/02_top10_emitters_bar.vg.json"
   },
   "params": [
     {

@@ -35,7 +35,7 @@
   },
   "description": "Malaysia emission growth from 1990 to 2025, decomposed into changes in eight sectors.",
   "data": {
-    "url": "data/malaysia_waterfall.csv",
+    "url": "data/malaysia_sector_changes.csv",
     "format": {
       "type": "csv",
       "parse": {
@@ -167,6 +167,6 @@
       "EDGAR 2026"
     ],
     "data_year": 2025,
-    "specification_file": "js/10_malaysia_waterfall.vg.json"
+    "specification_file": "charts/10_malaysia_sectors_waterfall.vg.json"
   }
 }

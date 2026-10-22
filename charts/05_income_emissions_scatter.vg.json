@@ -41,7 +41,7 @@
   },
   "description": "GDP per person and greenhouse gas emissions per person, using EDGAR and World Bank data for the same year. Bubble area shows population.",
   "data": {
-    "url": "data/income_scatter.csv",
+    "url": "data/income_emissions.csv",
     "format": {
       "type": "csv",
       "parse": {
@@ -259,6 +259,6 @@
       "World Bank WDI"
     ],
     "data_year": 2025,
-    "specification_file": "charts/05_income_scatter.vg.json"
+    "specification_file": "charts/05_income_emissions_scatter.vg.json"
   }
 }

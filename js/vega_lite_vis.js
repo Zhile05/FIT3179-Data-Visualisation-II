@@ -1,23 +1,23 @@
 const charts = [
-  "01_total_map",
-  "02_top_emitters",
-  "03_percap_map",
-  "04_percap_dumbbell",
-  "05_income_scatter",
-  "06_global_trend",
-  "07_rank_bump",
-  "08_sector_treemap",
-  "09_sector_heatmap",
-  "10_malaysia_waterfall",
-  "11_regional_cartogram",
-  "12_malaysia_trade_flow"
+  "01_total_emissions_map",
+  "02_top10_emitters_bar",
+  "03_per_person_map",
+  "04_per_person_dumbbell",
+  "05_income_emissions_scatter",
+  "06_global_emissions_line",
+  "07_emissions_rank_bump",
+  "08_global_sectors_treemap",
+  "09_country_sectors_heatmap",
+  "10_malaysia_sectors_waterfall",
+  "11_southeast_asia_cartogram",
+  "12_malaysia_exports_flow"
 ];
 
 const views = {};
 const chartWidths = {};
 const embedOptions = { renderer: "svg", actions: false, tooltip: true };
-const yearCharts = ["01_total_map", "02_top_emitters", "03_percap_map"];
-const worldMaps = ["01_total_map", "03_percap_map"];
+const yearCharts = ["01_total_emissions_map", "02_top10_emitters_bar", "03_per_person_map"];
+const worldMaps = ["01_total_emissions_map", "03_per_person_map"];
 
 // Display numbers without thousands separators.
 function number(value, digits = 1) {
@@ -29,8 +29,8 @@ function number(value, digits = 1) {
 }
 
 // Vega's CSV reader uses the same file that is referenced by the chart JSON.
-async function loadHistory() {
-  const csvText = await vega.loader().load("data/country_history.csv");
+async function loadCountryEmissions() {
+  const csvText = await vega.loader().load("data/country_emissions.csv");
   return vega.read(csvText, {
     type: "csv",
     parse: {
@@ -42,8 +42,8 @@ async function loadHistory() {
   });
 }
 
-function updateStory(year, history) {
-  const rows = history.filter(row => row.year === year);
+function updateStory(year, countryEmissions) {
+  const rows = countryEmissions.filter(row => row.year === year);
   const world = rows.find(row => row.country_code === "GLOBAL TOTAL");
   const malaysia = rows.find(row => row.country_code === "MYS");
   const ranked = rows.filter(row => row.country_code !== "GLOBAL TOTAL")
@@ -75,10 +75,10 @@ function fitChart(id, element) {
   if (worldMaps.includes(id)) {
     view.height(Math.max(260, Math.min(400, Math.round(width * 0.48 + 50))));
   }
-  if (id === "11_regional_cartogram") {
+  if (id === "11_southeast_asia_cartogram") {
     view.height(width < 430 ? 390 : 445);
   }
-  if (id === "12_malaysia_trade_flow") {
+  if (id === "12_malaysia_exports_flow") {
     view.height(width < 500 ? 670 : width < 760 ? 730 : 540);
   }
   return view.runAsync();
@@ -122,7 +122,7 @@ function drawCharts() {
   });
 }
 
-function enableYearSlider(history) {
+function enableYearSlider(countryEmissions) {
   const slider = document.getElementById("map-year");
   let timer;
   slider.disabled = false;
@@ -135,7 +135,7 @@ function enableYearSlider(history) {
         await Promise.all(yearCharts.map(id => views[id]
           ? views[id].signal("selectedYear", year).runAsync()
           : Promise.resolve()));
-        updateStory(year, history);
+        updateStory(year, countryEmissions);
       } catch (error) {
         console.error("Year selection", error);
       }
@@ -170,9 +170,9 @@ async function initialise() {
       await Promise.all([400, 600, 700].map(weight =>
         document.fonts.load(weight + ' 14px "Source Sans 3"')));
     }
-    const [failures, history] = await Promise.all([drawCharts(), loadHistory()]);
-    updateStory(2025, history);
-    enableYearSlider(history);
+    const [failures, countryEmissions] = await Promise.all([drawCharts(), loadCountryEmissions()]);
+    updateStory(2025, countryEmissions);
+    enableYearSlider(countryEmissions);
     enableResponsiveCharts();
     status.textContent = failures ? "Some charts could not load. Check the project files." : "";
   } catch (error) {

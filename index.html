@@ -92,7 +92,7 @@
             </h3>
             <p class="chart-subtitle">Circle area represents annual emissions. Hover over a circle for the country total.</p>
             <div class="map-layout">
-              <div class="chart map" id="chart-01_total_map" aria-label="World map of country greenhouse gas totals">
+              <div class="chart map" id="chart-01_total_emissions_map" aria-label="World map of country greenhouse gas totals">
                 <p class="loading-text">Loading map…</p>
               </div>
               <aside class="map-story">
@@ -119,7 +119,7 @@
             <h3>The ten largest country totals <span data-map-year>2025</span>
             </h3>
             <p class="chart-subtitle">Country reporting areas, ordered from largest to smallest.</p>
-            <div class="chart" id="chart-02_top_emitters" aria-label="Top ten emitters">
+            <div class="chart" id="chart-02_top10_emitters_bar" aria-label="Top ten emitters">
             </div>
             <figcaption>These ten reporting areas contribute <strong id="selected-top10">65.6%</strong> of the global total. Regional and global aggregates are excluded from the country ranking.<span class="caption-source">Source: EDGAR 2026. 1 Gt = 1000 Mt.</span>
             </figcaption>
@@ -153,7 +153,7 @@
             </h3>
             <p class="chart-subtitle">Darker shades represent higher emissions per person. The year selector above also updates this map.</p>
             <div class="map-layout">
-              <div class="chart map" id="chart-03_percap_map" aria-label="World map of greenhouse gas emissions per person">
+              <div class="chart map" id="chart-03_per_person_map" aria-label="World map of greenhouse gas emissions per person">
               </div>
               <aside class="map-story">
                 <div class="map-block">
@@ -186,7 +186,7 @@
                 <i class="dot current-dot">
                 </i>2025</span>
             </div>
-            <div class="chart" id="chart-04_percap_dumbbell" aria-label="Change in per person greenhouse gas emissions">
+            <div class="chart" id="chart-04_per_person_dumbbell" aria-label="Change in per person greenhouse gas emissions">
             </div>
             <figcaption>Lines connect each country's 1990 and 2025 values. The selected countries illustrate differences, rather than development-group averages.<span class="caption-source">Sources: EDGAR 2026 and IMF WEO October 2026 classification.</span>
             </figcaption>
@@ -206,7 +206,7 @@
             <span class="figure-label">Figure 5 - Bubble scatterplot</span>
             <h3>Income, population and emissions together</h3>
             <p class="chart-subtitle">170 matched economies in 2025. Symbol area shows population; shapes identify income groups.</p>
-            <div class="chart" id="chart-05_income_scatter" aria-label="GDP per person compared with emissions per person">
+            <div class="chart" id="chart-05_income_emissions_scatter" aria-label="GDP per person compared with emissions per person">
             </div>
             <figcaption>Each labelled step right represents a tenfold increase in GDP per person. Use the dropdown to compare income groups. Malaysia is outlined in orange.<span class="caption-source">Sources: EDGAR 2026 and World Bank WDI, same-year records. Income labels follow World Bank classification.</span>
             </figcaption>
@@ -230,7 +230,7 @@
             <span class="figure-label">Figure 6 - Line chart</span>
             <h3>The long-term global trend</h3>
             <p class="chart-subtitle">Annual greenhouse gas emissions, 1990-2025.</p>
-            <div class="chart" id="chart-06_global_trend" aria-label="Global greenhouse gas emissions over time">
+            <div class="chart" id="chart-06_global_emissions_line" aria-label="Global greenhouse gas emissions over time">
             </div>
             <figcaption>The 2009 financial crisis and the 2020 COVID-19 disruption coincide with falls in the emissions series. The longer-term trend remains upward.<span class="caption-source">Source: EDGAR 2026, including international transport.</span>
             </figcaption>
@@ -241,7 +241,7 @@
             <span class="figure-label">Figure 7 - Bump chart</span>
             <h3>Major contributors moved through the ranking</h3>
             <p class="chart-subtitle">Seven major emitters, at selected years. Rank 1 is the largest.</p>
-            <div class="chart" id="chart-07_rank_bump" aria-label="Global ranks of major emitters over time">
+            <div class="chart" id="chart-07_emissions_rank_bump" aria-label="Global ranks of major emitters over time">
             </div>
             <figcaption>Ranks cover all EDGAR country reporting areas; only the seven largest emitters in 2025 are shown. Rank changes reflect relative position, not emissions growth alone.<span class="caption-source">Source: EDGAR 2026.</span>
             </figcaption>
@@ -265,7 +265,7 @@
             <span class="figure-label">Figure 8 - Treemap</span>
             <h3>Global emissions by sector</h3>
             <p class="chart-subtitle">Rectangle area represents the sector’s contribution in 2025. Power is highlighted.</p>
-            <div class="chart" id="chart-08_sector_treemap" aria-label="Global sector contributions to greenhouse gases">
+            <div class="chart" id="chart-08_global_sectors_treemap" aria-label="Global sector contributions to greenhouse gases">
             </div>
             <div class="sector-key" aria-label="Sector names">
               <span>Power</span>
@@ -286,7 +286,7 @@
             <span class="figure-label">Figure 9 - Heatmap</span>
             <h3>Different countries have different sector mixes</h3>
             <p class="chart-subtitle">Sector shares in four developed and four developing countries in 2025. Cells show rounded percentages.</p>
-            <div class="chart" id="chart-09_sector_heatmap" aria-label="Sector shares for eight selected countries">
+            <div class="chart" id="chart-09_country_sectors_heatmap" aria-label="Sector shares for eight selected countries">
             </div>
             <figcaption>Each row represents 100% of a country's emissions. The top four countries are developed; the bottom four are developing. These are the same countries as Figure 4. Malaysia is highlighted in orange.<span class="caption-source">Sources: EDGAR 2026 and IMF WEO October 2026. Rounded cells may not sum to exactly 100%.</span>
             </figcaption>
@@ -314,7 +314,7 @@
             <span class="figure-label">Figure 10 - Waterfall chart</span>
             <h3>What contributed to Malaysia’s emissions growth?</h3>
             <p class="chart-subtitle">From the 1990 total to the 2025 total, through sector changes.</p>
-            <div class="chart" id="chart-10_malaysia_waterfall" aria-label="Sector contributions to the growth of Malaysia emissions">
+            <div class="chart" id="chart-10_malaysia_sectors_waterfall" aria-label="Sector contributions to the growth of Malaysia emissions">
             </div>
             <figcaption>Floating bars show sector changes from 1990 to 2025, in Mt CO₂-equivalent. Dark bars show the national totals.<span class="caption-source">Source: EDGAR 2026. All sector changes reconcile with the change in the national total.</span>
             </figcaption>
@@ -326,7 +326,7 @@
             <h3>What if countries were resized by their emissions?</h3>
             <p class="chart-subtitle">Eleven Southeast Asian economies in 2025. Each country becomes a circle, with area proportional to its emissions.</p>
             <div class="map-layout">
-              <div class="chart cartogram" id="chart-11_regional_cartogram" aria-label="Dorling cartogram of greenhouse gas totals in Southeast Asia">
+              <div class="chart cartogram" id="chart-11_southeast_asia_cartogram" aria-label="Dorling cartogram of greenhouse gas totals in Southeast Asia">
               </div>
               <aside class="map-story">
                 <div class="map-block">
@@ -354,7 +354,7 @@
             <span class="figure-label">Figure 12 - Flow map</span>
             <h3>Emissions linked to Malaysia's exports</h3>
             <p class="chart-subtitle">The ten largest destinations by emissions embodied in Malaysia's exports, 2022. OECD dataset updated 29 April 2026.</p>
-            <div class="chart map" id="chart-12_malaysia_trade_flow" aria-label="Flow map of emissions embodied in Malaysia's exports to its ten largest destinations in 2022">
+            <div class="chart map" id="chart-12_malaysia_exports_flow" aria-label="Flow map of emissions embodied in Malaysia's exports to its ten largest destinations in 2022">
             </div>
             <figcaption>Arrows point from Malaysia to its export destinations. Thicker lines mean more embodied emissions; labels show Mt CO₂-equivalent. The ten destinations account for <strong>71.5%</strong> of the export-linked total. The close-up repeats four nearby destinations. Hover over a line or label to highlight its connection. Curves show trade relationships, not shipping routes.<span class="caption-source">Sources: OECD Greenhouse Gas Footprints, 2025 edition (2022 data), Natural Earth and country reference points. Includes upstream emissions in Malaysia and abroad.</span>
             </figcaption>

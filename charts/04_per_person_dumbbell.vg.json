@@ -40,7 +40,7 @@
   },
   "description": "Change in per person emissions between 1990 and 2025 for eight selected economies.",
   "data": {
-    "url": "data/percap_comparison.csv",
+    "url": "data/per_person_emissions.csv",
     "format": {
       "type": "csv",
       "parse": {
@@ -323,6 +323,6 @@
       "EDGAR 2026"
     ],
     "data_year": 2025,
-    "specification_file": "js/04_percap_dumbbell.vg.json"
+    "specification_file": "charts/04_per_person_dumbbell.vg.json"
   }
 }

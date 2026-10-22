@@ -40,7 +40,7 @@
   "layer": [
     {
       "data": {
-        "url": "data/geography.json"
+        "url": "data/world_boundaries.json"
       },
       "transform": [
         {
@@ -69,7 +69,7 @@
     },
     {
       "data": {
-        "url": "data/country_history.csv",
+        "url": "data/country_emissions.csv",
         "format": {
           "type": "csv",
           "parse": {
@@ -88,7 +88,7 @@
           "lookup": "country_code",
           "from": {
             "data": {
-              "url": "data/country_metadata.json"
+              "url": "data/country_info.json"
             },
             "key": "country_code",
             "fields": [
@@ -104,7 +104,7 @@
           "lookup": "country_code",
           "from": {
             "data": {
-              "url": "data/geography.json"
+              "url": "data/world_boundaries.json"
             },
             "key": "properties.country_code"
           },
@@ -184,7 +184,7 @@
     },
     {
       "data": {
-        "url": "data/geography.json"
+        "url": "data/world_boundaries.json"
       },
       "transform": [
         {
@@ -200,7 +200,7 @@
     },
     {
       "data": {
-        "url": "data/country_history.csv",
+        "url": "data/country_emissions.csv",
         "format": {
           "type": "csv",
           "parse": {
@@ -219,7 +219,7 @@
           "lookup": "country_code",
           "from": {
             "data": {
-              "url": "data/country_metadata.json"
+              "url": "data/country_info.json"
             },
             "key": "country_code",
             "fields": [
@@ -263,7 +263,7 @@
       "EDGAR 2026"
     ],
     "data_year": 2025,
-    "specification_file": "js/03_percap_map.vg.json"
+    "specification_file": "charts/03_per_person_map.vg.json"
   },
   "params": [
     {
