@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "description": "Greenhouse gas emissions embodied in Malaysia's gross exports to its ten largest individual destinations in 2022. Curved arrows point from Malaysia to the direct importer; line width encodes embodied emissions.",
+  "description": "Greenhouse gas emissions generated across the production chain for Malaysia's exported goods and services, including production in Malaysia and abroad, grouped by the ten export destinations linked to the largest totals in 2022. Arrows show trade links to direct buyers; thicker lines represent more emissions.",
   "width": 1000,
   "height": 450,
   "padding": 12,
@@ -759,7 +759,7 @@
             "signal": "!hoverPartner || hoverPartner === datum.importer ? 0.96 : 0.12"
           },
           "tooltip": {
-            "signal": "{'From': 'Malaysia', 'Destination': datum.country, 'Year': datum.year, 'Embodied emissions (Mt CO2e)': format(datum.emissions_mt_co2e, '.3f'), 'Share of export-linked emissions (%)': format(datum.export_share_pct, '.1f')}"
+            "signal": "{'Exporting country': 'Malaysia', 'Export destination': datum.country, 'Year': datum.year, 'Export-linked emissions (Mt CO2e)': format(datum.emissions_mt_co2e, '.3f'), 'Share of all destinations (%)': format(datum.export_share_pct, '.1f')}"
           }
         }
       }
@@ -782,7 +782,7 @@
             "signal": "!hoverPartner || hoverPartner === datum.importer ? 0.96 : 0.12"
           },
           "tooltip": {
-            "signal": "{'From': 'Malaysia', 'Destination': datum.country, 'Year': datum.year, 'Embodied emissions (Mt CO2e)': format(datum.emissions_mt_co2e, '.3f'), 'Share of export-linked emissions (%)': format(datum.export_share_pct, '.1f')}"
+            "signal": "{'Exporting country': 'Malaysia', 'Export destination': datum.country, 'Year': datum.year, 'Export-linked emissions (Mt CO2e)': format(datum.emissions_mt_co2e, '.3f'), 'Share of all destinations (%)': format(datum.export_share_pct, '.1f')}"
           }
         }
       }
@@ -907,7 +907,7 @@
             "value": 600
           },
           "tooltip": {
-            "signal": "{'From': 'Malaysia', 'Destination': datum.country, 'Year': datum.year, 'Embodied emissions (Mt CO2e)': format(datum.emissions_mt_co2e, '.3f'), 'Share of export-linked emissions (%)': format(datum.export_share_pct, '.1f')}"
+            "signal": "{'Exporting country': 'Malaysia', 'Export destination': datum.country, 'Year': datum.year, 'Export-linked emissions (Mt CO2e)': format(datum.emissions_mt_co2e, '.3f'), 'Share of all destinations (%)': format(datum.export_share_pct, '.1f')}"
           },
           "opacity": {
             "signal": "!hoverPartner || hoverPartner === datum.importer ? 1 : 0.3"
@@ -998,7 +998,7 @@
             "signal": "mainHeight - 48"
           },
           "text": {
-            "value": "Emissions in exports (Mt CO2e)"
+            "value": "Export-linked emissions (Mt CO2e)"
           },
           "fontWeight": {
             "value": "bold"
@@ -1290,7 +1290,7 @@
                 "signal": "!hoverPartner || hoverPartner === datum.importer ? 0.96 : 0.12"
               },
               "tooltip": {
-                "signal": "{'From': 'Malaysia', 'Destination': datum.country, 'Year': datum.year, 'Embodied emissions (Mt CO2e)': format(datum.emissions_mt_co2e, '.3f'), 'Share of export-linked emissions (%)': format(datum.export_share_pct, '.1f')}"
+                "signal": "{'Exporting country': 'Malaysia', 'Export destination': datum.country, 'Year': datum.year, 'Export-linked emissions (Mt CO2e)': format(datum.emissions_mt_co2e, '.3f'), 'Share of all destinations (%)': format(datum.export_share_pct, '.1f')}"
               }
             }
           }
@@ -1313,7 +1313,7 @@
                 "signal": "!hoverPartner || hoverPartner === datum.importer ? 0.96 : 0.12"
               },
               "tooltip": {
-                "signal": "{'From': 'Malaysia', 'Destination': datum.country, 'Year': datum.year, 'Embodied emissions (Mt CO2e)': format(datum.emissions_mt_co2e, '.3f'), 'Share of export-linked emissions (%)': format(datum.export_share_pct, '.1f')}"
+                "signal": "{'Exporting country': 'Malaysia', 'Export destination': datum.country, 'Year': datum.year, 'Export-linked emissions (Mt CO2e)': format(datum.emissions_mt_co2e, '.3f'), 'Share of all destinations (%)': format(datum.export_share_pct, '.1f')}"
               }
             }
           }
@@ -1435,7 +1435,7 @@
                 "signal": "!hoverPartner || hoverPartner === datum.importer ? 1 : 0.3"
               },
               "tooltip": {
-                "signal": "{'From': 'Malaysia', 'Destination': datum.country, 'Year': datum.year, 'Embodied emissions (Mt CO2e)': format(datum.emissions_mt_co2e, '.3f'), 'Share of export-linked emissions (%)': format(datum.export_share_pct, '.1f')}"
+                "signal": "{'Exporting country': 'Malaysia', 'Export destination': datum.country, 'Year': datum.year, 'Export-linked emissions (Mt CO2e)': format(datum.emissions_mt_co2e, '.3f'), 'Share of all destinations (%)': format(datum.export_share_pct, '.1f')}"
               }
             }
           }
