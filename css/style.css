@@ -226,14 +226,14 @@ h1 span{
 }
 
 .figure h3{
-  font-size:18px;
+  font-size:22px;
   line-height:1.35;
   margin:3px 0 7px;
   font-weight:600
 }
 
 .figure-label{
-  font-size:12px;
+  font-size:14px;
   color:var(--accent);
   text-transform:uppercase;
   letter-spacing:.08em;
@@ -241,9 +241,64 @@ h1 span{
 }
 
 .chart-subtitle{
-  font-size:14px;
+  font-size:16px;
   color:var(--muted);
   margin:0 0 12px
+}
+
+.scatter-header{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 215px;
+  gap:24px;
+  align-items:center;
+  padding-right:50px;
+  margin-bottom:18px
+}
+
+.scatter-heading .chart-subtitle{
+  margin-bottom:0
+}
+
+.scatter-figure .role-legend{
+  transform:translateX(var(--scatter-legend-shift,0px))
+}
+
+.scatter-filter label{
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+  gap:6px
+}
+
+.scatter-filter .vega-bind-name{
+  color:var(--muted);
+  font-size:14px;
+  font-weight:600
+}
+
+.scatter-filter select{
+  width:100%;
+  min-height:42px;
+  margin:0;
+  padding:9px 12px;
+  border:1px solid #b8cbd4;
+  border-radius:4px;
+  background:var(--paper);
+  color:var(--ink);
+  font:15px 'Source Sans 3',Arial,sans-serif;
+  cursor:pointer
+}
+
+@media(max-width:760px){
+  .scatter-header{
+    grid-template-columns:minmax(0,1fr);
+    gap:14px;
+    padding-right:0
+  }
+
+  .scatter-filter{
+    max-width:240px
+  }
 }
 
 .chart{
@@ -276,7 +331,7 @@ h1 span{
 }
 
 .map-story p{
-  font-size:14px;
+  font-size:15px;
   color:var(--muted);
   margin:0 0 16px
 }
@@ -290,7 +345,7 @@ h1 span{
 }
 
 figcaption{
-  font-size:13px;
+  font-size:14px;
   line-height:1.6;
   color:var(--muted);
   border-top:1px solid #edf1f3;
@@ -300,7 +355,7 @@ figcaption{
 
 .caption-source{
   display:block;
-  font-size:12px;
+  font-size:13px;
   margin-top:5px;
   color:#567080
 }
@@ -383,17 +438,17 @@ figcaption{
 
 .page .key{
   display:flex;
-  gap:18px;
+  gap:24px;
   align-items:center;
-  font-size:13px;
+  font-size:15px;
   margin:8px 0 8px;
   color:var(--muted)
 }
 
 .dot{
   display:inline-block;
-  width:10px;
-  height:10px;
+  width:13px;
+  height:13px;
   border-radius:50%;
   margin-right:7px;
   vertical-align:middle
@@ -412,7 +467,7 @@ figcaption{
   display:flex;
   gap:12px 16px;
   flex-wrap:wrap;
-  font-size:12px;
+  font-size:14px;
   color:var(--muted);
   margin-top:12px
 }
@@ -448,13 +503,13 @@ figcaption{
 }
 
 .vega-bindings{
-  font-size:14px;
+  font-size:15px;
   padding:10px 0 3px;
   color:var(--muted)
 }
 
 .vega-bindings select{
-  font:14px 'Source Sans 3',Arial,sans-serif;
+  font:15px 'Source Sans 3',Arial,sans-serif;
   border:1px solid #b8cbd4;
   border-radius:4px;
   background:white;
@@ -471,7 +526,7 @@ figcaption{
 }
 
 .vg-tooltip{
-  font:13px 'Source Sans 3',Arial,sans-serif!important
+  font:14px 'Source Sans 3',Arial,sans-serif!important
 }
 
 /* Keep tooltip labels and values in two aligned columns. */
@@ -766,7 +821,7 @@ p {
    
 }
 .country-code-key {
-   font-size: 13px;
+   font-size: 14px;
    margin-top: 12px;
    padding: 8px 0 0;
    

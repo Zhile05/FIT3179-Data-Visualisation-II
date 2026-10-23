@@ -202,10 +202,15 @@
           </aside>
 
           <!-- Figure 5 - Bubble scatterplot -->
-          <figure class="figure full">
-            <span class="figure-label">Figure 5 - Bubble scatterplot</span>
-            <h3>Income, population and emissions together</h3>
-            <p class="chart-subtitle">170 matched economies in 2025. Symbol area shows population; shapes identify income groups.</p>
+          <figure class="figure full scatter-figure">
+            <div class="scatter-header">
+              <div class="scatter-heading">
+                <span class="figure-label">Figure 5 - Bubble scatterplot</span>
+                <h3>Income, population and emissions together</h3>
+                <p class="chart-subtitle">170 matched economies in 2025. Symbol area shows population; shapes identify income groups.</p>
+              </div>
+              <div class="scatter-filter" id="income-filter"></div>
+            </div>
             <div class="chart" id="chart-05_income_emissions_scatter" aria-label="GDP per person compared with emissions per person">
             </div>
             <figcaption>Each labelled step right represents a tenfold increase in GDP per person. Use the dropdown to compare income groups. Malaysia is outlined in orange.<span class="caption-source">Sources: EDGAR 2026 and World Bank WDI, same-year records. Income labels follow World Bank classification.</span>
@@ -322,7 +327,7 @@
 
           <!-- Figure 11 - Dorling cartogram -->
           <figure class="figure full cartogram-figure">
-            <span class="figure-label">Figure 11 - Dorling cartogram</span>
+            <span class="figure-label">Figure 11 - Dorling cartogram (Map)</span>
             <h3>What if countries were resized by their emissions?</h3>
             <p class="chart-subtitle">Eleven Southeast Asian economies in 2025. Each country becomes a circle, with area proportional to its emissions.</p>
             <div class="map-layout">

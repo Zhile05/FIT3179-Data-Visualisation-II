@@ -1,13 +1,18 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 345,
+  "height": 380,
   "autosize": {
     "type": "fit",
     "contains": "padding",
     "resize": true
   },
-  "padding": { "left": 24, "right": 12, "top": 8, "bottom": 8 },
+  "padding": {
+    "left": 24,
+    "right": 12,
+    "top": 8,
+    "bottom": 8
+  },
   "config": {
     "background": "#ffffff",
     "font": "Source Sans 3",
@@ -15,22 +20,27 @@
       "stroke": null
     },
     "axis": {
-      "labelFontSize": 13,
-      "titleFontSize": 13,
+      "labelFontSize": 14,
+      "titleFontSize": 14,
       "labelColor": "#435968",
       "titleColor": "#435968",
       "gridColor": "#e5edf1",
       "domain": false,
-      "labelPadding": 7,
-      "titlePadding": 12
+      "labelPadding": 9,
+      "titlePadding": 14
     },
     "legend": {
       "orient": "bottom",
-      "labelFontSize": 13,
-      "titleFontSize": 13,
-      "labelLimit": 180,
+      "labelFontSize": 14,
+      "titleFontSize": 14,
+      "labelLimit": 210,
       "offset": 12,
-      "titleLimit": 300
+      "titleLimit": 340,
+      "columnPadding": 20,
+      "rowPadding": 10,
+      "labelOffset": 8,
+      "titlePadding": 10,
+      "padding": 4
     }
   },
   "description": "Ten largest EDGAR country reporting areas, ordered by annual greenhouse gas emissions.",
@@ -167,7 +177,7 @@
         "align": "left",
         "dx": 6,
         "color": "#24485f",
-        "fontSize": 12
+        "fontSize": 13
       },
       "encoding": {
         "x": {

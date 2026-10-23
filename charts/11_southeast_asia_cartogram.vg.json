@@ -63,6 +63,11 @@
           "expr": "datum.total_ghg_mt_co2e / 1358.912940661 * pow(min(width, 720) / 720, 2) * 22500"
         },
         {
+          "type": "formula",
+          "as": "label_inside",
+          "expr": "datum.symbol_area >= 3000 && length(datum.country) * 7 + 12 <= sqrt(datum.symbol_area)"
+        },
+        {
           "type": "force",
           "static": true,
           "restart": true,
@@ -71,7 +76,7 @@
             {
               "force": "collide",
               "radius": {
-                "expr": "sqrt(datum.symbol_area) / 2 + 11"
+                "expr": "sqrt(datum.symbol_area) / 2 + 16"
               },
               "iterations": 3,
               "strength": 1
@@ -174,7 +179,7 @@
             "field": "y"
           },
           "dy": {
-            "signal": "datum.symbol_area >= 3000 ? -6 : sqrt(datum.symbol_area) / 2 + 13"
+            "signal": "datum.label_inside ? -7 : sqrt(datum.symbol_area) / 2 + 16"
           },
           "text": {
             "signal": "datum.symbol_area >= 3000 ? datum.country : datum.country_code"
@@ -195,7 +200,7 @@
             "value": "bold"
           },
           "fill": {
-            "signal": "datum.symbol_area >= 3000 ? 'white' : '#19374b'"
+            "signal": "datum.label_inside ? 'white' : '#19374b'"
           }
         }
       }
@@ -215,7 +220,7 @@
             "field": "y"
           },
           "dy": {
-            "value": 14
+            "signal": "datum.label_inside ? 14 : 0"
           },
           "text": {
             "signal": "datum.symbol_area >= 3000 ? format(datum.total_ghg_mt_co2e, '.0f') + ' Mt' : ''"

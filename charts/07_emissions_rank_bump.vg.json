@@ -1,13 +1,18 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 350,
+  "height": 390,
   "autosize": {
     "type": "fit",
     "contains": "padding",
-    "resize": true
+    "resize": false
   },
-  "padding": 8,
+  "padding": {
+    "left": 8,
+    "right": 20,
+    "top": 12,
+    "bottom": 8
+  },
   "config": {
     "background": "#ffffff",
     "font": "Source Sans 3",
@@ -15,22 +20,27 @@
       "stroke": null
     },
     "axis": {
-      "labelFontSize": 13,
-      "titleFontSize": 13,
+      "labelFontSize": 14,
+      "titleFontSize": 14,
       "labelColor": "#435968",
       "titleColor": "#435968",
       "gridColor": "#e5edf1",
       "domain": false,
-      "labelPadding": 7,
-      "titlePadding": 12
+      "labelPadding": 9,
+      "titlePadding": 14
     },
     "legend": {
       "orient": "bottom",
-      "labelFontSize": 13,
-      "titleFontSize": 13,
-      "labelLimit": 180,
+      "labelFontSize": 14,
+      "titleFontSize": 14,
+      "labelLimit": 210,
       "offset": 12,
-      "titleLimit": 300
+      "titleLimit": 340,
+      "columnPadding": 20,
+      "rowPadding": 10,
+      "labelOffset": 8,
+      "titlePadding": 10,
+      "padding": 4
     }
   },
   "description": "Global emission ranks of seven major emitters at selected years. Ranks are computed across all EDGAR country entries.",
@@ -49,10 +59,10 @@
     {
       "mark": {
         "type": "line",
-        "strokeWidth": 2.5,
+        "strokeWidth": 3,
         "point": {
           "filled": true,
-          "size": 45
+          "size": 65
         }
       },
       "encoding": {
@@ -203,7 +213,7 @@
         "type": "text",
         "align": "left",
         "dx": 6,
-        "fontSize": 12,
+        "fontSize": 13,
         "color": "#19374b"
       },
       "encoding": {

@@ -21,16 +21,21 @@
       "titleColor": "#435968",
       "gridColor": "#e5edf1",
       "domain": false,
-      "labelPadding": 7,
-      "titlePadding": 12
+      "labelPadding": 9,
+      "titlePadding": 14
     },
     "legend": {
       "orient": "bottom",
       "labelFontSize": 13,
       "titleFontSize": 13,
-      "labelLimit": 180,
+      "labelLimit": 210,
       "offset": 12,
-      "titleLimit": 300
+      "titleLimit": 340,
+      "columnPadding": 20,
+      "rowPadding": 10,
+      "labelOffset": 8,
+      "titlePadding": 10,
+      "padding": 4
     }
   },
   "description": "Country greenhouse gas totals. Circle area represents emissions.",
@@ -123,7 +128,10 @@
               15000
             ],
             "format": ".0f",
-            "direction": "horizontal"
+            "direction": "horizontal",
+            "columns": {
+              "expr": "width < 460 ? 2 : 4"
+            }
           }
         },
         "color": {

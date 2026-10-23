@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   "width": 540,
-  "height": 330,
+  "height": 360,
   "padding": 2,
   "autosize": {
     "type": "fit",
@@ -153,6 +153,9 @@
           },
           "fontWeight": {
             "value": "bold"
+          },
+          "limit": {
+            "signal": "max(0, datum.x1 - datum.x0 - 20)"
           }
         }
       }

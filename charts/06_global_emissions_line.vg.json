@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 350,
+  "height": 375,
   "autosize": {
     "type": "fit",
     "contains": "padding",
@@ -21,16 +21,21 @@
       "titleColor": "#435968",
       "gridColor": "#e5edf1",
       "domain": false,
-      "labelPadding": 7,
-      "titlePadding": 12
+      "labelPadding": 9,
+      "titlePadding": 14
     },
     "legend": {
       "orient": "bottom",
       "labelFontSize": 13,
       "titleFontSize": 13,
-      "labelLimit": 180,
+      "labelLimit": 210,
       "offset": 12,
-      "titleLimit": 300
+      "titleLimit": 340,
+      "columnPadding": 20,
+      "rowPadding": 10,
+      "labelOffset": 8,
+      "titlePadding": 10,
+      "padding": 4
     }
   },
   "description": "Annual global greenhouse gas emissions from 1990 to 2025.",
@@ -99,7 +104,7 @@
       "mark": {
         "type": "line",
         "color": "#496b8a",
-        "strokeWidth": 3
+        "strokeWidth": 3.5
       },
       "encoding": {
         "x": {
@@ -256,7 +261,7 @@
         "type": "point",
         "filled": true,
         "color": "#496b8a",
-        "size": 65
+        "size": 85
       },
       "encoding": {
         "x": {

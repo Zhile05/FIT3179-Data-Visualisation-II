@@ -21,16 +21,21 @@
       "titleColor": "#435968",
       "gridColor": "#e5edf1",
       "domain": false,
-      "labelPadding": 7,
-      "titlePadding": 12
+      "labelPadding": 9,
+      "titlePadding": 14
     },
     "legend": {
       "orient": "bottom",
       "labelFontSize": 13,
       "titleFontSize": 13,
-      "labelLimit": 180,
+      "labelLimit": 210,
       "offset": 12,
-      "titleLimit": 300
+      "titleLimit": 340,
+      "columnPadding": 20,
+      "rowPadding": 10,
+      "labelOffset": 8,
+      "titlePadding": 10,
+      "padding": 4
     }
   },
   "description": "Greenhouse gas emissions per person, shaded by country reporting area.",
@@ -152,8 +157,11 @@
             "legend": {
               "title": "Annual tonnes CO₂e per person",
               "direction": "horizontal",
-              "columns": 5,
-              "symbolType": "square"
+              "columns": {
+                "expr": "width < 360 ? 3 : 5"
+              },
+              "symbolType": "square",
+              "symbolSize": 144
             }
           },
           "value": "#e7e9eb"

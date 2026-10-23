@@ -72,6 +72,18 @@ function fitChart(id, element) {
   const width = Math.max(250, Math.round(element.clientWidth));
   chartWidths[id] = width;
   view.width(width);
+  if (id === "05_income_emissions_scatter") {
+    return view.runAsync().then(() => view.resize().runAsync()).then(() => {
+      // Centre the legend boxes within the full chart, including the Y-axis space.
+      element.style.setProperty("--scatter-legend-shift", "0px");
+      const boxes = Array.from(element.querySelectorAll(".role-legend > g > .background"))
+        .map(box => box.getBoundingClientRect());
+      const chart = element.getBoundingClientRect();
+      const left = Math.min(...boxes.map(box => box.left));
+      const right = Math.max(...boxes.map(box => box.right));
+      element.style.setProperty("--scatter-legend-shift", (chart.left + chart.width / 2 - (left + right) / 2) + "px");
+    });
+  }
   if (worldMaps.includes(id)) {
     view.height(Math.max(260, Math.min(400, Math.round(width * 0.48 + 50))));
   }

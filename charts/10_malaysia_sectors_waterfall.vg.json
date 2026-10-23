@@ -1,13 +1,18 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 370,
+  "height": 410,
   "autosize": {
     "type": "fit",
     "contains": "padding",
-    "resize": true
+    "resize": false
   },
-  "padding": 8,
+  "padding": {
+    "left": 32,
+    "right": 16,
+    "top": 12,
+    "bottom": 8
+  },
   "config": {
     "background": "#ffffff",
     "font": "Source Sans 3",
@@ -15,22 +20,27 @@
       "stroke": null
     },
     "axis": {
-      "labelFontSize": 13,
-      "titleFontSize": 13,
+      "labelFontSize": 14,
+      "titleFontSize": 14,
       "labelColor": "#435968",
       "titleColor": "#435968",
       "gridColor": "#e5edf1",
       "domain": false,
-      "labelPadding": 7,
-      "titlePadding": 12
+      "labelPadding": 9,
+      "titlePadding": 14
     },
     "legend": {
       "orient": "bottom",
-      "labelFontSize": 13,
-      "titleFontSize": 13,
-      "labelLimit": 180,
+      "labelFontSize": 14,
+      "titleFontSize": 14,
+      "labelLimit": 210,
       "offset": 12,
-      "titleLimit": 300
+      "titleLimit": 340,
+      "columnPadding": 20,
+      "rowPadding": 10,
+      "labelOffset": 8,
+      "titlePadding": 10,
+      "padding": 4
     }
   },
   "description": "Malaysia emission growth from 1990 to 2025, decomposed into changes in eight sectors.",
@@ -50,7 +60,7 @@
     {
       "mark": {
         "type": "bar",
-        "size": 19,
+        "size": 23,
         "cornerRadius": 2
       },
       "encoding": {
@@ -61,8 +71,9 @@
           "scale": {
             "domain": [
               0,
-              421.60143470718754
-            ]
+              370
+            ],
+            "nice": false
           },
           "axis": {
             "tickCount": 5,
@@ -82,7 +93,7 @@
           "title": null,
           "axis": {
             "grid": false,
-            "labelLimit": 125
+            "labelLimit": 150
           }
         },
         "color": {
@@ -101,7 +112,11 @@
             ]
           },
           "legend": {
-            "title": null
+            "title": null,
+            "symbolSize": 144,
+            "columns": {
+              "expr": "width < 400 ? 2 : 3"
+            }
           }
         },
         "tooltip": [
@@ -123,7 +138,7 @@
         "type": "text",
         "align": "left",
         "dx": 6,
-        "fontSize": 12,
+        "fontSize": 13,
         "color": "#24485f"
       },
       "encoding": {
@@ -134,8 +149,9 @@
           "scale": {
             "domain": [
               0,
-              421.60143470718754
-            ]
+              370
+            ],
+            "nice": false
           },
           "axis": {
             "tickCount": 5,
@@ -152,7 +168,7 @@
           "title": null,
           "axis": {
             "grid": false,
-            "labelLimit": 125
+            "labelLimit": 150
           }
         },
         "text": {
