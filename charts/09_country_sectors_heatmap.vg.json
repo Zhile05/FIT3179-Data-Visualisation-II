@@ -127,10 +127,7 @@
             ]
           },
           "legend": {
-            "title": [
-              "Share of country",
-              "emissions (%)"
-            ],
+            "title": "Share of country emissions (%)",
             "direction": "horizontal",
             "gradientLength": {
               "expr": "min(200, max(100, width - 20))"

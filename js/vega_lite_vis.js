@@ -108,7 +108,6 @@ function embedChart(id) {
       return fitChart(id, container);
     })
     .then(function() {
-      container.setAttribute("data-ready", "true");
       return 0;
     })
     .catch(function(error) {
@@ -177,7 +176,7 @@ async function initialise() {
     return;
   }
   try {
-    // Load the local sans-serif font before Vega measures labels and legends.
+    // Load chart fonts before Vega measures labels and legends.
     if (document.fonts) {
       await Promise.all([400, 600, 700].map(weight =>
         document.fonts.load(weight + ' 14px "Source Sans 3"')));
