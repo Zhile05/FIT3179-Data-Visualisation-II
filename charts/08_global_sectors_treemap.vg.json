@@ -134,7 +134,7 @@
             "signal": "datum.y0 + 12"
           },
           "text": {
-            "signal": "datum.x1-datum.x0 > 65 && datum.y1-datum.y0 > 45 ? datum.label : ''"
+            "signal": "datum.x1-datum.x0 > 65 && datum.y1-datum.y0 > 28 ? datum.label : ''"
           },
           "align": {
             "value": "left"

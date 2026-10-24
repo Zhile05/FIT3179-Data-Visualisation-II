@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Explore global greenhouse gas emissions, sector contributions and Malaysia's position using EDGAR and World Bank data.">
+    <meta name="description" content="Discover the largest greenhouse gas emitters, changes since 1990, sector contributions and differences between selected developed and developing countries, with a focus on Malaysia.">
     <title>A world of emissions | Yew Zhi Le</title>
 
     <link rel="stylesheet" href="css/style.css">
@@ -36,12 +36,12 @@
 
       <!-- Title and introduction -->
       <section class="hero" aria-labelledby="page-title">
-        <p class="eyebrow">A global view with a Malaysian perspective</p>
+        <p class="eyebrow">Who emits most, what changed, and where Malaysia fits</p>
         <h1 id="page-title">A world of <span>emissions.</span>
         </h1>
-        <p class="lede">Where greenhouse gases come from depends on how we look at them. Country totals show global scale. Per-person figures and sector patterns reveal differences that a national ranking alone cannot show.</p>
+        <p class="lede">Global emissions have kept rising, while countries have followed different paths. Compare the largest contributors, changes since 1990 and sector patterns in selected developed and developing countries, with a focus on Malaysia.</p>
         <p class="definition">
-          <strong>What are we measuring?</strong> CO₂-equivalent puts carbon dioxide, methane, nitrous oxide and fluorinated gases on a comparable warming scale. The emissions shown here exclude land use and forestry. <strong>2025</strong> is the latest EDGAR data year.</p>
+          <strong>What are we measuring?</strong> CO₂-equivalent compares greenhouse gases by their warming effect. EDGAR figures exclude land use and forestry and run through <strong>2025</strong>. The export comparison uses OECD data for 2022.</p>
 
         <!-- Key figures -->
         <div class="kpis" aria-label="Global and Malaysian emissions in 2025">
@@ -52,7 +52,7 @@
           </div>
           <div class="kpi">
             <strong>49.0%</strong>
-            <span>of global emissions from the three largest country totals</span>
+            <span>of global emissions from China, the United States and India</span>
           </div>
           <div class="kpi">
             <strong>337.3 <span class="unit">Mt</span>
@@ -71,8 +71,8 @@
         <div class="chapter-head">
           <div class="chapter-number">01</div>
           <div>
-            <h2 id="scale-title">A few countries contribute a large share</h2>
-            <p class="chapter-intro">China, the United States and India together account for almost half of global emissions in 2025. The map shows geographic concentration, while the ranking makes the sizes easier to compare.</p>
+            <h2 id="scale-title">Who contributes most to global emissions?</h2>
+            <p class="chapter-intro">China, the United States and India produce almost half of global emissions in 2025. Other countries contribute much smaller shares.</p>
           </div>
         </div>
 
@@ -88,9 +88,9 @@
           <!-- Figure 1 - Proportional symbol map -->
           <figure class="figure full">
             <span class="figure-label">Figure 1 - Proportional symbol map</span>
-            <h3>Where national emissions are concentrated <span data-map-year>2025</span>
+            <h3>A few countries dominate global emissions in <span data-map-year>2025</span>
             </h3>
-            <p class="chart-subtitle">Circle area represents annual emissions. Hover over a circle for the country total.</p>
+            <p class="chart-subtitle">Compare annual emissions across countries. Circle area shows the total; hover for country values.</p>
             <div class="map-layout">
               <div class="chart map" id="chart-01_total_emissions_map" aria-label="World map of country greenhouse gas totals">
                 <p class="loading-text">Loading map…</p>
@@ -109,28 +109,28 @@
                 </div>
               </aside>
             </div>
-            <figcaption>Symbols are placed at country reference points. National emissions are measured in million tonnes (Mt) of CO₂-equivalent.<span class="caption-source">Sources: EDGAR 2026, Natural Earth, World Bank country coordinates.</span>
+            <figcaption>Asia and North America stand out for their large national totals. Malaysia's smaller orange circle provides a local reference.<span class="caption-source">Sources: EDGAR 2026, Natural Earth and World Bank country coordinates. Mt = million tonnes.</span>
             </figcaption>
           </figure>
 
           <!-- Figure 2 - Bar chart -->
           <figure class="figure">
             <span class="figure-label">Figure 2 - Bar chart</span>
-            <h3>The ten largest country totals <span data-map-year>2025</span>
+            <h3>Ten emitters produce most of the total in <span data-map-year>2025</span>
             </h3>
-            <p class="chart-subtitle">Country reporting areas, ordered from largest to smallest.</p>
+            <p class="chart-subtitle">Compare the ten largest country totals. Bar length shows annual emissions in billion tonnes (Gt).</p>
             <div class="chart" id="chart-02_top10_emitters_bar" aria-label="Top ten emitters">
             </div>
-            <figcaption>These ten reporting areas contribute <strong id="selected-top10">65.6%</strong> of the global total. Regional and global aggregates are excluded from the country ranking.<span class="caption-source">Source: EDGAR 2026. 1 Gt = 1000 Mt.</span>
+            <figcaption>These ten emitters contribute <strong id="selected-top10">65.6%</strong> of the selected year's global emissions.<span class="caption-source">Source: EDGAR 2026. Gt = billion tonnes; 1 Gt = 1000 Mt.</span>
             </figcaption>
           </figure>
 
           <!-- Reading the global picture explanation -->
           <aside class="insight">
-            <p class="eyebrow">Reading the global picture</p>
-            <h3>Totals show the scale of emissions</h3>
-            <p>Country totals include power generation, industry, transport and agriculture. Per-person figures help compare countries with different population sizes.</p>
-            <p>International aviation and shipping count towards the global total but are reported separately from countries.</p>
+            <p class="eyebrow">Beyond country totals</p>
+            <h3>Population changes the comparison</h3>
+            <p>A smaller country can emit less overall while having higher emissions per person. National totals alone do not show this difference.</p>
+            <p>The next section compares emissions across populations of different sizes.</p>
           </aside>
         </div>
       </section>
@@ -140,8 +140,8 @@
         <div class="chapter-head">
           <div class="chapter-number">02</div>
           <div>
-            <h2 id="person-title">A different picture per person</h2>
-            <p class="chapter-intro">Per-person figures average national emissions across the population. Smaller countries can have high per-person emissions despite contributing little to the global total. Comparing income groups adds context to these differences.</p>
+            <h2 id="person-title">Per-person figures reveal a different pattern</h2>
+            <p class="chapter-intro">A large population can contribute to a large national total. Per-person figures reveal another pattern, including different changes among the selected developed and developing countries.</p>
           </div>
         </div>
         <div class="grid">
@@ -149,9 +149,9 @@
           <!-- Figure 3 - Choropleth map -->
           <figure class="figure full">
             <span class="figure-label">Figure 3 - Choropleth map</span>
-            <h3>Annual emissions per person <span data-map-year>2025</span>
+            <h3>Small totals can hide high emissions per person in <span data-map-year>2025</span>
             </h3>
-            <p class="chart-subtitle">Darker shades represent higher emissions per person. The year selector above also updates this map.</p>
+            <p class="chart-subtitle">Compare annual emissions per person across countries. Darker colours mean higher values; the year slider above updates this map.</p>
             <div class="map-layout">
               <div class="chart map" id="chart-03_per_person_map" aria-label="World map of greenhouse gas emissions per person">
               </div>
@@ -169,15 +169,15 @@
                 </div>
               </aside>
             </div>
-            <figcaption>The same colour thresholds are used for every year. Grey areas have no matched emissions record. Malaysia’s boundary is outlined in orange.<span class="caption-source">Sources: EDGAR 2026 and Natural Earth. Population normalisation follows EDGAR.</span>
+            <figcaption>Brunei emits less overall than China but more per person. Grey areas lack matched data; colour thresholds stay fixed.<span class="caption-source">Sources: EDGAR 2026 and Natural Earth. Per-person values follow EDGAR.</span>
             </figcaption>
           </figure>
 
           <!-- Figure 4 - Dumbbell chart -->
           <figure class="figure">
             <span class="figure-label">Figure 4 - Dumbbell chart</span>
-            <h3>Per-person emissions have changed differently</h3>
-            <p class="chart-subtitle">Four developed and four developing countries, comparing 1990 with 2025.</p>
+            <h3>Declines in the four selected developed countries</h3>
+            <p class="chart-subtitle">Each row compares one country's emissions per person. Circles show 1990; diamonds show 2025. Four developed and four developing countries are selected.</p>
             <div class="key">
               <span>
                 <i class="dot grey-dot">
@@ -188,17 +188,16 @@
             </div>
             <div class="chart" id="chart-04_per_person_dumbbell" aria-label="Change in per person greenhouse gas emissions">
             </div>
-            <figcaption>Lines connect each country's 1990 and 2025 values. The selected countries illustrate differences, rather than development-group averages.<span class="caption-source">Sources: EDGAR 2026 and IMF WEO October 2026 classification.</span>
+            <figcaption>All four selected developing countries recorded increases, while the four selected developed countries recorded declines.<span class="caption-source">Sources: EDGAR 2026 and IMF WEO October 2026 classification.</span>
             </figcaption>
           </figure>
 
           <!-- Development groups explanation -->
           <aside class="insight">
             <p class="eyebrow">Development groups</p>
-            <h3>Why compare these eight countries?</h3>
-            <p>Four developed and four developing countries were chosen to compare major emitters and different regions, including Malaysia and neighbouring Indonesia. These examples do not represent group averages.</p>
-            <p>Per-person emissions fell in all four selected developed countries but rose in all four selected developing countries. Malaysia increased from <strong>4.9</strong> to <strong>9.7 tonnes per person</strong>.</p>
-            <p>Developed and developing follow the IMF's advanced and emerging/developing groups. The same classification is used for both years.</p>
+            <h3>Malaysia's per-person emissions nearly doubled</h3>
+            <p>Malaysia rose from <strong>4.9 to 9.7 tonnes per person</strong>, alongside increases in China, India and Indonesia.</p>
+            <p>These examples are not group averages. The IMF's advanced and emerging/developing classification is held fixed for both years.</p>
           </aside>
 
           <!-- Figure 5 - Bubble scatterplot -->
@@ -206,14 +205,14 @@
             <div class="scatter-header">
               <div class="scatter-heading">
                 <span class="figure-label">Figure 5 - Bubble scatterplot</span>
-                <h3>Income, population and emissions together</h3>
-                <p class="chart-subtitle">170 matched economies in 2025. Symbol area shows population; shapes identify income groups.</p>
+                <h3>Richer economies often emit more per person</h3>
+                <p class="chart-subtitle">GDP per person (horizontal) versus emissions per person (vertical), 2025. Each symbol is an economy; area shows population, colour and shape show income group.</p>
               </div>
               <div class="scatter-filter" id="income-filter"></div>
             </div>
             <div class="chart" id="chart-05_income_emissions_scatter" aria-label="GDP per person compared with emissions per person">
             </div>
-            <figcaption>Each labelled step right represents a tenfold increase in GDP per person. Use the dropdown to compare income groups. Malaysia is outlined in orange.<span class="caption-source">Sources: EDGAR 2026 and World Bank WDI, same-year records. Income labels follow World Bank classification.</span>
+            <figcaption>Across all 170 economies, higher incomes generally accompany higher per-person emissions, with wide differences at similar incomes. Each labelled GDP step is a tenfold increase.<span class="caption-source">Sources: EDGAR 2026 and World Bank WDI, matched in 2025. World Bank income groups differ from IMF development groups.</span>
             </figcaption>
           </figure>
         </div>
@@ -224,8 +223,8 @@
         <div class="chapter-head">
           <div class="chapter-number">03</div>
           <div>
-            <h2 id="change-title">Global emissions grew as the leading contributors changed</h2>
-            <p class="chapter-intro">Global emissions in 2025 were <strong>68.5% higher than in 1990</strong>, despite temporary falls during major disruptions. The leading contributors also changed over time.</p>
+            <h2 id="change-title">Global emissions kept rising as the leaders changed</h2>
+            <p class="chapter-intro">These different per-person paths occurred as global emissions grew <strong>68.5% between 1990 and 2025</strong>. The balance between leading contributors also changed.</p>
           </div>
         </div>
         <div class="grid">
@@ -233,22 +232,22 @@
           <!-- Figure 6 - Line chart -->
           <figure class="figure">
             <span class="figure-label">Figure 6 - Line chart</span>
-            <h3>The long-term global trend</h3>
-            <p class="chart-subtitle">Annual greenhouse gas emissions, 1990-2025.</p>
+            <h3>Global emissions rebounded after temporary falls</h3>
+            <p class="chart-subtitle">Follow the world's annual emissions from 1990 to 2025. The line shows total greenhouse gases in billion tonnes (Gt).</p>
             <div class="chart" id="chart-06_global_emissions_line" aria-label="Global greenhouse gas emissions over time">
             </div>
-            <figcaption>The 2009 financial crisis and the 2020 COVID-19 disruption coincide with falls in the emissions series. The longer-term trend remains upward.<span class="caption-source">Source: EDGAR 2026, including international transport.</span>
+            <figcaption>Emissions rose from <strong>32.1 to 54.1 Gt</strong>. Falls around the 2009 financial crisis and 2020 COVID-19 disruption were followed by renewed growth.<span class="caption-source">Source: EDGAR 2026, including international transport.</span>
             </figcaption>
           </figure>
 
           <!-- Figure 7 - Bump chart -->
           <figure class="figure">
             <span class="figure-label">Figure 7 - Bump chart</span>
-            <h3>Major contributors moved through the ranking</h3>
-            <p class="chart-subtitle">Seven major emitters, at selected years. Rank 1 is the largest.</p>
+            <h3>Indonesia and Iran climbed the global ranking</h3>
+            <p class="chart-subtitle">Follow the 2025 top seven emitters' global ranks at five years, 1990-2025. Each line is a country; rank 1 is the largest emitter.</p>
             <div class="chart" id="chart-07_emissions_rank_bump" aria-label="Global ranks of major emitters over time">
             </div>
-            <figcaption>Ranks cover all EDGAR country reporting areas; only the seven largest emitters in 2025 are shown. Rank changes reflect relative position, not emissions growth alone.<span class="caption-source">Source: EDGAR 2026.</span>
+            <figcaption>Indonesia rose from <strong>17th to 5th</strong> and Iran from <strong>19th to 7th</strong> between 1990 and 2025. Ranks compare all country reporting areas.<span class="caption-source">Source: EDGAR 2026. Ranks show relative position, not the size of emissions changes.</span>
             </figcaption>
           </figure>
         </div>
@@ -259,8 +258,8 @@
         <div class="chapter-head">
           <div class="chapter-number">04</div>
           <div>
-            <h2 id="sector-title">The sectors behind the country totals</h2>
-            <p class="chapter-intro">Power and heat generation account for <strong>29.2%</strong> of global emissions in 2025, the largest sector share. Each country's sector mix differs.</p>
+            <h2 id="sector-title">Power leads globally, but country sector mixes differ</h2>
+            <p class="chapter-intro">Country rankings identify the largest contributors. Sector shares reveal the activities behind those totals, with differences within both selected development groups.</p>
           </div>
         </div>
         <div class="grid">
@@ -268,8 +267,8 @@
           <!-- Figure 8 - Treemap -->
           <figure class="figure">
             <span class="figure-label">Figure 8 - Treemap</span>
-            <h3>Global emissions by sector</h3>
-            <p class="chart-subtitle">Rectangle area represents the sector’s contribution in 2025. Power is highlighted.</p>
+            <h3>Power contributes the largest global share</h3>
+            <p class="chart-subtitle">Compare sectors' shares of global emissions in 2025. Larger rectangles mean larger contributions; labels show percentages.</p>
             <div class="chart" id="chart-08_global_sectors_treemap" aria-label="Global sector contributions to greenhouse gases">
             </div>
             <div class="sector-key" aria-label="Sector names">
@@ -282,25 +281,25 @@
               <span>Buildings</span>
               <span>Waste</span>
             </div>
-            <figcaption>Power includes heat generation; Industry covers industrial fuel combustion; Processes covers industrial production; Farming means agriculture, excluding land-use change.<span class="caption-source">Source: EDGAR 2026. Sector values are shares of the global total.</span>
+            <figcaption>Power and transport account for <strong>45.4%</strong> of global emissions. Farming, industrial fuel use and fuel production each add about 11-12%.<span class="caption-source">Source: EDGAR 2026. Full sector definitions are listed below.</span>
             </figcaption>
           </figure>
 
           <!-- Figure 9 - Heatmap -->
           <figure class="figure">
             <span class="figure-label">Figure 9 - Heatmap</span>
-            <h3>Different countries have different sector mixes</h3>
-            <p class="chart-subtitle">Sector shares in four developed and four developing countries in 2025. Cells show rounded percentages.</p>
+            <h3>Sector mixes vary within each selected group</h3>
+            <p class="chart-subtitle">Each cell shows a sector's share of a country's 2025 emissions (%); darker means larger. Top four rows: developed countries; bottom four: developing countries.</p>
             <div class="chart" id="chart-09_country_sectors_heatmap" aria-label="Sector shares for eight selected countries">
             </div>
-            <figcaption>Each row represents 100% of a country's emissions. The top four countries are developed; the bottom four are developing. These are the same countries as Figure 4. Malaysia is highlighted in orange.<span class="caption-source">Sources: EDGAR 2026 and IMF WEO October 2026. Rounded cells may not sum to exactly 100%.</span>
+            <figcaption>Power accounts for about <strong>42%</strong> in both Japan and China. Transport contributes <strong>29%</strong> in the United States versus <strong>7%</strong> in China. The same countries appear in Figure 4.<span class="caption-source">Sources: EDGAR 2026 and IMF WEO October 2026. Each row totals 100% before rounding.</span>
             </figcaption>
           </figure>
         </div>
 
         <!-- Sector comparison summary -->
         <p class="takeaway">
-          <strong>The comparison matters:</strong> power accounts for about 37% of Malaysia's emissions in 2025, and transport about 20%. Sector shares show where each country's emissions come from.</p>
+          <strong>Malaysia's sector mix:</strong> power and transport together account for <strong>57.5%</strong> of its emissions. Their role becomes clearer when we trace Malaysia's growth since 1990.</p>
       </section>
 
       <!-- Section 5 - Malaysia -->
@@ -308,8 +307,8 @@
         <div class="chapter-head">
           <div class="chapter-number">05</div>
           <div>
-            <h2 id="malaysia-title">Malaysia’s place in the picture</h2>
-            <p class="chapter-intro">Malaysia contributes <strong>0.62%</strong> of global emissions but exceeds the global per-person average. Sector changes, regional comparisons and export links provide context for its emissions.</p>
+            <h2 id="malaysia-title">Power and transport lead Malaysia's emissions growth</h2>
+            <p class="chapter-intro">Malaysia contributes <strong>0.62%</strong> of global emissions. Its national total is nearly four times its 1990 level, led by growth in power and transport.</p>
           </div>
         </div>
         <div class="grid">
@@ -317,19 +316,19 @@
           <!-- Figure 10 - Waterfall chart -->
           <figure class="figure full">
             <span class="figure-label">Figure 10 - Waterfall chart</span>
-            <h3>What contributed to Malaysia’s emissions growth?</h3>
-            <p class="chart-subtitle">From the 1990 total to the 2025 total, through sector changes.</p>
+            <h3>Power and transport explain most of the increase</h3>
+            <p class="chart-subtitle">Start with Malaysia's 1990 total and add each sector's change to reach 2025. Dark bars show totals; floating bars show changes in million tonnes (Mt).</p>
             <div class="chart" id="chart-10_malaysia_sectors_waterfall" aria-label="Sector contributions to the growth of Malaysia emissions">
             </div>
-            <figcaption>Floating bars show sector changes from 1990 to 2025, in Mt CO₂-equivalent. Dark bars show the national totals.<span class="caption-source">Source: EDGAR 2026. All sector changes reconcile with the change in the national total.</span>
+            <figcaption>Power and transport contributed <strong>65.2%</strong> of the increase from <strong>87.6 to 337.3 Mt</strong>.<span class="caption-source">Source: EDGAR 2026.</span>
             </figcaption>
           </figure>
 
           <!-- Figure 11 - Dorling cartogram -->
           <figure class="figure full cartogram-figure">
             <span class="figure-label">Figure 11 - Dorling cartogram (Map)</span>
-            <h3>What if countries were resized by their emissions?</h3>
-            <p class="chart-subtitle">Eleven Southeast Asian economies in 2025. Each country becomes a circle, with area proportional to its emissions.</p>
+            <h3>Malaysia ranks fourth in Southeast Asia</h3>
+            <p class="chart-subtitle">Each circle represents one Southeast Asian economy in 2025. Area shows total emissions; circles shift from geographic reference points to avoid overlap.</p>
             <div class="map-layout">
               <div class="chart cartogram" id="chart-11_southeast_asia_cartogram" aria-label="Dorling cartogram of greenhouse gas totals in Southeast Asia">
               </div>
@@ -344,7 +343,7 @@
                 </div>
               </aside>
             </div>
-            <figcaption>Circles stay near geographic reference points but move to avoid overlap. Country shapes, land areas and distances are not preserved.<span class="caption-source">Sources: EDGAR 2026, Natural Earth and World Bank country reference points. Hover for full country names and values.</span>
+            <figcaption>Indonesia emits about <strong>four times Malaysia's total</strong>, but Malaysia's per-person value is about <strong>twice Indonesia's</strong>.<span class="caption-source">Sources: EDGAR 2026, Natural Earth and World Bank country reference points. Shapes and distances are distorted. Hover for details.</span>
             </figcaption>
 
             <!-- Country abbreviation key -->
@@ -354,14 +353,17 @@
             </details>
           </figure>
 
+          <!-- From national totals to trade links -->
+          <p class="story-transition full">National totals describe where emissions occur. Producing Malaysia's exports also involves supply chains abroad, adding another perspective on its emissions.</p>
+
           <!-- Figure 12 - Flow map -->
           <figure class="figure full">
             <span class="figure-label">Figure 12 - Flow map</span>
-            <h3>The emissions behind Malaysia's exports</h3>
-            <p class="chart-subtitle">Producing goods and services for export generates emissions in Malaysia and abroad. The map shows the ten destinations linked to the largest totals in 2022.</p>
+            <h3>Exports to China are linked to the most emissions</h3>
+            <p class="chart-subtitle">Arrows connect Malaysia to export destinations; thicker lines mean more emissions from producing those exports, in Malaysia and abroad. Top ten by emissions, 2022.</p>
             <div class="chart map" id="chart-12_malaysia_exports_flow" aria-label="Flow map showing emissions from producing Malaysia's exports, grouped by export destination in 2022">
             </div>
-            <figcaption>Exports to China account for <strong>25.3%</strong> of the emissions linked to Malaysia's exports; these ten destinations together account for <strong>71.5%</strong>. Thicker arrows mean more emissions across the production chain, from raw materials to finished products. Labels show million tonnes (Mt) of CO₂-equivalent. Arrows show trade links, and the close-up enlarges four of the same connections. Hover for details.<span class="caption-source">Sources: OECD Greenhouse Gas Footprints, 2025 edition (2022 data; dataset updated 29 April 2026), Natural Earth and country reference points.</span>
+            <figcaption>Exports to China account for <strong>25.3%</strong> of the export-linked total; these ten destinations account for <strong>71.5%</strong>. Totals cover the production chain, from raw materials to finished products. The close-up repeats four connections.<span class="caption-source">Sources: OECD Greenhouse Gas Footprints, 2025 edition (2022 data; dataset updated 29 April 2026), Natural Earth and country reference points. Mt = million tonnes.</span>
             </figcaption>
 
             <!-- Flow map destination names -->
@@ -374,7 +376,7 @@
 
         <!-- Malaysia summary -->
         <div class="takeaway">
-          <strong>For Malaysia:</strong> emissions grew by 285.1% from 1990 to 2025. Power and heat generation added 109.6 Mt CO₂-equivalent, the largest sector increase.</div>
+          <strong>For Malaysia:</strong> power and transport lead its emissions growth. Its small global share sits alongside above-average emissions per person and production chains linked to buyers abroad.</div>
       </section>
 
       <!-- Sources and author credit -->
@@ -430,6 +432,8 @@
               <strong>Population series.</strong> Per-person emissions follow EDGAR’s population normalisation. Bubble areas use World Bank population values. These population series can differ, so the bubble-area population should not be used to recalculate the displayed EDGAR per-person value.</p>
             <p>
               <strong>Sector changes.</strong> Malaysia’s waterfall uses the difference between each sector’s 2025 and 1990 emissions. The sum of those changes equals the change in the national total.</p>
+            <p>
+              <strong>Sector labels.</strong> Power includes heat generation; Industry covers fuel burned in industry; Processes covers industrial production; Fuel means fuel production; Farming means agriculture, excluding land-use change.</p>
             <p>
               <strong>Emissions linked to exports.</strong> Figure 12 counts emissions across the production chain for Malaysia's exported goods and services, including emissions in Malaysia and abroad. It includes exports used in further production and those sold for final use. Destinations are direct buyers and may export the products again. These totals use different boundaries from EDGAR's national totals and should not be added to them. Retrieved on 22 October 2026.</p>
             <p>
