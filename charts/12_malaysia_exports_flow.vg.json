@@ -1531,7 +1531,7 @@
     "malaysia_export_total_mt_co2e": 206.097,
     "definition": "Gross exports include intermediate and final goods and services and their upstream emissions, which can originate in Malaysia or abroad. Importer is the direct trade partner, not necessarily the final consumer. Values are not a territorial inventory or transport-only emissions.",
     "specification_file": "charts/12_malaysia_exports_flow.vg.json",
-    "dataset_last_updated": "2026-04-29",
+    "dataset_last_updated": "2026-04-30",
     "dataset_update_source": "https://data-explorer.oecd.org/vis?df[ag]=OECD.STI.PIE&df[ds]=dsDisseminateFinalDMZ&df[id]=DSD_ICIO_GHG_TRADE_2025@DF_ICIO_GHG_TRADE_2025&df[vs]=1.0"
   }
 }
