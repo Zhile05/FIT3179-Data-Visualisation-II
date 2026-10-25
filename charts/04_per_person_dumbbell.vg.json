@@ -90,10 +90,16 @@
         "y": {
           "field": "country",
           "type": "nominal",
-          "sort": {
-            "field": "current",
-            "order": "descending"
-          },
+          "sort": [
+            "Australia",
+            "United States",
+            "Japan",
+            "Germany",
+            "China",
+            "Malaysia",
+            "Indonesia",
+            "India"
+          ],
           "title": null,
           "axis": {
             "labelLimit": 160,
@@ -159,10 +165,16 @@
         "y": {
           "field": "country",
           "type": "nominal",
-          "sort": {
-            "field": "current",
-            "order": "descending"
-          },
+          "sort": [
+            "Australia",
+            "United States",
+            "Japan",
+            "Germany",
+            "China",
+            "Malaysia",
+            "Indonesia",
+            "India"
+          ],
           "title": null,
           "axis": {
             "labelLimit": 160,
@@ -230,10 +242,16 @@
         "y": {
           "field": "country",
           "type": "nominal",
-          "sort": {
-            "field": "current",
-            "order": "descending"
-          },
+          "sort": [
+            "Australia",
+            "United States",
+            "Japan",
+            "Germany",
+            "China",
+            "Malaysia",
+            "Indonesia",
+            "India"
+          ],
           "title": null,
           "axis": {
             "labelLimit": 160,
@@ -301,10 +319,16 @@
         "y": {
           "field": "country",
           "type": "nominal",
-          "sort": {
-            "field": "current",
-            "order": "descending"
-          },
+          "sort": [
+            "Australia",
+            "United States",
+            "Japan",
+            "Germany",
+            "China",
+            "Malaysia",
+            "Indonesia",
+            "India"
+          ],
           "title": null,
           "axis": {
             "labelLimit": 160,
@@ -318,6 +342,37 @@
           "field": "current",
           "type": "quantitative",
           "format": ".1f"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {}
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "color": "#adbcc6",
+        "strokeWidth": 1,
+        "strokeDash": [
+          3,
+          4
+        ]
+      },
+      "encoding": {
+        "x": {
+          "value": 0
+        },
+        "x2": {
+          "value": {
+            "expr": "width"
+          }
+        },
+        "y": {
+          "value": {
+            "expr": "(scale('y', 'Germany') + scale('y', 'China') + bandwidth('y')) / 2"
+          }
         }
       }
     }
