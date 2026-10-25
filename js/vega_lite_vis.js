@@ -19,7 +19,7 @@ const embedOptions = { renderer: "svg", actions: false, tooltip: true };
 const yearCharts = ["01_total_emissions_map", "02_top10_emitters_bar", "03_per_person_map"];
 const worldMaps = ["01_total_emissions_map", "03_per_person_map"];
 
-// Display numbers without thousands separators.
+// Number formatting
 function number(value, digits = 1) {
   return new Intl.NumberFormat("en", {
     useGrouping: false,
@@ -28,7 +28,7 @@ function number(value, digits = 1) {
   }).format(value);
 }
 
-// Vega's CSV reader uses the same file that is referenced by the chart JSON.
+// Country emissions data
 async function loadCountryEmissions() {
   const csvText = await vega.loader().load("data/country_emissions.csv");
   return vega.read(csvText, {
@@ -74,7 +74,7 @@ function fitChart(id, element) {
   view.width(width);
   if (id === "05_income_emissions_scatter") {
     return view.runAsync().then(() => view.resize().runAsync()).then(() => {
-      // Centre the legend boxes within the full chart, including the Y-axis space.
+      // Scatterplot legend alignment
       element.style.setProperty("--scatter-legend-shift", "0px");
       const boxes = Array.from(element.querySelectorAll(".role-legend > g > .background"))
         .map(box => box.getBoundingClientRect());
@@ -96,7 +96,7 @@ function fitChart(id, element) {
   return view.runAsync();
 }
 
-// Embed a chart and keep its view for resizing and year selection.
+// Chart embedding
 function embedChart(id) {
   var vg = "charts/" + id + ".vg.json";
   var container = document.getElementById("chart-" + id);
@@ -176,7 +176,7 @@ async function initialise() {
     return;
   }
   try {
-    // Load chart fonts before Vega measures labels and legends.
+    // Chart fonts
     if (document.fonts) {
       await Promise.all([400, 600, 700].map(weight =>
         document.fonts.load(weight + ' 14px "Source Sans 3"')));

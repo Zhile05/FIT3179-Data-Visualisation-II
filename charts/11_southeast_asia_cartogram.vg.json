@@ -145,7 +145,7 @@
             "signal": "datum.country_code === 'MYS' ? '#a84420' : '#496b8a'"
           },
           "fillOpacity": {
-            "value": 0.9
+            "value": 1
           },
           "stroke": {
             "value": "white"
@@ -158,8 +158,11 @@
           }
         },
         "hover": {
-          "fillOpacity": {
-            "value": 0.7
+          "stroke": {
+            "value": "#19374b"
+          },
+          "strokeWidth": {
+            "value": 2.5
           }
         }
       }

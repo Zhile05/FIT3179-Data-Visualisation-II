@@ -124,7 +124,8 @@
             "range": [
               "#edf3f7",
               "#164f74"
-            ]
+            ],
+            "interpolate": "lab"
           },
           "legend": {
             "title": "Share of country emissions (%)",

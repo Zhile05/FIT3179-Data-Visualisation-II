@@ -120,7 +120,7 @@
     {
       "mark": {
         "type": "point",
-        "opacity": 0.65,
+        "opacity": 0.8,
         "filled": true
       },
       "encoding": {
@@ -183,14 +183,14 @@
             "test": "datum.country_code === 'MYS'",
             "value": "#a84420"
           },
-          "value": "#ffffff"
+          "value": "#435968"
         },
         "strokeWidth": {
           "condition": {
             "test": "datum.country_code === 'MYS'",
             "value": 3
           },
-          "value": 0.6
+          "value": 0.65
         },
         "tooltip": [
           {

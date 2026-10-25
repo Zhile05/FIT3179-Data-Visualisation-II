@@ -111,6 +111,10 @@ h1 span{
   margin:0 0 20px
 }
 
+.lede,.definition,.chapter-intro{
+  max-width:60ch
+}
+
 .definition{
   font-size:14px;
   color:var(--muted);
@@ -180,7 +184,8 @@ h1 span{
 
 .chapter-intro{
   margin:0;
-  color:#435f70
+  color:#435f70;
+  text-wrap:balance
 }
 
 .story-transition{
@@ -227,7 +232,22 @@ h1 span{
 .chart-subtitle{
   font-size:16px;
   color:var(--muted);
-  margin:0 0 12px
+  margin:0 0 12px;
+  max-width:60ch;
+  text-wrap:balance
+}
+
+@media(min-width:901px){
+  #change .grid,#sectors .grid{
+    row-gap:0
+  }
+
+  #change .figure,#sectors .figure{
+    display:grid;
+    grid-template-rows:subgrid;
+    grid-row:span 5;
+    row-gap:0
+  }
 }
 
 .scatter-header{
@@ -514,7 +534,7 @@ figcaption{
   font:14px 'Source Sans 3',Arial,sans-serif!important
 }
 
-/* Keep tooltip labels and values in two aligned columns. */
+/* Tooltip layout */
 #vg-tooltip-element.vg-tooltip table tr td.key,
 #vg-tooltip-element.vg-tooltip table tr td.value{
   display:table-cell;
@@ -558,15 +578,37 @@ footer h2{
 .source-grid{
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:15px 35px
+  column-gap:36px
+}
+
+.source-grid > div{
+  display:grid;
+  grid-template-columns:1fr;
+  align-content:start;
+  gap:5px;
+  padding:12px 0;
+  border-bottom:1px solid var(--line)
+}
+
+.source-grid > div:last-child{
+  border-bottom:0
 }
 
 .source-grid p{
-  margin:0 0 8px
+  margin:0;
+  max-width:60ch;
+  line-height:1.65;
+  text-wrap:pretty
 }
 
-.source-grid strong{
+.source-grid p:not(:last-child){
+  padding-left:18px;
+  text-indent:-18px;
   color:var(--ink)
+}
+
+.source-grid p:last-child{
+  padding-left:18px
 }
 
 details{
@@ -581,22 +623,12 @@ summary{
   font-weight:600
 }
 
-.methodology{
-  columns:2;
-  column-gap:35px;
-  padding-top:10px;
-  font-size:13px
-}
-
-.methodology p{
-  break-inside:avoid;
-  margin:0 0 12px
-}
-
 .credit{
-  font-size:12px;
+  font-size:14px;
   color:#567080;
-  margin-top:16px
+  margin-top:28px;
+  border-top:1px solid var(--line);
+  padding-top:18px
 }
 
 .footnote{
@@ -640,6 +672,10 @@ summary{
 }
 }
 @media(max-width:740px){
+  .source-grid{
+    grid-template-columns:1fr
+  }
+
   .page{
   padding:0 18px 28px
 }
@@ -721,14 +757,6 @@ nav{
   min-width:0
 }
 
-.source-grid{
-  grid-template-columns:1fr
-}
-
-.methodology{
-  columns:1
-}
-
 .year-controls{
   gap:10px;
   padding:11px
@@ -777,12 +805,9 @@ nav{
   break-before:auto
 }
 
-details .methodology{
-  display:block
-}
 }
 
-/* Keyboard skip link and responsive chart layout. */
+/* Accessibility and responsive layout */
 .skip-link {
    position: absolute;
    left: 16px;
@@ -802,7 +827,7 @@ p {
    
 }
 .chart-subtitle {
-   min-height: 2.8em;
+   min-height: 3.3em;
    
 }
 .country-code-key {
