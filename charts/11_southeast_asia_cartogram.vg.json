@@ -3,9 +3,14 @@
   "description": "A Dorling cartogram of eleven Southeast Asian economies in 2025. Area encodes greenhouse gas totals; positions are shifted around projected geographic reference points to remove overlaps.",
   "width": 720,
   "height": 445,
-  "padding": 10,
+  "padding": {
+    "top": 10,
+    "right": 10,
+    "bottom": 40,
+    "left": 10
+  },
   "autosize": {
-    "type": "fit",
+    "type": "none",
     "contains": "padding",
     "resize": true
   },
@@ -66,6 +71,16 @@
           "type": "formula",
           "as": "label_inside",
           "expr": "datum.symbol_area >= 3000 && length(datum.country) * 7 + 12 <= sqrt(datum.symbol_area)"
+        },
+        {
+          "type": "formula",
+          "as": "fx",
+          "expr": "indexof(['MYS', 'SGP'], datum.country_code) >= 0 ? datum.anchor_x : null"
+        },
+        {
+          "type": "formula",
+          "as": "fy",
+          "expr": "indexof(['MYS', 'SGP'], datum.country_code) >= 0 ? datum.anchor_y : null"
         },
         {
           "type": "force",
