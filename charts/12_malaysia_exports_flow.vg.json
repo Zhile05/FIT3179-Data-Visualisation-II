@@ -1515,10 +1515,9 @@
     "sources": [
       "OECD Greenhouse Gas Footprints, 2025 edition",
       "Natural Earth",
-      "Existing country reference coordinates"
+      "World Bank country metadata"
     ],
     "data_year": 2022,
-    "retrieved": "2026-10-22",
     "source_url": "https://www.oecd.org/en/data/datasets/greenhouse-gas-footprint-indicators.html",
     "data_url": "https://sdmx.oecd.org/public/rest/v1/data/OECD.STI.PIE,DSD_ICIO_GHG_TRADE_2025@DF_ICIO_GHG_TRADE_2025,1.0/A.TRADE_GHG.MYS.._T.TTL.T_CO2E?startPeriod=2020&format=csvfile",
     "selection": {
@@ -1532,11 +1531,6 @@
     "malaysia_export_total_mt_co2e": 206.097,
     "definition": "Gross exports include intermediate and final goods and services and their upstream emissions, which can originate in Malaysia or abroad. Importer is the direct trade partner, not necessarily the final consumer. Values are not a territorial inventory or transport-only emissions.",
     "specification_file": "charts/12_malaysia_exports_flow.vg.json",
-    "top_ten_mt_co2e": 147.366,
-    "top_ten_share_pct": 71.50322420995938,
-    "latest_year_checked": "2026-10-22: current 2025-edition Malaysia observations end in 2022.",
-    "map_view": "Focused on Asia-Pacific and the United States to make nearby destinations easier to distinguish. Curve positions are schematic trade links.",
-    "closeup": "Four of the same ten flows (Singapore, Thailand, Viet Nam and Indonesia), enlarged with a second projection and the same line-width scale. Not additional emissions.",
     "dataset_last_updated": "2026-04-29",
     "dataset_update_source": "https://data-explorer.oecd.org/vis?df[ag]=OECD.STI.PIE&df[ds]=dsDisseminateFinalDMZ&df[id]=DSD_ICIO_GHG_TRADE_2025@DF_ICIO_GHG_TRADE_2025&df[vs]=1.0"
   }
