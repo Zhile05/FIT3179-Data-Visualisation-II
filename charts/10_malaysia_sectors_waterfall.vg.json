@@ -102,21 +102,17 @@
           "scale": {
             "domain": [
               "Total",
-              "Increase",
-              "Decrease"
+              "Increase"
             ],
             "range": [
               "#333333",
-              "#377eb8",
-              "#e69f00"
+              "#377eb8"
             ]
           },
           "legend": {
             "title": null,
             "symbolSize": 144,
-            "columns": {
-              "expr": "width < 400 ? 2 : 3"
-            }
+            "columns": 2
           }
         },
         "tooltip": [
