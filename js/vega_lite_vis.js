@@ -1,3 +1,4 @@
+// Chart configuration and state
 const charts = [
   "01_total_emissions_map",
   "02_top10_emitters_bar",
@@ -19,7 +20,7 @@ const embedOptions = { renderer: "svg", actions: false, tooltip: true };
 const yearCharts = ["01_total_emissions_map", "02_top10_emitters_bar", "03_per_person_map"];
 const worldMaps = ["01_total_emissions_map", "03_per_person_map"];
 
-// Number formatting
+// Format values for story statistics.
 function number(value, digits = 1) {
   return new Intl.NumberFormat("en", {
     useGrouping: false,
@@ -28,7 +29,7 @@ function number(value, digits = 1) {
   }).format(value);
 }
 
-// Country emissions data
+// Load and parse country emissions.
 async function loadCountryEmissions() {
   const csvText = await vega.loader().load("data/country_emissions.csv");
   return vega.read(csvText, {
@@ -42,6 +43,7 @@ async function loadCountryEmissions() {
   });
 }
 
+// Update story statistics for the selected year.
 function updateStory(year, countryEmissions) {
   const rows = countryEmissions.filter(row => row.year === year);
   const world = rows.find(row => row.country_code === "GLOBAL TOTAL");
@@ -66,6 +68,7 @@ function updateStory(year, countryEmissions) {
   ) + "×";
 }
 
+// Resize a chart to fit its container.
 function fitChart(id, element) {
   const view = views[id];
   if (!view) return Promise.resolve();
@@ -74,7 +77,6 @@ function fitChart(id, element) {
   view.width(width);
   if (id === "05_income_emissions_scatter") {
     return view.runAsync().then(() => view.resize().runAsync()).then(() => {
-      // Scatterplot legend alignment
       element.style.setProperty("--scatter-legend-shift", "0px");
       const boxes = Array.from(element.querySelectorAll(".role-legend > g > .background"))
         .map(box => box.getBoundingClientRect());
@@ -96,7 +98,7 @@ function fitChart(id, element) {
   return view.runAsync();
 }
 
-// Chart embedding
+// Load a chart specification into its HTML container.
 function embedChart(id) {
   var vg = "charts/" + id + ".vg.json";
   var container = document.getElementById("chart-" + id);
@@ -118,6 +120,7 @@ function embedChart(id) {
     });
 }
 
+// Load all twelve charts.
 function drawCharts() {
   var chartPromises = [];
   for (var i = 0; i < charts.length; i++) {
@@ -133,6 +136,7 @@ function drawCharts() {
   });
 }
 
+// Connect the year slider to the charts and story statistics.
 function enableYearSlider(countryEmissions) {
   const slider = document.getElementById("map-year");
   let timer;
@@ -154,6 +158,7 @@ function enableYearSlider(countryEmissions) {
   });
 }
 
+// Resize charts when their containers change.
 function enableResponsiveCharts() {
   if (!window.ResizeObserver) return;
   const observer = new ResizeObserver(entries => {
@@ -168,6 +173,7 @@ function enableResponsiveCharts() {
   document.querySelectorAll(".chart").forEach(node => observer.observe(node));
 }
 
+// Load fonts, charts and data, then enable interactions.
 async function initialise() {
   const status = document.getElementById("load-status");
   if (window.location.protocol === "file:") {
@@ -176,7 +182,6 @@ async function initialise() {
     return;
   }
   try {
-    // Chart fonts
     if (document.fonts) {
       await Promise.all([400, 600, 700].map(weight =>
         document.fonts.load(weight + ' 14px "Source Sans 3"')));

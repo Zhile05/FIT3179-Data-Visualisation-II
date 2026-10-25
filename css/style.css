@@ -1,3 +1,4 @@
+/* Base styles */
 :root{
   --ink:#19374b;
   --muted:#567080;
@@ -44,6 +45,7 @@ a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{
   background:#fff
 }
 
+/* Header and introduction */
 .masthead{
   display:flex;
   justify-content:space-between;
@@ -156,6 +158,7 @@ h1 span{
   font-size:18px;
   color:var(--ink)
 }
+/* Sections and chart layout */
 .chapter{
   padding:32px 0 12px;
   border-top:1px solid var(--line);
@@ -250,6 +253,7 @@ h1 span{
   }
 }
 
+/* Scatterplot controls */
 .scatter-header{
   display:grid;
   grid-template-columns:minmax(0,1fr) 215px;
@@ -363,6 +367,7 @@ figcaption{
   margin-top:5px;
   color:#567080
 }
+/* Year slider */
 .year-controls{
   display:flex;
   align-items:center;
@@ -561,6 +566,7 @@ figcaption{
   border:1px solid #edc4bb;
   font-size:14px
 }
+/* Data sources and footer */
 footer{
   border-top:2px solid var(--ink);
   padding-top:25px;
@@ -641,6 +647,7 @@ summary{
   font-size:14px;
   padding-top:20px
 }
+/* Responsive and print styles */
 @media(max-width:1000px){
   .page{
   padding:0 24px 35px

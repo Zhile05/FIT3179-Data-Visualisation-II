@@ -52,56 +52,6 @@
         }
       },
       "mark": {
-        "type": "area",
-        "color": "#dceaf0",
-        "opacity": 0.7
-      },
-      "encoding": {
-        "x": {
-          "field": "year",
-          "type": "quantitative",
-          "title": null,
-          "scale": {
-            "domain": [
-              1990,
-              2025
-            ]
-          },
-          "axis": {
-            "format": "d",
-            "tickCount": 6,
-            "grid": false
-          }
-        },
-        "y": {
-          "field": "emissions_gt",
-          "type": "quantitative",
-          "title": "Annual emissions (Gt CO₂e)",
-          "scale": {
-            "domain": [
-              0,
-              60
-            ]
-          },
-          "axis": {
-            "tickCount": 5,
-            "format": ".0f"
-          }
-        }
-      }
-    },
-    {
-      "data": {
-        "url": "data/global_emissions.csv",
-        "format": {
-          "type": "csv",
-          "parse": {
-            "year": "number",
-            "emissions_gt": "number"
-          }
-        }
-      },
-      "mark": {
         "type": "line",
         "color": "#496b8a",
         "strokeWidth": 3.5
